@@ -3,23 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tatibounty — студия маникюра и эстетики в Камышине | Советская, 21</title>
-<meta name="description" content="Студия ногтевой эстетики Tatibounty в Камышине. Стерильность по СанПиН, авторский дизайн, покрытие от 3 недель. Советская, 21.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Tatibounty — студия маникюра и эстетики ногтей в Камышине | Советская, 21</title>
+<meta name="description" content="Студия ногтевой эстетики Tatibounty в Камышине. Бережный маникюр, Smart-педикюр, авторский дизайн и стойкое покрытие от 3 недель. Советская, 21.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F7F5F0;
+  --bg: #F9F7F2;
   --paper: #FFFFFF;
-  --ink: #191614;
-  --ink-soft: #4F4A45;
-  --ink-muted: #8A847E;
-  --line: #E3DDD4;
-  --line-dark: #2A2521;
-  --berry: #8E2B43;
-  --berry-soft: #F4E8EB;
-  --sand: #EAE4D9;
+  --ink: #181513;
+  --ink-soft: #4E4944;
+  --ink-muted: #8A837C;
+  --line: #E2DBD0;
+  --line-subtle: #EDE7DD;
+  --burgundy: #7C1D32;
+  --burgundy-dark: #621324;
+  --rose-mist: #F6EAEC;
+  --sand: #F0EAE1;
   --gold: #B88E52;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Onest", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,523 +46,560 @@ body {
   padding: 0 24px;
 }
 
-/* Плашка демо */
-.top-notice {
+/* Верхняя плашка для владельца студии */
+.demo-strip {
   background: var(--ink);
   color: #EDE8E1;
   font-size: 13px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   text-align: center;
 }
-.top-notice a {
-  color: #E2B2BE;
-  margin-left: 8px;
+.demo-strip b {
+  color: #fff;
+}
+.demo-strip a {
+  color: #F1B4C4;
+  margin-left: 10px;
   text-decoration: underline;
 }
 
-/* Навигация */
+/* Шапка */
 header {
   border-bottom: 1px solid var(--line);
-  background: rgba(247, 245, 240, 0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(249, 247, 242, 0.96);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 50;
 }
-.header-row {
+.header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 80px;
 }
-.brand {
+.brand-block {
+  text-decoration: none;
+}
+.brand-name {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ink);
-  text-decoration: none;
   line-height: 1;
 }
-.brand small {
-  display: block;
+.brand-tag {
   font-family: var(--sans);
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--ink-muted);
   font-weight: 600;
-  margin-top: 3px;
+  margin-top: 4px;
+  display: block;
 }
-.header-contacts {
+.header-info {
   display: flex;
-  align-items: baseline;
-  gap: 24px;
+  align-items: center;
+  gap: 32px;
   font-size: 14px;
 }
-.header-contacts .place {
-  color: var(--ink-soft);
+.info-col {
+  display: flex;
+  flex-direction: column;
 }
-.header-contacts .phone {
+.info-col b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.info-col span {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+.phone-link {
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
+  font-size: 15px;
   white-space: nowrap;
 }
-.btn-book {
-  background: var(--ink);
+.btn-head {
+  background: var(--burgundy);
   color: #fff;
-  padding: 12px 22px;
+  padding: 13px 24px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: background 0.2s;
   white-space: nowrap;
 }
-.btn-book:hover {
-  background: var(--berry);
+.btn-head:hover {
+  background: var(--burgundy-dark);
 }
 
 /* Hero — журнальная композиция */
 .hero {
-  padding: 64px 0 72px;
+  padding: 64px 0 76px;
   border-bottom: 1px solid var(--line);
 }
-.hero-layout {
+.hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 60px;
+  gap: 56px;
   align-items: center;
 }
-.hero-eyebrow {
+.eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: var(--berry);
-  font-weight: 600;
-  margin-bottom: 20px;
+  color: var(--burgundy);
+  font-weight: 700;
+  margin-bottom: 18px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(38px, 4.8vw, 62px);
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 .hero h1 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--berry);
+  color: var(--burgundy);
 }
-.hero-lead {
+.hero-desc {
   font-size: 18px;
   color: var(--ink-soft);
-  max-width: 480px;
-  margin-bottom: 36px;
+  max-width: 490px;
+  margin-bottom: 34px;
   line-height: 1.6;
 }
-.hero-buttons {
+.hero-cta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
 }
-.hero-btn-main {
-  background: var(--berry);
+.btn-primary {
+  background: var(--burgundy);
   color: #fff;
-  padding: 15px 28px;
+  padding: 16px 30px;
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.2s;
+  border-radius: 4px;
+  transition: background 0.2s;
 }
-.hero-btn-main:hover {
-  background: #732235;
+.btn-primary:hover {
+  background: var(--burgundy-dark);
 }
-.hero-btn-sub {
+.btn-ghost {
   color: var(--ink);
   font-weight: 600;
+  font-size: 15px;
   text-decoration: none;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1.5px solid var(--ink);
   padding-bottom: 2px;
 }
 
-/* Интерактивный план визита в Hero (не SaaS-карточка, а элегантный блокнот) */
-.appointment-sheet {
+/* Экспресс-подбор комплекса визита */
+.planner-card {
   background: var(--paper);
   border: 1px solid var(--line);
-  padding: 36px 32px;
-  border-radius: 2px;
-  box-shadow: 0 4px 24px rgba(25, 22, 20, 0.04);
+  padding: 34px 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(24, 21, 19, 0.04);
 }
-.sheet-title {
+.planner-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+.planner-title {
   font-family: var(--serif);
   font-size: 26px;
   font-weight: 600;
-  margin-bottom: 6px;
 }
-.sheet-sub {
-  font-size: 13px;
-  color: var(--ink-muted);
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 14px;
-}
-.picker-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 12px 0;
-  border-bottom: 1px dashed var(--line);
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.picker-row:hover, .picker-row.picked {
-  color: var(--berry);
-}
-.picker-left {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.picker-radio {
-  accent-color: var(--berry);
-}
-.picker-name {
-  font-size: 15px;
-  font-weight: 500;
-}
-.picker-meta {
+.planner-loc {
   font-size: 12px;
   color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
-.picker-price {
-  font-weight: 700;
-  font-size: 16px;
+.plan-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.plan-item:hover, .plan-item.selected {
+  background: var(--rose-mist);
+  border-color: #EAC9D1;
+}
+.plan-name {
+  font-weight: 600;
+  font-size: 15px;
   color: var(--ink);
-  white-space: nowrap;
 }
-.sheet-total {
+.plan-sub {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+.plan-price {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--burgundy);
+  white-space: nowrap; /* ЦЕНА ВСЕГДА В ОДНУ СТРОКУ */
+}
+.plan-footer {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 2px solid var(--ink);
 }
-.sheet-total-label {
-  font-size: 14px;
+.plan-total-label {
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
   font-weight: 600;
 }
-.sheet-total-sum {
+.plan-total-sum {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
-  color: var(--berry);
+  color: var(--burgundy);
   white-space: nowrap;
 }
-.sheet-btn {
+.plan-btn {
   display: block;
   width: 100%;
   text-align: center;
   background: var(--ink);
   color: #fff;
-  padding: 14px;
+  padding: 15px;
   font-weight: 600;
   font-size: 15px;
   border-radius: 4px;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 18px;
   transition: background 0.2s;
 }
-.sheet-btn:hover {
-  background: var(--berry);
+.plan-btn:hover {
+  background: var(--burgundy);
 }
 
-/* Секция: Меню услуг (строгая журнальная верстка строк, БЕЗ 3 окон) */
+/* Меню услуг — журнальная верстка строк */
 .menu-section {
   padding: 80px 0;
 }
-.section-headline {
+.menu-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 44px;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 20px;
+  margin-bottom: 36px;
 }
-.section-headline h2 {
+.menu-header h2 {
   font-family: var(--serif);
-  font-size: clamp(32px, 3.8vw, 48px);
+  font-size: clamp(34px, 4vw, 50px);
   font-weight: 600;
-  line-height: 1.05;
+  line-height: 1;
 }
-.section-headline span {
+.menu-header span {
   font-size: 14px;
   color: var(--ink-muted);
   text-align: right;
+  line-height: 1.4;
 }
 
-/* Категории переключатели */
-.tab-list {
+/* Табы фильтрации */
+.tabs-bar {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 32px;
   flex-wrap: wrap;
 }
-.tab-btn {
-  background: transparent;
+.tab-pill {
+  background: var(--paper);
   border: 1px solid var(--line);
   padding: 8px 18px;
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 600;
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s;
 }
-.tab-btn.active, .tab-btn:hover {
+.tab-pill.active, .tab-pill:hover {
   background: var(--ink);
   color: #fff;
   border-color: var(--ink);
 }
 
-/* Табличный список услуг — цены строго в 1 строчку */
-.menu-table {
+/* Список услуг: чисто, строчно, без серых карточек */
+.price-table {
   display: flex;
   flex-direction: column;
 }
-.menu-item {
+.price-row {
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: baseline;
-  gap: 24px;
-  padding: 20px 0;
+  gap: 32px;
+  padding: 22px 0;
   border-bottom: 1px solid var(--line);
   transition: background 0.15s;
 }
-.menu-item:hover {
-  background: rgba(255,255,255,0.4);
+.price-row:hover {
+  background: rgba(255,255,255,0.6);
 }
-.item-title {
-  font-size: 17px;
+.price-col-title {
+  font-size: 18px;
   font-weight: 600;
   color: var(--ink);
 }
-.item-desc {
+.price-col-desc {
   font-size: 14px;
   color: var(--ink-soft);
-  margin-top: 4px;
+  margin-top: 5px;
+  max-width: 600px;
 }
-.item-time {
-  font-size: 13px;
-  color: var(--ink-muted);
-  white-space: nowrap;
-}
-.item-price {
+.price-col-price {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--ink);
   white-space: nowrap; /* ЦЕНА СТРОГО В ОДНУ СТРОКУ */
 }
-.item-action {
-  color: var(--berry);
+.price-col-action a {
+  color: var(--burgundy);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  white-space: nowrap;
   border-bottom: 1px solid currentColor;
+  white-space: nowrap;
 }
 
-/* Мастера — элегантный список с цитатами */
-.masters-section {
+/* Секция мастеров */
+.team-section {
   padding: 80px 0;
   background: var(--sand);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
-.roster {
+.team-header {
+  margin-bottom: 40px;
+}
+.team-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.team-header p {
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+.team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
+  gap: 28px;
 }
-.roster-card {
+.team-card {
   background: var(--paper);
-  padding: 32px 28px;
-  border-left: 3px solid var(--berry);
+  padding: 34px 28px;
+  border-left: 3px solid var(--burgundy);
 }
-.roster-num {
+.team-num {
   font-family: var(--serif);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--ink-muted);
   margin-bottom: 8px;
 }
-.roster-name {
+.team-name {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 4px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
-.roster-role {
+.team-spec {
+  color: var(--burgundy);
   font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--berry);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: 16px;
 }
-.roster-quote {
+.team-quote {
   font-style: italic;
   font-size: 14px;
   color: var(--ink-soft);
   line-height: 1.55;
 }
-.roster-author {
+.team-author {
   display: block;
   font-style: normal;
   font-size: 12px;
   color: var(--ink-muted);
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
-/* Секция отзывов: редакционная колонка цитат */
+/* Отзывы */
 .reviews-section {
   padding: 80px 0;
+  border-bottom: 1px solid var(--line);
 }
-.reviews-layout {
+.reviews-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 60px;
   align-items: start;
 }
-.reviews-meta h3 {
+.reviews-info h3 {
   font-family: var(--serif);
-  font-size: 38px;
+  font-size: 40px;
   line-height: 1.1;
   margin-bottom: 18px;
 }
-.rating-highlight {
+.score-badge {
   display: flex;
   align-items: baseline;
   gap: 12px;
   margin-bottom: 24px;
 }
-.big-score {
+.score-num {
   font-family: var(--serif);
-  font-size: 64px;
+  font-size: 68px;
   font-weight: 700;
   line-height: 1;
   color: var(--ink);
 }
-.stars {
+.score-stars {
   color: #D97706;
-  font-size: 20px;
+  font-size: 22px;
 }
-.reviews-stream {
+.reviews-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
-.review-entry {
+.review-item {
   border-bottom: 1px solid var(--line);
-  padding-bottom: 20px;
+  padding-bottom: 22px;
 }
-.review-entry:last-child {
+.review-item:last-child {
   border-bottom: none;
 }
-.review-quote {
+.review-body {
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 20px;
   font-style: italic;
   line-height: 1.45;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-.review-byline {
+.review-guest {
   font-size: 13px;
   color: var(--ink-muted);
+  font-weight: 500;
 }
 
-/* Секция записи: чистый лист с вызовом */
+/* Форма записи */
 .booking-section {
-  padding: 70px 0 90px;
+  padding: 80px 0 96px;
   background: var(--ink);
-  color: #F7F5F0;
+  color: #F9F7F2;
 }
-.booking-wrap {
+.booking-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 64px;
   align-items: center;
 }
-.booking-left h2 {
+.booking-info h2 {
   font-family: var(--serif);
-  font-size: 42px;
+  font-size: 44px;
   line-height: 1.1;
   margin-bottom: 20px;
 }
-.booking-left p {
-  color: #B8B2A9;
+.booking-info p {
+  color: #B5AFA7;
   font-size: 17px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
+  line-height: 1.6;
 }
-.booking-contacts-list {
+.details-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   font-size: 15px;
 }
-.booking-contacts-list b {
+.details-list b {
   color: #fff;
 }
-.booking-contacts-list span {
+.details-list span {
   color: #A39D94;
 }
-.booking-box {
+.booking-form-box {
   background: #25221F;
-  border: 1px solid #3D3833;
-  padding: 36px;
+  border: 1px solid #3E3833;
+  padding: 38px 34px;
   border-radius: 4px;
 }
-.field {
+.form-field {
   margin-bottom: 18px;
 }
-.field label {
+.form-field label {
   display: block;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #A39D94;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   font-weight: 600;
 }
-.field input, .field select {
+.form-field input, .form-field select {
   width: 100%;
-  background: #191614;
-  border: 1px solid #3D3833;
+  background: #181513;
+  border: 1px solid #3E3833;
   color: #fff;
-  padding: 14px;
+  padding: 14px 16px;
   font-family: var(--sans);
   font-size: 15px;
   border-radius: 4px;
 }
-.field input:focus, .field select:focus {
+.form-field input:focus, .form-field select:focus {
   outline: none;
-  border-color: #E2B2BE;
+  border-color: #F1B4C4;
 }
 .btn-submit {
   width: 100%;
-  background: var(--berry);
+  background: var(--burgundy);
   color: #fff;
   border: none;
-  padding: 16px;
+  padding: 17px;
   font-weight: 600;
   font-size: 16px;
   border-radius: 4px;
@@ -567,13 +608,12 @@ header {
   margin-top: 10px;
 }
 .btn-submit:hover {
-  background: #A0314C;
+  background: var(--burgundy-dark);
 }
 
 /* Футер */
 footer {
   padding: 32px 0;
-  border-top: 1px solid var(--line);
   font-size: 13px;
   color: var(--ink-muted);
 }
@@ -585,23 +625,23 @@ footer {
   gap: 16px;
 }
 
-/* Адаптив */
+/* Адаптив под мобильные телефоны */
 @media (max-width: 860px) {
-  .hero-layout, .reviews-layout, .booking-wrap {
+  .hero-grid, .reviews-grid, .booking-layout {
     grid-template-columns: 1fr;
     gap: 36px;
   }
-  .roster {
+  .team-grid {
     grid-template-columns: 1fr;
   }
-  .header-contacts {
+  .header-info {
     display: none;
   }
-  .menu-item {
+  .price-row {
     grid-template-columns: 1fr auto;
-    gap: 12px;
+    gap: 14px;
   }
-  .item-action {
+  .price-col-action {
     grid-column: 1 / -1;
   }
 }
@@ -609,216 +649,231 @@ footer {
 </head>
 <body>
 
-<div class="top-notice">
-  Бесплатный демонстрационный проект страницы записи для студии <b>Tatibounty</b> (Камышин, Советская, 21)
+<div class="demo-strip">
+  Демонстрационный сайт онлайн-записи для студии <b>Tatibounty</b> (Камышин, Советская, 21)
   <a href="https://yandex.ru/maps/org/tatibounty/136271769067/" target="_blank">Карточка на Яндекс.Картах ↗</a>
 </div>
 
 <header>
-  <div class="wrap header-row">
-    <a href="#" class="brand">
-      Tatibounty
-      <small>студия ногтевой эстетики</small>
+  <div class="wrap header-bar">
+    <a href="#" class="brand-block">
+      <div class="brand-name">Tatibounty</div>
+      <span class="brand-tag">студия ногтевой эстетики</span>
     </a>
     
-    <div class="header-contacts">
-      <div class="place">Камышин, ул. Советская, 21</div>
-      <div class="time">10:00 – 20:00 ежедневно</div>
-      <a href="tel:+79669344555" class="phone">+7 (966) 934-45-55</a>
+    <div class="header-info">
+      <div class="info-col">
+        <b>Советская улица, 21</b>
+        <span>Камышин, центр</span>
+      </div>
+      <div class="info-col">
+        <b>10:00 – 20:00</b>
+        <span>Ежедневно, по записи</span>
+      </div>
+      <a href="tel:+79669344555" class="phone-link">+7 (966) 934-45-55</a>
     </div>
 
-    <a href="#booking" class="btn-book">Онлайн-запись</a>
+    <a href="#booking" class="btn-head">Онлайн-запись</a>
   </div>
 </header>
 
 <main>
   <!-- Hero -->
   <section class="hero">
-    <div class="wrap hero-layout">
+    <div class="wrap hero-grid">
       <div>
-        <div class="hero-eyebrow">★ Рейтинг 4.8 на Яндекс.Картах • Камышин, центр</div>
-        <h1>Эстетика ваших рук <em>без компромиссов</em> по стойкости</h1>
-        <p class="hero-lead">
-          Стерильность по СанПиН в 3 этапа, авторские дизайны и покрытие, которое носится от 3 недель без сколов и отслоек.
+        <div class="eyebrow">★ 4.8 на Яндекс.Картах • Камышин, Советская, 21</div>
+        <h1>Эстетика ваших ногтей и <em>безупречный уход</em> в центре Камышина</h1>
+        <p class="hero-desc">
+          Бережный уход за руками, трендовые авторские дизайны и стойкое покрытие без сколов на месяц. В уютной студии на Советской, 21.
         </p>
-        <div class="hero-buttons">
-          <a href="#booking" class="hero-btn-main">Записаться на удобное время</a>
-          <a href="#menu" class="hero-btn-sub">Посмотреть прайс-лист ↓</a>
+        <div class="hero-cta">
+          <a href="#booking" class="btn-primary">Записаться на удобное время</a>
+          <a href="#menu" class="btn-ghost">Посмотреть прайс-лист ↓</a>
         </div>
       </div>
 
-      <!-- Экспресс-подбор комплекса -->
-      <div class="appointment-sheet">
-        <div class="sheet-title">Популярные комплексы</div>
-        <div class="sheet-sub">Выберите услугу для быстрого расчета:</div>
+      <!-- Экспресс-подбор комплекса визита -->
+      <div class="planner-card">
+        <div class="planner-head">
+          <div class="planner-title">Популярные комплексы</div>
+          <div class="planner-loc">Советская, 21</div>
+        </div>
 
-        <div class="picker-row picked" onclick="pickQuick('Снятие + Маникюр + Гель-лак', '1 700 ₽')">
-          <div class="picker-left">
-            <input type="radio" name="quick" checked class="picker-radio">
-            <div>
-              <div class="picker-name">Комплекс «Всё включено»</div>
-              <div class="picker-meta">Снятие, аппаратный маникюр, выравнивание, покрытие • 1.5 ч</div>
-            </div>
+        <div class="plan-item selected" onclick="pickPlan('Комплекс «Всё включено» (маникюр + гель-лак)', '1 700 ₽', this)">
+          <div>
+            <div class="plan-name">Маникюр «Всё включено»</div>
+            <div class="plan-sub">Снятие, комби-маникюр, укрепление, цвет • 1.5 ч</div>
           </div>
-          <div class="picker-price">1 700 ₽</div>
+          <div class="plan-price">1 700 ₽</div>
         </div>
 
-        <div class="picker-row" onclick="pickQuick('Smart-педикюр с покрытием', '2 100 ₽')">
-          <div class="picker-left">
-            <input type="radio" name="quick" class="picker-radio">
-            <div>
-              <div class="picker-name">Smart-педикюр</div>
-              <div class="picker-meta">Обработка стоп смарт-диском + пальчики + гель-лак • 1.5 ч</div>
-            </div>
+        <div class="plan-item" onclick="pickPlan('Smart-педикюр с покрытием', '2 100 ₽', this)">
+          <div>
+            <div class="plan-name">Smart-педикюр</div>
+            <div class="plan-sub">Мягкая обработка стоп смарт-диском + гель-лак • 1.5 ч</div>
           </div>
-          <div class="picker-price">2 100 ₽</div>
+          <div class="plan-price">2 100 ₽</div>
         </div>
 
-        <div class="picker-row" onclick="pickQuick('Моделирование и наращивание', '2 500 ₽')">
-          <div class="picker-left">
-            <input type="radio" name="quick" class="picker-radio">
-            <div>
-              <div class="picker-name">Наращивание ногтей</div>
-              <div class="picker-meta">Гель / полигель любой длины + комби-маникюр • 2.5 ч</div>
-            </div>
+        <div class="plan-item" onclick="pickPlan('Наращивание ногтей (гель / полигель)', '2 500 ₽', this)">
+          <div>
+            <div class="plan-name">Наращивание ногтей</div>
+            <div class="plan-sub">Моделирование любой формы и длины + маникюр • 2.5 ч</div>
           </div>
-          <div class="picker-price">2 500 ₽</div>
+          <div class="plan-price">2 500 ₽</div>
         </div>
 
-        <div class="sheet-total">
-          <span class="sheet-total-label">Стоимость визита:</span>
-          <span class="sheet-total-sum" id="quick-sum">1 700 ₽</span>
+        <div class="plan-footer">
+          <span class="plan-total-label">Итоговая стоимость:</span>
+          <span class="plan-total-sum" id="plan-sum">1 700 ₽</span>
         </div>
 
-        <a href="#booking" class="sheet-btn" id="quick-btn">Записаться на этот комплекс</a>
+        <a href="#booking" class="plan-btn">Записаться на этот комплекс</a>
       </div>
     </div>
   </section>
 
-  <!-- Меню услуг (строгая верстка списка, НЕ 3 карточки) -->
+  <!-- Меню услуг (журнальный строчный прайс) -->
   <section class="menu-section" id="menu">
     <div class="wrap">
-      <div class="section-headline">
-        <h2>Услуги и честные цены</h2>
-        <span>В каждый комплекс уже включено снятие старого покрытия<br>и крафт-пакет со стерильными инструментами</span>
+      <div class="menu-header">
+        <h2>Прайс-лист студии</h2>
+        <span>В каждый комплекс уже включено снятие предыдущего покрытия<br>и индивидуальный стерильный крафт-пакет</span>
       </div>
 
       <!-- Табы -->
-      <div class="tab-list">
-        <button class="tab-btn active" onclick="filterTab('all', this)">Все услуги</button>
-        <button class="tab-btn" onclick="filterTab('manicure', this)">Маникюр</button>
-        <button class="tab-btn" onclick="filterTab('pedicure', this)">Smart-педикюр</button>
-        <button class="tab-btn" onclick="filterTab('care', this)">Наращивание и уход</button>
+      <div class="tabs-bar">
+        <button class="tab-pill active" onclick="switchCategory('all', this)">Все услуги</button>
+        <button class="tab-pill" onclick="switchCategory('manicure', this)">Маникюр</button>
+        <button class="tab-pill" onclick="switchCategory('pedicure', this)">Smart-педикюр</button>
+        <button class="tab-pill" onclick="switchCategory('ext', this)">Наращивание и дизайн</button>
       </div>
 
-      <!-- Таблица услуг: цена строго в одну строчку -->
-      <div class="menu-table">
-        <div class="menu-item" data-cat="manicure">
+      <!-- Таблица цен: всё в одну строчку, без карточек -->
+      <div class="price-table">
+        <div class="price-row" data-cat="manicure">
           <div>
-            <div class="item-title">Комплекс «Маникюр + Покрытие гель-лак»</div>
-            <div class="item-desc">Снятие предыдущего материала, комбинированная обработка кутикулы, укрепление базой, идеальный цвет под кутикулу.</div>
+            <div class="price-col-title">Маникюр с покрытием гель-лак «Всё включено»</div>
+            <div class="price-col-desc">Снятие старого покрытия, комбинированная обработка кутикулы, укрепление базой или гелем, покрытие под кутикулу и легкий дизайн.</div>
           </div>
-          <div class="item-price">1 700 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Маникюр + Гель-лак (1 700 ₽)')">Выбрать →</a>
+          <div class="price-col-price">1 700 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Маникюр «Всё включено» (1 700 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="manicure">
+        <div class="price-row" data-cat="manicure">
           <div>
-            <div class="item-title">Аппаратный гигиенический маникюр (без покрытия)</div>
-            <div class="item-desc">Чистая и безопасная обработка ногтей и боковых валиков, придание формы, питательное масло для кутикулы.</div>
+            <div class="price-col-title">Аппаратный гигиенический маникюр (без покрытия)</div>
+            <div class="price-col-desc">Аккуратный срез кутикулы, чистая полировка боковых валиков, придание формы свободному краю и питательное масло.</div>
           </div>
-          <div class="item-price">1 000 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Гигиенический маникюр (1 000 ₽)')">Выбрать →</a>
+          <div class="price-col-price">1 000 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Гигиенический маникюр (1 000 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="manicure">
+        <div class="price-row" data-cat="manicure">
           <div>
-            <div class="item-title">Японский эко-маникюр Masura</div>
-            <div class="item-desc">Глубокое восстановление истонченных ногтей: втирание минеральной пасты и полировка пчелиным воском до зеркального блеска.</div>
+            <div class="price-col-title">Японский эко-маникюр Masura</div>
+            <div class="price-col-desc">Процедура восстановления ногтей: втирание минеральной жемчужной пасты и полировка пчелиным воском до натурального зеркального блеска.</div>
           </div>
-          <div class="item-price">1 400 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Японский маникюр (1 400 ₽)')">Выбрать →</a>
+          <div class="price-col-price">1 400 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Японский эко-маникюр (1 400 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="pedicure">
+        <div class="price-row" data-cat="pedicure">
           <div>
-            <div class="item-title">Полный Smart-педикюр с покрытием гель-лак</div>
-            <div class="item-desc">Обработка стопы умными смарт-дисками без замачивания (устранение трещин и натоптышей), обработка пальчиков и покрытие.</div>
+            <div class="price-col-title">Полный Smart-педикюр с покрытием гель-лак</div>
+            <div class="price-col-desc">Обработка стоп умными смарт-дисками без лезвий и замачивания. Идеально гладкие пятки до 4 недель, обработка пальчиков и цветное покрытие.</div>
           </div>
-          <div class="item-price">2 100 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Smart-педикюр с покрытием (2 100 ₽)')">Выбрать →</a>
+          <div class="price-col-price">2 100 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Smart-педикюр с покрытием (2 100 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="pedicure">
+        <div class="price-row" data-cat="pedicure">
           <div>
-            <div class="item-title">Экспресс-педикюр (только пальчики + гель-лак)</div>
-            <div class="item-desc">Обработка ногтевой пластины, кутикулы и нанесение стойкого покрытия. Для тех, кому нужна идеальная эстетика быстро.</div>
+            <div class="price-col-title">Экспресс-педикюр (обработка пальчиков + гель-лак)</div>
+            <div class="price-col-desc">Эстетическая обработка ногтей на ногах, оформление кутикулы и нанесение стойкого покрытия. Для быстрой и аккуратной эстетики.</div>
           </div>
-          <div class="item-price">1 600 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Экспресс-педикюр пальчики (1 600 ₽)')">Выбрать →</a>
+          <div class="price-col-price">1 600 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Экспресс-педикюр пальчики (1 600 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="care">
+        <div class="price-row" data-cat="ext">
           <div>
-            <div class="item-title">Наращивание ногтей (гель / полигель)</div>
-            <div class="item-desc">Моделирование длины и любой формы (миндаль, четкий квадрат, стилет) + комби-маникюр и однотонное покрытие.</div>
+            <div class="price-col-title">Наращивание ногтей (гель / полигель)</div>
+            <div class="price-col-desc">Моделирование любой длины и архитектуры ногтя (мягкий квадрат, миндаль, овал, стилет) + комби-маникюр и однотонное покрытие.</div>
           </div>
-          <div class="item-price">2 500 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Наращивание ногтей (2 500 ₽)')">Выбрать →</a>
+          <div class="price-col-price">2 500 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Наращивание ногтей (2 500 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="care">
+        <div class="price-row" data-cat="ext">
           <div>
-            <div class="item-title">Коррекция наращенных ногтей</div>
-            <div class="item-desc">Поднятие клюющих ногтей, восстановление архитектуры, ремонт сломанных углов и свежее покрытие.</div>
+            <div class="price-col-title">Коррекция наращенных ногтей</div>
+            <div class="price-col-desc">Поднятие клюющей арки, ремонт сколов, укрепление стрессовой зоны и обновление цветного покрытия.</div>
           </div>
-          <div class="item-price">2 000 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Коррекция ногтей (2 000 ₽)')">Выбрать →</a>
+          <div class="price-col-price">2 000 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Коррекция наращивания (2 000 ₽)')">Выбрать →</a>
+          </div>
         </div>
 
-        <div class="menu-item" data-cat="care">
+        <div class="price-row" data-cat="ext">
           <div>
-            <div class="item-title">Авторский дизайн (френч / градиент / втирка / арт)</div>
-            <div class="item-desc">Сложные ручные росписи, стемпинг, геометрия и инкрустация от мастеров Татьяны и Анастасии.</div>
+            <div class="price-col-title">Авторский дизайн (френч / градиент / втирка / стемпинг)</div>
+            <div class="price-col-desc">Сложная ручная роспись, акварельные капли, геометрия и инкрустация от топ-мастеров студии.</div>
           </div>
-          <div class="item-price">от 300 ₽</div>
-          <a href="#booking" class="item-action" onclick="setService('Дизайн ногтей (от 300 ₽)')">Выбрать →</a>
+          <div class="price-col-price">от 300 ₽</div>
+          <div class="price-col-action">
+            <a href="#booking" onclick="chooseService('Авторский дизайн (от 300 ₽)')">Выбрать →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Мастера из отзывов -->
-  <section class="masters-section">
+  <section class="team-section">
     <div class="wrap">
-      <div class="section-headline" style="border-bottom-color: var(--line-dark);">
-        <h2>Мастера студии</h2>
-        <span>Имена, которые гости благодарят<br>в отзывах на Яндекс.Картах</span>
+      <div class="team-header">
+        <h2>Мастера Tatibounty</h2>
+        <p>Специалисты студии, которых регулярно благодарят гостьи в отзывах на Яндекс.Картах</p>
       </div>
 
-      <div class="roster">
-        <div class="roster-card">
-          <div class="roster-num">01 / Топ-мастер</div>
-          <div class="roster-name">Анастасия</div>
-          <div class="roster-role">Моделирование и дизайн</div>
-          <p class="roster-quote">«Настоящий профессионал своего дела: аккуратно, качественно и всегда подскажет интересные решения для дизайна.»</p>
-          <span class="roster-author">— из отзыва Натальи Сыроежкиной</span>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-num">01 / Топ-мастер</div>
+          <div class="team-name">Анастасия</div>
+          <div class="team-spec">Моделирование и сложный дизайн</div>
+          <p class="team-quote">«Настоящий профессионал: делает очень аккуратно и всегда подскажет свежие и стильные идеи для дизайна.»</p>
+          <span class="team-author">— из отзыва Натальи Сыроежкиной</span>
         </div>
 
-        <div class="roster-card">
-          <div class="roster-num">02 / Ведущий мастер</div>
-          <div class="roster-name">Татьяна</div>
-          <div class="roster-role">Скоростной маникюр</div>
-          <p class="roster-quote">«Огромное спасибо за ее дизайны и качественную носку. Очень внимательная, всегда войдет в положение по времени.»</p>
-          <span class="roster-author">— из отзыва Анны Дорожкиной</span>
+        <div class="team-card">
+          <div class="team-num">02 / Ведущий мастер</div>
+          <div class="team-name">Татьяна</div>
+          <div class="team-spec">Скоростной маникюр и архитектура</div>
+          <p class="team-quote">«Огромное спасибо за безупречную носку и авторские дизайны. Очень внимательная, всегда подберет удобное время.»</p>
+          <span class="team-author">— из отзыва Анны Дорожкиной</span>
         </div>
 
-        <div class="roster-card">
-          <div class="roster-num">03 / Эстетист</div>
-          <div class="roster-name">София</div>
-          <div class="roster-role">Выравнивание и Smart-педикюр</div>
-          <p class="roster-quote">«Стерильность на 100%, покрытие ровное, без затеков, держится идеально. Хожу только к ней.»</p>
-          <span class="roster-author">— из отзыва Асёны Самойловой</span>
+        <div class="team-card">
+          <div class="team-num">03 / Эстетист</div>
+          <div class="team-name">София</div>
+          <div class="team-spec">Идеальное выравнивание и Smart-педикюр</div>
+          <p class="team-quote">«Покрытие без единого затека, носится неделями, стерильность идеальная. Хожу только к ней.»</p>
+          <span class="team-author">— из отзыва Асёны Самойловой</span>
         </div>
       </div>
     </div>
@@ -826,55 +881,55 @@ footer {
 
   <!-- Отзывы -->
   <section class="reviews-section">
-    <div class="wrap reviews-layout">
-      <div class="reviews-meta">
-        <div class="hero-eyebrow">Честная репутация</div>
-        <h3>Почему выбирают Tatibounty в Камышине</h3>
-        <div class="rating-highlight">
-          <div class="big-score">4.8</div>
+    <div class="wrap reviews-grid">
+      <div class="reviews-info">
+        <div class="eyebrow">Проверенная репутация</div>
+        <h3>Почему гостьи возвращаются снова</h3>
+        <div class="score-badge">
+          <div class="score-num">4.8</div>
           <div>
-            <div class="stars">★★★★★</div>
-            <div style="font-size:13px; color:var(--ink-muted);">более 50 проверенных отзывов на Яндекс.Картах</div>
+            <div class="score-stars">★★★★★</div>
+            <div style="font-size:13px; color:var(--ink-muted);">более 50 проверенных оценок на Яндекс.Картах</div>
           </div>
         </div>
         <p style="color:var(--ink-soft); font-size:15px; line-height:1.6;">
-          Мы строго относимся к нормам стерилизации (сухожар ГП-10, индивидуальный крафт-пакет вскрывается прямо при вас) и даем гарантию на покрытие 7 дней.
+          Студия Tatibounty расположена на улице Советской, 21. Мы ценим время наших гостей, гарантируем безопасность инструментов и стойкость покрытия от 3 недель.
         </p>
       </div>
 
-      <div class="reviews-stream">
-        <div class="review-entry">
-          <div class="review-quote">
-            «Отдельно хочу отметить доброжелательную атмосферу. Здесь чувствуешь себя расслабленно, что делает визит не только полезным, но и по-настоящему приятным. Обязательно вернусь снова!»
+      <div class="reviews-list">
+        <div class="review-item">
+          <div class="review-body">
+            «Отдельно хочу отметить приятную атмосферу: чувствуешь себя комфортно и расслабленно, визит приносит удовольствие. Буду рекомендовать салон подругам!»
           </div>
-          <div class="review-byline">Наталья Сыроежкина • Мастер Анастасия</div>
+          <div class="review-guest">Наталья Сыроежкина • Мастер Анастасия</div>
         </div>
 
-        <div class="review-entry">
-          <div class="review-quote">
-            «Очень добрые девочки, всегда перезапишут и никогда не откажут. Уютно, чисто, хорошая атмосфера и безупречные ногти.»
+        <div class="review-item">
+          <div class="review-body">
+            «Отличный салон, очень добрые девочки, всегда пойдут навстречу, перезапишут и никогда не откажут. Уютно, чисто и ногти держатся отлично.»
           </div>
-          <div class="review-byline">Анна Дорожкина • Мастер Татьяна</div>
+          <div class="review-guest">Анна Дорожкина • Мастер Татьяна</div>
         </div>
 
-        <div class="review-entry">
-          <div class="review-quote">
-            «В салоне чисто и аккуратно, чувствуется, что к стерильности относятся очень серьёзно. Покрытие ровное, без затеков, довольна на все 100%.»
+        <div class="review-item">
+          <div class="review-body">
+            «В студии очень чисто, чувствуется, что к стерилизации относятся со всей серьезностью. Покрытие ровное, идеальное, довольна на 100%.»
           </div>
-          <div class="review-byline">Асёна Самойлова • Мастер София</div>
+          <div class="review-guest">Асёна Самойлова • Мастер София</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Бронирование -->
+  <!-- Запись -->
   <section class="booking-section" id="booking">
-    <div class="wrap booking-wrap">
-      <div class="booking-left">
-        <h2>Запишитесь на удобное время</h2>
-        <p>Администратор студии свяжется с вами в течение 10 минут, уточнит пожелания по дизайну и подтвердит окошко к выбранному мастеру.</p>
+    <div class="wrap booking-layout">
+      <div class="booking-info">
+        <h2>Запишитесь на удобный день</h2>
+        <p>Администратор студии свяжется с вами в течение 10 минут, уточнит детали по времени и закрепит запись за нужным мастером.</p>
 
-        <div class="booking-contacts-list">
+        <div class="details-list">
           <div>
             <b>Адрес студии:</b><br>
             <span>г. Камышин, Советская улица, 21 (центр города)</span>
@@ -884,22 +939,22 @@ footer {
             <span>Ежедневно с 10:00 до 20:00 (по предварительной записи)</span>
           </div>
           <div>
-            <b>Прямой контакт:</b><br>
+            <b>Телефон:</b><br>
             <a href="tel:+79669344555" style="color:#fff; text-decoration:none; font-weight:700;">+7 (966) 934-45-55</a>
           </div>
         </div>
       </div>
 
-      <div class="booking-box">
-        <form onsubmit="sendBooking(event)">
-          <div class="field">
+      <div class="booking-form-box">
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-field">
             <label>Выбранная процедура</label>
-            <input type="text" id="order-service" value="Комплекс «Всё включено» (1 700 ₽)" readonly>
+            <input type="text" id="target-service" value="Маникюр «Всё включено» (1 700 ₽)" readonly>
           </div>
 
-          <div class="field">
+          <div class="form-field">
             <label>Желаемый мастер</label>
-            <select id="order-master">
+            <select id="target-master">
               <option value="Любой свободный мастер">Любой свободный мастер</option>
               <option value="Анастасия (топ-мастер)">Анастасия (топ-мастер)</option>
               <option value="Татьяна (ведущий специалист)">Татьяна (ведущий специалист)</option>
@@ -907,19 +962,19 @@ footer {
             </select>
           </div>
 
-          <div class="field">
+          <div class="form-field">
             <label>Ваше имя</label>
-            <input type="text" id="order-name" placeholder="Например, Анна" required>
+            <input type="text" id="target-name" placeholder="Например, Анна" required>
           </div>
 
-          <div class="field">
-            <label>Номер телефона</label>
-            <input type="tel" id="order-phone" placeholder="+7 (___) ___-__-__" required>
+          <div class="form-field">
+            <label>Телефон для связи</label>
+            <input type="tel" id="target-phone" placeholder="+7 (___) ___-__-__" required>
           </div>
 
           <button type="submit" class="btn-submit">Отправить заявку в WhatsApp студии</button>
-          <div style="font-size:12px; color:#8A847E; text-align:center; margin-top:10px;">
-            Администратор сразу получит выбранный комплекс и свяжется с вами
+          <div style="font-size:12px; color:#A39D94; text-align:center; margin-top:12px;">
+            Администратор сразу получит данные и свяжется с вами для подтверждения
           </div>
         </form>
       </div>
@@ -933,49 +988,48 @@ footer {
       <b>Tatibounty</b> © 2026. Студия ногтевой эстетики. Камышин, Советская, 21.
     </div>
     <div>
-      <a href="https://wa.me/79669344555" target="_blank" style="color:var(--berry); text-decoration:none; font-weight:600;">Написать в WhatsApp студии ↗</a>
+      <a href="https://wa.me/79669344555" target="_blank" style="color:var(--burgundy); text-decoration:none; font-weight:600;">Написать в WhatsApp студии ↗</a>
     </div>
   </div>
 </footer>
 
 <script>
-function pickQuick(name, price) {
-  document.getElementById('quick-sum').innerText = price;
-  document.getElementById('order-service').value = name + ' (' + price + ')';
+function pickPlan(name, price, el) {
+  document.getElementById('plan-sum').innerText = price;
+  document.getElementById('target-service').value = name + ' (' + price + ')';
   
-  const rows = document.querySelectorAll('.picker-row');
-  rows.forEach(r => r.classList.remove('picked'));
-  event.currentTarget.classList.add('picked');
-  event.currentTarget.querySelector('input').checked = true;
+  const items = document.querySelectorAll('.plan-item');
+  items.forEach(it => it.classList.remove('selected'));
+  el.classList.add('selected');
 }
 
-function setService(str) {
-  document.getElementById('order-service').value = str;
+function chooseService(serviceStr) {
+  document.getElementById('target-service').value = serviceStr;
 }
 
-function filterTab(cat, btn) {
-  const btns = document.querySelectorAll('.tab-btn');
-  btns.forEach(b => b.classList.remove('active'));
+function switchCategory(cat, btn) {
+  const pills = document.querySelectorAll('.tab-pill');
+  pills.forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
 
-  const items = document.querySelectorAll('.menu-item');
-  items.forEach(it => {
-    if (cat === 'all' || it.getAttribute('data-cat') === cat) {
-      it.style.display = 'grid';
+  const rows = document.querySelectorAll('.price-row');
+  rows.forEach(r => {
+    if (cat === 'all' || r.getAttribute('data-cat') === cat) {
+      r.style.display = 'grid';
     } else {
-      it.style.display = 'none';
+      r.style.display = 'none';
     }
   });
 }
 
-function sendBooking(e) {
+function handleFormSubmit(e) {
   e.preventDefault();
-  const s = document.getElementById('order-service').value;
-  const m = document.getElementById('order-master').value;
-  const n = document.getElementById('order-name').value;
-  const p = document.getElementById('order-phone').value;
+  const serv = document.getElementById('target-service').value;
+  const mast = document.getElementById('target-master').value;
+  const name = document.getElementById('target-name').value;
+  const phone = document.getElementById('target-phone').value;
 
-  const msg = encodeURIComponent(`Здравствуйте! Хочу записаться в Tatibounty.\nУслуга: ${s}\nМастер: ${m}\nИмя: ${n}\nТелефон: ${p}`);
+  const msg = encodeURIComponent(`Здравствуйте! Хочу записаться в Tatibounty.\nУслуга: ${serv}\nМастер: ${mast}\nИмя: ${name}\nТелефон: ${phone}`);
   window.open(`https://wa.me/79669344555?text=${msg}`, '_blank');
 }
 </script>

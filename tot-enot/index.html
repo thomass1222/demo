@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тот Енот — ремонт телефонов в Камышине</title>
+<meta name="description" content="Ремонт телефонов в Камышине, ул. Тургенева, 6. Напишите модель и поломку — проверим деталь у поставщиков и ответим с ценой и сроком.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@500;700;800&family=Commissioner:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fur:#EEF0F2; --paper:#FFFFFF; --ink:#23262B; --grey:#8A9099; --line:#D5D9DE;
+  --pink:#D62F7C; --pink-d:#B0215F; --cyan:#1A9FB0; --cyan-soft:#DDF2F5;
+  --display:"Tektur",system-ui,sans-serif; --text:"Commissioner",system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,48px); --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--fur);color:var(--ink);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800}
+p{margin:0}
+
+/* тестовая плашка */
+.test{background:var(--ink);color:#fff;font-size:14px;text-align:center;padding:8px 16px}
+.test b{color:#ffd1e5;font-weight:600}
+
+/* хвост енота — разделитель */
+.tail{height:14px;background:repeating-linear-gradient(90deg,var(--ink) 0 46px,var(--grey) 46px 92px,var(--fur) 92px 104px)}
+
+/* шапка */
+header{padding-block:18px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:52px;height:52px;flex:none}
+.logo strong{font-family:var(--display);font-size:24px;font-weight:800;display:block;line-height:1}
+.logo small{color:var(--grey);font-size:14px}
+.top-r{display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:15px}
+.stars{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.stars span{color:var(--pink)}
+.find-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
+.find-link svg{width:18px;height:18px}
+.find-link:hover{border-color:var(--ink)}
+.tel{font-family:var(--display);font-weight:700;font-size:19px;text-decoration:none}
+
+/* первый экран */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,64px);align-items:start;padding-block:clamp(24px,5vw,56px) clamp(40px,6vw,80px)}
+.hero h1{font-size:clamp(34px,5.4vw,62px);font-weight:800}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);margin-top:20px;max-width:34ch;color:#3b3f46}
+.facts{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:14px;max-width:44ch}
+.facts li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.facts svg{width:28px;height:28px;color:var(--cyan)}
+.facts b{font-weight:600}
+
+/* квитанция */
+.ticket{background:var(--paper);border-radius:18px;position:relative;box-shadow:0 1px 0 var(--line),0 24px 48px -28px rgba(35,38,43,.45)}
+.t-head{padding:22px 24px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.t-head h2{font-size:22px;font-weight:700}
+.t-no{font-family:var(--display);color:var(--grey);font-size:14px}
+.t-body{padding:0 24px 24px}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend,.lbl{font-weight:600;font-size:15px;margin-bottom:8px;display:block;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer;user-select:none;background:#fff}
+.chips label:hover{border-color:var(--grey)}
+.chips input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible+label{outline:3px solid var(--cyan);outline-offset:2px}
+input[type=text],input[type=tel],textarea{width:100%;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;background:#fff;color:var(--ink)}
+input[type=text]:focus,input[type=tel]:focus,textarea:focus{border-color:var(--cyan);outline:none;box-shadow:0 0 0 3px var(--cyan-soft)}
+.hint{font-size:13px;color:var(--grey);margin-top:6px}
+.perf{border-top:2px dashed var(--line);margin:4px -24px 18px}
+.estimate{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;background:var(--cyan-soft);border-radius:12px;padding:14px 16px;margin-bottom:18px}
+.estimate .what{font-size:15px}
+.estimate .sum{font-family:var(--display);font-weight:800;font-size:26px;white-space:nowrap}
+.estimate .note{grid-column:1/-1;font-size:13px;color:#2c5d64}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;width:100%;font:700 18px/1 var(--display);background:var(--pink);color:#fff;border:0;border-radius:12px;padding:17px 20px;cursor:pointer}
+.btn:hover{background:var(--pink-d)}
+.btn:active{transform:translateY(1px)}
+.fine{font-size:13px;color:var(--grey);margin-top:10px;text-align:center}
+.err{color:var(--pink-d);font-size:14px;margin-top:8px;min-height:1em}
+
+/* сообщение владельцу */
+.sent{display:none;padding:0 24px 24px}
+.ticket.done .t-body{display:none}
+.ticket.done .sent{display:block}
+.sent p.ok{font-weight:600;margin-bottom:12px}
+.bubble{background:#2E3138;color:#fff;border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:15px;line-height:1.5;animation:pop .35s ease-out}
+.bubble .from{color:#7fd6e2;font-weight:600;font-size:13px;margin-bottom:4px}
+.bubble pre{font:inherit;white-space:pre-wrap;margin:0}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.sent .again{margin-top:16px;background:none;border:1.5px solid var(--line);color:var(--ink);font-family:var(--text);font-weight:600;font-size:15px;border-radius:10px;padding:10px 14px;cursor:pointer}
+
+/* шаги */
+section{padding-block:clamp(48px,7vw,88px)}
+.steps-sec{background:var(--paper)}
+.steps-sec .intro{max-width:56ch;margin-top:14px;color:#3b3f46}
+.steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--ink);padding-top:16px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:40px;color:var(--pink);display:block;line-height:1;margin-bottom:10px}
+.steps h3{font-size:19px;font-weight:700;margin-bottom:6px}
+.steps p{font-size:15px;color:#4a4f57}
+
+/* цены */
+.price-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.price-head p{max-width:46ch;color:#3b3f46}
+.finder{margin-top:28px;max-width:680px}
+.search-box{position:relative}
+.search-box svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:22px;height:22px;color:var(--grey);pointer-events:none}
+.search-box input{width:100%;font:inherit;font-size:18px;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:14px;padding:15px 16px 15px 50px}
+.search-box input:focus{outline:none;box-shadow:0 0 0 4px var(--cyan-soft);border-color:var(--cyan)}
+.sres{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:5;background:#fff;border-radius:14px;box-shadow:0 18px 40px -16px rgba(35,38,43,.45),0 0 0 1px var(--line);list-style:none;margin:0;padding:6px;max-height:380px;overflow-y:auto}
+.sres li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 12px;border-radius:9px;cursor:pointer}
+.sres li small{color:var(--grey);font-size:13px;white-space:nowrap}
+.sres li[aria-selected=true]{background:var(--fur)}
+.sres mark{background:none;color:var(--pink-d);font-weight:600}
+.sres .none{cursor:default;color:var(--grey);display:block}
+.search-box.small svg{left:13px;width:18px;height:18px}
+.search-box.small input{font-size:16px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px 11px 40px}
+.search-box.small input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px var(--cyan-soft)}
+.search-box.small .sres{max-height:300px}
+.cat{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;margin-top:24px;align-items:start}
+.cat-side,.cat-main{background:var(--paper);border-radius:16px;padding:20px}
+.brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.brands-grid button{background:var(--fur);border:2px solid transparent;border-radius:12px;padding:11px 12px;text-align:left;font:700 16px/1.15 var(--display);color:var(--ink);cursor:pointer}
+.brands-grid button small{display:block;font:400 13px var(--text);color:var(--grey);margin-top:3px}
+.brands-grid button:hover{border-color:var(--line)}
+.brands-grid button[aria-pressed=true]{background:#fff;border-color:var(--ink)}
+.series{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.series button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:500 14px var(--text);color:var(--ink);cursor:pointer}
+.series button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.mgrid{list-style:none;margin:14px 0 0;padding:2px;display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:8px;max-height:470px;overflow-y:auto;scrollbar-width:thin}
+.mgrid button{width:100%;height:100%;display:grid;grid-template-columns:20px 1fr;gap:2px 10px;align-items:center;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 10px;font:inherit;color:var(--ink);cursor:pointer}
+.mgrid svg{grid-row:1/3;width:20px;height:34px}
+.mgrid b{font-weight:600;font-size:15px;line-height:1.2}
+.mgrid small{color:var(--grey);font-size:12px}
+.mgrid button:hover{border-color:var(--grey)}
+.mgrid button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.mgrid button[aria-pressed=true] small{color:#c4c8ce}
+.cat-main{padding:22px 26px;position:sticky;top:16px}
+.cat-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:14px;border-bottom:3px solid var(--ink)}
+.cat-title h3{font-size:clamp(24px,3vw,32px);font-weight:800}
+.cat-title span{color:var(--grey)}
+.prow{display:grid;grid-template-columns:1fr auto auto;gap:6px 16px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.prow:last-child{border-bottom:0}
+.prow .w small{display:block;color:var(--grey);font-size:13px}
+.prow .p{font-family:var(--display);font-weight:700;font-size:18px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.prow .p.free{color:var(--cyan)}
+.prow .t{color:var(--grey);font-size:13px;white-space:nowrap;text-align:right}
+.prow button{grid-column:3;grid-row:1/3;background:none;border:1.5px solid var(--line);border-radius:8px;padding:7px 10px;font:600 14px var(--text);color:var(--ink);cursor:pointer;white-space:nowrap}
+.prow button:hover{border-color:var(--pink);color:var(--pink-d)}
+.prow .p{grid-column:2;grid-row:1}.prow .t{grid-column:2;grid-row:2}
+.edit-note{font-size:14px;color:var(--grey);margin-top:12px}
+
+/* 3D */
+.print{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.print p{margin-top:14px;color:#3b3f46;max-width:44ch}
+.print ul{margin:18px 0 0;padding-left:20px;color:#3b3f46}
+.layers{aspect-ratio:4/3;border-radius:18px;background:var(--ink);position:relative;overflow:hidden}
+.layers svg{position:absolute;inset:0;width:100%;height:100%}
+.link-btn{display:inline-block;margin-top:24px;font:700 16px/1 var(--display);color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:12px;padding:14px 18px}
+.link-btn:hover{background:var(--ink);color:#fff}
+
+/* контакты */
+.contacts{background:var(--ink);color:#fff}
+.contacts .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+.contacts h2{color:#fff}
+.contacts dl{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 24px;font-size:17px}
+.contacts dt{color:#a9afb8}
+.contacts dd{margin:0}
+.contacts a{color:#fff}
+.msg{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.msg a{text-decoration:none;border:1.5px solid #4a4f57;border-radius:999px;padding:10px 16px;font-weight:600}
+.msg a:hover{border-color:#fff}
+.rating{background:#2E3138;border-radius:18px;padding:24px}
+.rating p{color:#cfd3d9}
+.rating strong{font-family:var(--display);font-size:22px;display:block;margin-bottom:8px;color:#fff}
+footer{background:var(--ink);color:#8A9099;font-size:14px;padding-block:0 32px}
+
+@media (max-width:900px){
+  .hero,.print,.contacts .grid,.cat{grid-template-columns:1fr}
+  .cat-main{position:static}
+  .mgrid{max-height:340px}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .top-r{gap:12px}
+  .t-head,.t-body,.sent{padding-inline:18px}
+  .perf{margin-inline:-18px}
+  .cat-main,.cat-side{padding:16px}
+  .brands-grid{grid-template-columns:1fr 1fr}
+  .search-box input{font-size:17px}
+  .prow{grid-template-columns:1fr auto;gap:8px 12px}
+  .prow .w{grid-column:1/-1}
+  .prow .p{grid-column:1;grid-row:2}
+  .prow .t{display:none}
+  .prow button{grid-column:2;grid-row:2}
+}
+</style>
+</head>
+<body>
+
+<div class="test">Тестовая версия страницы для «Тот Енот». <b>Цены — примерные</b>, впишем ваши.</div>
+
+<header class="wrap">
+  <div class="top">
+    <a class="logo" href="#" aria-label="Тот Енот — на главную">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="34" r="27" fill="#8A9099"/>
+        <path d="M9 14 L20 22 L13 30Z M55 14 L44 22 L51 30Z" fill="#23262B"/>
+        <path d="M8 33c6-8 14-9 24-4 10-5 18-4 24 4-4 6-11 9-17 6-3-2-4-3-7-3s-4 1-7 3c-6 3-13 0-17-6z" fill="#23262B"/>
+        <circle cx="22" cy="33" r="4" fill="#fff"/><circle cx="42" cy="33" r="4" fill="#fff"/>
+        <circle cx="22.8" cy="33.4" r="2" fill="#23262B"/><circle cx="42.8" cy="33.4" r="2" fill="#23262B"/>
+        <path d="M24 45c4 4 12 4 16 0-2 7-14 7-16 0z" fill="#EEF0F2"/>
+        <circle cx="32" cy="45" r="3" fill="#D62F7C"/>
+      </svg>
+      <span><strong>Тот Енот</strong><small>ремонт телефонов, Камышин</small></span>
+    </a>
+    <div class="top-r">
+      <a class="find-link" href="#prices" id="findLink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Найти свою модель</a>
+      <a class="stars" href="https://yandex.ru/maps/org/tot_yenot/197056560706/reviews/" target="_blank" rel="noopener"><span>★ 5,0</span> на Картах, 257 оценок</a>
+      <a class="tel" href="tel:+79044215777">+7 904 421-57-77</a>
+    </div>
+  </div>
+</header>
+
+<div class="tail" aria-hidden="true"></div>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <h1>Скажите модель и поломку. Мы найдём деталь и назовём цену</h1>
+    <p class="lead">Не нужно звонить и ждать, пока мастер освободится. Заявка приходит нам в мессенджер, отвечаем в рабочее время.</p>
+    <ul class="facts">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h13l5 5v5h-3M3 7v10h3M3 7l2-3h9l2 3"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>
+        <span><b>Наличие проверяем у нескольких поставщиков.</b> Пишем, какая деталь есть, сколько стоит и когда приедет.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><b>Срок называем с учётом очереди.</b> Если деталь в наличии, часто ремонт в тот же день.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><b>Диагностика бесплатно,</b> если делаете ремонт у нас.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ticket" id="ticket">
+    <div class="t-head">
+      <h2>Узнать цену и наличие</h2>
+    </div>
+    <form class="t-body" id="form" novalidate>
+      <fieldset>
+        <legend>Телефон</legend>
+        <div class="chips" id="brands"></div>
+      </fieldset>
+
+      <label class="lbl" for="model">Модель</label>
+      <div class="search-box small">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input type="text" id="model" placeholder="Начните вводить: A52, Note 12, iPhone 13" autocomplete="off"
+          role="combobox" aria-expanded="false" aria-controls="fres" aria-autocomplete="list">
+        <ul class="sres" id="fres" role="listbox" hidden></ul>
+      </div>
+      <datalist id="models"></datalist>
+      <p class="hint">Выберите из подсказок или напишите свою модель — найдём.</p>
+
+      <fieldset style="margin-top:18px">
+        <legend>Что случилось</legend>
+        <div class="chips" id="works"></div>
+      </fieldset>
+
+      <div class="perf" aria-hidden="true"></div>
+
+      <div class="estimate" aria-live="polite">
+        <span class="what" id="estWhat">Выберите модель и поломку</span>
+        <span class="sum" id="estSum">—</span>
+        <span class="note" id="estNote">Точную цену назовём после проверки детали у поставщика.</span>
+      </div>
+
+      <div class="row2">
+        <div><label class="lbl" for="name">Как к вам обращаться</label><input type="text" id="name" autocomplete="given-name"></div>
+        <div><label class="lbl" for="phone">Телефон для ответа</label><input type="tel" id="phone" autocomplete="tel" placeholder="+7"></div>
+      </div>
+
+      <button class="btn" type="submit">Узнать наличие и точную цену</button>
+      <p class="err" id="err" role="alert"></p>
+      <p class="fine">Ответим сообщением или перезвоним. Ни к чему не обязывает.</p>
+    </form>
+
+    <div class="sent" id="sent">
+      <p class="ok">Заявка отправлена. Вот что пришло мастеру в MAX:</p>
+      <div class="bubble"><div class="from">Сайт «Тот Енот»</div><pre id="msgText"></pre></div>
+      <button class="again" type="button" id="again">Отправить ещё одну заявку</button>
+    </div>
+  </div>
+</div>
+
+<div class="tail" aria-hidden="true"></div>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>Как проходит ремонт</h2>
+    <p class="intro">Деталей на все модели не держит ни один сервис, поэтому сначала проверяем, где она есть, и только потом называем цену и срок.</p>
+    <ol class="steps">
+      <li><h3>Вы оставляете заявку</h3><p>Модель и поломка. Можно одной фразой, если не уверены, что сломалось.</p></li>
+      <li><h3>Мы проверяем деталь</h3><p>Смотрим наличие у поставщиков и время доставки.</p></li>
+      <li><h3>Называем цену и срок</h3><p>С учётом очереди на ремонт. Если что-то изменится, сразу напишем.</p></li>
+      <li><h3>Вы приносите телефон</h3><p>Когда деталь уже у нас, чтобы не ходить дважды.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <div class="price-head">
+      <h2>Цены на ремонт по моделям</h2>
+      <p>Выберите свой телефон. Цена зависит и от того, какая деталь сейчас есть у поставщика: оригинал или копия, поэтому точную назовём после проверки.</p>
+    </div>
+    <div class="finder">
+      <label class="lbl" for="catSearch">Поиск по устройству</label>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input type="search" id="catSearch" placeholder="Например, A52, Note 12 или iPhone 13" autocomplete="off"
+          role="combobox" aria-expanded="false" aria-controls="sres" aria-autocomplete="list">
+        <ul class="sres" id="sres" role="listbox" hidden></ul>
+      </div>
+    </div>
+    <div class="cat">
+      <div class="cat-side">
+        <p class="lbl">Каталог устройств</p>
+        <div class="brands-grid" id="catBrands" role="group" aria-label="Марка"></div>
+        <div class="series" id="catSeries" role="group" aria-label="Серия"></div>
+        <ul class="mgrid" id="mlist"></ul>
+      </div>
+      <div class="cat-main" aria-live="polite">
+        <div class="cat-title"><h3 id="catModel">Galaxy A52</h3><span id="catBrandName">Samsung</span></div>
+        <div class="plist" id="plist"></div>
+        <p class="hint" style="margin-top:14px">Нет вашей модели? Оставьте заявку — проверим деталь и назовём цену.</p>
+      </div>
+    </div>
+    <p class="edit-note">Цены — заглушки для тестовой версии. В рабочей подставим ваши: все цены меняются в одном месте.</p>
+  </div>
+</section>
+
+<div class="tail" aria-hidden="true"></div>
+
+<section style="background:var(--paper)">
+  <div class="wrap print">
+    <div>
+      <h2>Печатаем на 3D-принтере</h2>
+      <p>Когда нужной детали нет в продаже, её можно напечатать.</p>
+      <ul>
+        <li>сломанные защёлки, крышки и кнопки</li>
+        <li>держатели и подставки</li>
+        <li>детали по вашему образцу или чертежу</li>
+      </ul>
+      <a class="link-btn" href="#ticket" id="to3d">Спросить про 3D-печать</a>
+    </div>
+    <div class="layers" aria-hidden="true">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+        <g fill="none" stroke-width="7" stroke-linecap="round">
+          <path d="M120 240h160" stroke="#8A9099"/><path d="M118 228h164" stroke="#8A9099"/><path d="M120 216h160" stroke="#8A9099"/>
+          <path d="M126 204h148" stroke="#1A9FB0"/><path d="M134 192h132" stroke="#1A9FB0"/><path d="M144 180h112" stroke="#1A9FB0"/>
+          <path d="M156 168h88" stroke="#D62F7C"/><path d="M170 156h60" stroke="#D62F7C"/>
+        </g>
+        <path d="M200 60v66" stroke="#EEF0F2" stroke-width="3"/>
+        <path d="M184 128h32l-16 20z" fill="#EEF0F2"/>
+        <rect x="60" y="48" width="280" height="12" rx="6" fill="#4a4f57"/>
+        <rect x="172" y="36" width="56" height="36" rx="6" fill="#EEF0F2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap grid">
+    <div>
+      <h2>Приходите или напишите</h2>
+      <dl>
+        <dt>Адрес</dt><dd>Камышин, улица Тургенева, 6<br><a href="https://yandex.ru/maps/org/tot_yenot/197056560706/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a></dd>
+        <dt>Телефон</dt><dd><a href="tel:+79044215777">+7 904 421-57-77</a></dd>
+      </dl>
+      <div class="msg">
+        <a href="https://vk.ru/tut_tot_enot" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="https://t.me/tot_enot100" target="_blank" rel="noopener">Telegram</a>
+        <a href="#ticket">Заявка с сайта</a>
+      </div>
+    </div>
+    <div class="rating">
+      <strong>★ 5,0 на Яндекс Картах</strong>
+      <p>257 оценок и 189 отзывов с текстом. Почитайте, что пишут о нас клиенты.</p>
+      <a class="link-btn" style="color:#fff;border-color:#fff" href="https://yandex.ru/maps/org/tot_yenot/197056560706/reviews/" target="_blank" rel="noopener">Читать отзывы</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© Тот Енот, Камышин</div></footer>
+
+<script>
+/* ===== ЦЕНЫ (заглушки). Меняются здесь. =====
+   Цена работы = base × (коэффициент модели)^s, округление до …90.
+   Чтобы задать точную цену для модели, добавьте её в FIX: FIX["iPhone 13"] = {display_o: 12990}. */
+const REPAIRS = [
+  {id:"display_c",name:"Замена дисплея",note:"копия, хорошее качество",base:1900,s:1,  time:"1–2 ч"},
+  {id:"display_o",name:"Замена дисплея",note:"оригинал",               base:3400,s:1.1,time:"1–2 ч"},
+  {id:"battery",  name:"Замена аккумулятора",                           base:1100,s:.8, time:"30–60 мин"},
+  {id:"port",     name:"Замена разъёма зарядки",                        base:900, s:.7, time:"1 ч"},
+  {id:"glass",    name:"Замена стекла камеры",                          base:600, s:.6, time:"30 мин"},
+  {id:"back",     name:"Замена задней крышки",                          base:800, s:.9, time:"30–60 мин"},
+  {id:"cam",      name:"Замена основной камеры",                        base:1400,s:1,  time:"1 ч"},
+  {id:"front",    name:"Замена фронтальной камеры",                     base:900, s:.9, time:"1 ч"},
+  {id:"faceid",   name:"Ремонт Face ID",                                base:2500,s:.8, time:"1–2 дня", ios:true},
+  {id:"speaker",  name:"Замена динамика",note:"разговорный или полифонический",base:700,s:.6,time:"1 ч"},
+  {id:"mic",      name:"Замена микрофона",                              base:700, s:.6, time:"1 ч"},
+  {id:"buttons",  name:"Ремонт кнопок",note:"громкость, питание",        base:800, s:.6, time:"1–2 ч"},
+  {id:"water",    name:"Чистка после воды",                             base:1300,s:.5, time:"1–2 дня"},
+  {id:"soft",     name:"Прошивка, сброс пароля",                        base:900, s:.3, time:"1–2 ч"},
+  {id:"diag",     name:"Диагностика",note:"бесплатно при ремонте",       base:0,   s:0,  time:"15 мин"}
+];
+/* модель: [название, коэффициент цены] */
+const CATALOG = {
+  "Samsung":[["Galaxy A05",1],["Galaxy A05s",1],["Galaxy A10",.95],["Galaxy A12",1],["Galaxy A13",1.05],["Galaxy A14",1.1],["Galaxy A15",1.2],["Galaxy A22",1.25],["Galaxy A23",1.3],["Galaxy A24",1.35],["Galaxy A25",1.45],["Galaxy A32",1.4],["Galaxy A33",1.5],["Galaxy A34",1.6],["Galaxy A35",1.75],["Galaxy A50",1.4],["Galaxy A51",1.5],["Galaxy A52",1.65],["Galaxy A53",1.75],["Galaxy A54",1.9],["Galaxy A55",2.1],["Galaxy M31",1.4],["Galaxy M52",1.7],["Galaxy S20",2.6],["Galaxy S20 FE",2.2],["Galaxy S21",2.8],["Galaxy S21 FE",2.4],["Galaxy S22",3.1],["Galaxy S22 Ultra",4.2],["Galaxy S23",3.4],["Galaxy S23 Ultra",4.6],["Galaxy S24",3.7],["Galaxy S24 Ultra",5]],
+  "Xiaomi":[["Redmi 9A",.85],["Redmi 9C",.9],["Redmi 10",1],["Redmi 10C",.95],["Redmi 12",1.05],["Redmi 12C",1],["Redmi 13C",1.05],["Redmi A2",.85],["Redmi A3",.9],["Redmi Note 8 Pro",1.15],["Redmi Note 9",1.1],["Redmi Note 10",1.2],["Redmi Note 10 Pro",1.5],["Redmi Note 11",1.25],["Redmi Note 11 Pro",1.6],["Redmi Note 12",1.3],["Redmi Note 12 Pro",1.7],["Redmi Note 13",1.4],["Redmi Note 13 Pro",1.9],["Poco X3 Pro",1.4],["Poco X5",1.35],["Poco X6",1.6],["Poco F5",1.9],["Xiaomi 12",2.4],["Xiaomi 13",2.7],["Xiaomi 14",3]],
+  "Honor / Huawei":[["Honor X6",.95],["Honor X7",1.05],["Honor X8",1.2],["Honor X9a",1.5],["Honor 50",1.6],["Honor 70",1.8],["Honor 90",2],["Honor 200",2.2],["Huawei P30 Lite",1.2],["Huawei P40 Lite",1.25],["Huawei Nova 9",1.6]],
+  "Realme":[["Realme C11",.85],["Realme C21",.9],["Realme C30",.9],["Realme C51",.95],["Realme C55",1.05],["Realme 8",1.3],["Realme 10",1.3],["Realme 11",1.4],["Realme GT Master",1.8]],
+  "Tecno / Infinix":[["Tecno Spark 10",.9],["Tecno Spark 20",.95],["Tecno Camon 20",1.2],["Tecno Pova 5",1.1],["Infinix Smart 7",.8],["Infinix Hot 30",.95],["Infinix Hot 40",1],["Infinix Note 30",1.2]],
+  "iPhone":[["iPhone 7",1.3],["iPhone 8",1.4],["iPhone SE 2020",1.4],["iPhone SE 2022",1.5],["iPhone X",2],["iPhone XR",1.9],["iPhone XS",2.1],["iPhone 11",2.1],["iPhone 11 Pro",2.6],["iPhone 12",2.5],["iPhone 12 Pro",2.9],["iPhone 13",2.8],["iPhone 13 Pro",3.4],["iPhone 14",3.1],["iPhone 14 Pro",3.9],["iPhone 15",3.5],["iPhone 15 Pro",4.4],["iPhone 16",3.9],["iPhone 16 Pro",4.9]]
+};
+const FIX = {}; /* точные цены владельца, перекрывают формулу */
+/* поломки в форме → работа из прайса */
+const WORKS = [
+  {id:"screen", name:"Разбит экран",           rep:"display_c"},
+  {id:"battery",name:"Быстро садится батарея", rep:"battery"},
+  {id:"port",   name:"Не заряжается",          rep:"port"},
+  {id:"camera", name:"Разбито стекло камеры",  rep:"glass"},
+  {id:"water",  name:"Попала вода",            rep:"water"},
+  {id:"other",  name:"Другое / не знаю",       rep:"diag"}
+];
+
+const rub = n => n.toLocaleString("ru-RU")+" ₽";
+const $ = id => document.getElementById(id);
+const MODELS = Object.entries(CATALOG).flatMap(([b,list])=>list.map(([name,k])=>({brand:b,name,k})));
+const isIphone = m => m.brand==="iPhone";
+function repairsFor(m){
+  const noFace = /iPhone (7|8|SE)/.test(m.name);
+  return REPAIRS.filter(r=>!r.ios || (isIphone(m) && !noFace));
+}
+function price(m,r){
+  if(FIX[m.name] && FIX[m.name][r.id]!=null) return FIX[m.name][r.id];
+  if(!r.base) return 0;
+  return Math.round(r.base*Math.pow(m.k,r.s)/100)*100-10;
+}
+function findModel(text){
+  const t=text.trim().toLowerCase().replace(/\s+/g," "); if(t.length<2) return null;
+  return MODELS.find(m=>m.name.toLowerCase()===t)
+      || MODELS.find(m=>t.endsWith(m.name.toLowerCase().replace(/^(galaxy|xiaomi|honor|huawei|realme|tecno|infinix) /,"")) && t.length>=3)
+      || null;
+}
+
+/* ===== каталог цен ===== */
+function chips(el,name,items){
+  el.innerHTML = items.map((t,i)=>`<input type="radio" name="${name}" id="${name}${i}" value="${t.v}"><label for="${name}${i}">${t.l}</label>`).join("");
+}
+/* серии внутри марки: [название, правило] */
+const SERIES = {
+  "Samsung":[["Galaxy A",/Galaxy A/],["Galaxy M",/Galaxy M/],["Galaxy S",/Galaxy S/]],
+  "Xiaomi":[["Redmi",/^Redmi (?!Note)/],["Redmi Note",/Redmi Note/],["Poco",/Poco/],["Xiaomi",/^Xiaomi/]],
+  "Honor / Huawei":[["Honor X",/Honor X/],["Honor",/Honor \d/],["Huawei",/Huawei/]],
+  "Realme":[["Realme C",/Realme C/],["Realme и GT",/Realme (\d|GT)/]],
+  "Tecno / Infinix":[["Tecno Spark",/Spark/],["Tecno Camon и Pova",/Camon|Pova/],["Infinix",/Infinix/]],
+  "iPhone":[["iPhone 7–8 и SE",/iPhone (7|8|SE)/],["iPhone X–11",/iPhone (X|11)/],["iPhone 12–13",/iPhone 1[23]/],["iPhone 14–16",/iPhone 1[4-6]/]]
+};
+const seriesOf = m => (SERIES[m.brand].find(([,re])=>re.test(m.name))||[""])[0];
+const phoneIcon = ios => `<svg viewBox="0 0 20 34" aria-hidden="true"><rect x="1.5" y="1.5" width="17" height="31" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/>${ios?'<rect x="7" y="3.6" width="6" height="2" rx="1" fill="currentColor"/>':'<circle cx="10" cy="5" r="1.2" fill="currentColor"/>'}</svg>`;
+
+let catModel=MODELS.find(m=>m.name==="Galaxy A52"), catBrand=catModel.brand, catSeries=seriesOf(catModel);
+function renderBrands(){
+  $("catBrands").innerHTML=Object.keys(CATALOG).map(b=>
+    `<button type="button" data-b="${b}" aria-pressed="${b===catBrand}">${b}<small>${CATALOG[b].length} моделей</small></button>`).join("");
+}
+function renderSeries(){
+  $("catSeries").innerHTML=[["Все",null],...SERIES[catBrand]].map(([s])=>
+    `<button type="button" data-s="${s}" aria-pressed="${(catSeries||"Все")===s}">${s}</button>`).join("");
+}
+function renderList(){
+  const list=MODELS.filter(m=>m.brand===catBrand && (!catSeries || seriesOf(m)===catSeries));
+  $("mlist").innerHTML=list.map(m=>`<li><button type="button" data-m="${m.name}" aria-pressed="${m===catModel}">${phoneIcon(isIphone(m))}<b>${m.name}</b><small>экран от ${rub(price(m,REPAIRS[0]))}</small></button></li>`).join("");
+}
+function renderCatalog(){renderBrands();renderSeries();renderList()}
+function selectModel(m,scroll){
+  catModel=m; catBrand=m.brand; catSeries=seriesOf(m);
+  renderCatalog(); renderPrices();
+  const sel=$("mlist").querySelector('[aria-pressed=true]'); if(sel) sel.scrollIntoView({block:"nearest"});
+  if(scroll && matchMedia("(max-width:900px)").matches) $("catModel").scrollIntoView({behavior:"smooth",block:"start"});
+}
+$("catBrands").addEventListener("click",e=>{const b=e.target.closest("[data-b]");if(!b)return;catBrand=b.dataset.b;catSeries=null;renderCatalog()});
+$("catSeries").addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;catSeries=b.dataset.s==="Все"?null:b.dataset.s;renderSeries();renderList()});
+
+/* поиск с подсказками */
+const norm = s => s.toLowerCase().replace(/ё/g,"е").replace(/[\s\-]+/g," ").trim();
+const ALIAS = {"самсунг":"samsung","галакси":"galaxy","сяоми":"xiaomi","ксиаоми":"xiaomi","редми":"redmi","ноут":"note","поко":"poco","хонор":"honor","хуавей":"huawei","реалми":"realme","текно":"tecno","инфиникс":"infinix","айфон":"iphone","iphone":"iphone","про":"pro","ультра":"ultra"};
+function searchModels(q){
+  const words=norm(q).split(" ").filter(Boolean).map(w=>ALIAS[w]||w);
+  if(!words.length) return [];
+  return MODELS.map(m=>{
+    const hay=norm(m.brand+" "+m.name);
+    if(!words.every(w=>hay.includes(w))) return null;
+    const exact=words.some(w=>norm(m.name).split(" ").includes(w));
+    return {m,score:(exact?0:1)+norm(m.name).length/100};
+  }).filter(Boolean).sort((a,b)=>a.score-b.score).slice(0,8).map(x=>x.m);
+}
+let sIdx=-1, sList=[];
+function hl(name,q){
+  let out=name; norm(q).split(" ").filter(Boolean).map(w=>ALIAS[w]||w).forEach(w=>{
+    const i=out.toLowerCase().indexOf(w); if(i>=0 && !/<mark>/.test(out)) out=out.slice(0,i)+"<mark>"+out.slice(i,i+w.length)+"</mark>"+out.slice(i+w.length);
+  }); return out;
+}
+function renderResults(){
+  const q=$("catSearch").value; sList=searchModels(q); sIdx=sList.length?0:-1;
+  const box=$("sres");
+  if(!q.trim()){box.hidden=true;$("catSearch").setAttribute("aria-expanded","false");return}
+  box.innerHTML = sList.length
+    ? sList.map((m,i)=>`<li role="option" id="sr${i}" data-m="${m.name}" aria-selected="${i===sIdx}"><span>${hl(m.name,q)}</span><small>${m.brand==="iPhone"?"Apple":m.brand}, экран от ${rub(price(m,REPAIRS[0]))}</small></li>`).join("")
+    : `<li class="none">Такой модели нет в каталоге. Оставьте заявку — проверим деталь и назовём цену.</li>`;
+  box.hidden=false; $("catSearch").setAttribute("aria-expanded","true");
+  $("catSearch").setAttribute("aria-activedescendant", sIdx>=0?"sr"+sIdx:"");
+}
+function pick(m){ $("catSearch").value=m.name; $("sres").hidden=true; $("catSearch").setAttribute("aria-expanded","false"); selectModel(m,true); }
+$("catSearch").addEventListener("input",renderResults);
+$("catSearch").addEventListener("keydown",e=>{
+  if($("sres").hidden||!sList.length) return;
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+    e.preventDefault(); sIdx=(sIdx+(e.key==="ArrowDown"?1:-1)+sList.length)%sList.length;
+    [...$("sres").children].forEach((li,i)=>li.setAttribute("aria-selected",i===sIdx));
+    $("catSearch").setAttribute("aria-activedescendant","sr"+sIdx);
+    $("sres").children[sIdx].scrollIntoView({block:"nearest"});
+  } else if(e.key==="Enter"){e.preventDefault();pick(sList[sIdx])}
+  else if(e.key==="Escape"){$("sres").hidden=true}
+});
+$("sres").addEventListener("mousedown",e=>{const li=e.target.closest("[data-m]");if(!li)return;e.preventDefault();pick(MODELS.find(m=>m.name===li.dataset.m))});
+$("catSearch").addEventListener("blur",()=>setTimeout(()=>{$("sres").hidden=true},150));
+$("catSearch").addEventListener("focus",()=>{if($("catSearch").value.trim()) renderResults()});
+function renderPrices(){
+  const m=catModel;
+  $("catModel").textContent=m.name; $("catBrandName").textContent=m.brand==="iPhone"?"Apple":m.brand;
+  $("plist").innerHTML = repairsFor(m).map(r=>{
+    const p=price(m,r);
+    return `<div class="prow"><div class="w">${r.name}${r.note?`<small>${r.note}</small>`:""}</div>
+      <span class="p${p?"":" free"}">${p?"от "+rub(p):"бесплатно"}</span><span class="t">${r.time}</span>
+      <button type="button" data-r="${r.id}">Заявка</button></div>`;
+  }).join("");
+}
+$("findLink").addEventListener("click",()=>setTimeout(()=>$("catSearch").focus({preventScroll:true}),500));
+$("mlist").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-m]"); if(!b) return;
+  selectModel(MODELS.find(m=>m.name===b.dataset.m),true);
+});
+renderCatalog(); renderPrices();
+
+/* ===== форма ===== */
+chips($("brands"),"brand",[...Object.keys(CATALOG),"Другой"].map(b=>({v:b,l:b})));
+chips($("works"),"work",WORKS.map(w=>({v:w.id,l:w.name})));
+$("models").innerHTML=MODELS.map(m=>`<option value="${m.name}">`).join("");
+let brand=null, work=null, catRep=null; /* catRep — работа, выбранная из прайса */
+
+function currentRepair(){
+  if(catRep) return {label:catRep.name+(catRep.note?` (${catRep.note})`:""), rep:catRep};
+  const w=WORKS.find(x=>x.id===work); if(!w) return null;
+  return {label:w.name, rep:REPAIRS.find(r=>r.id===w.rep)};
+}
+function deviceLabel(){
+  const model=$("model").value.trim();
+  const m=findModel(model);
+  if(m) return (m.brand==="iPhone"?"":m.brand.split(" ")[0]+" ")+m.name;
+  return ((brand&&brand!=="Другой"&&!model.toLowerCase().startsWith(brand.split(" ")[0].toLowerCase())?brand+" ":"")+model).trim();
+}
+function update(){
+  const cr=currentRepair();
+  if(!cr){$("estWhat").textContent="Выберите модель и поломку";$("estSum").textContent="—";return}
+  $("estWhat").textContent=(deviceLabel()||"Телефон")+": "+cr.label.toLowerCase();
+  if(cr.rep.id==="diag"){$("estSum").textContent="бесплатно";$("estNote").textContent="Посмотрим телефон и скажем, что сломалось и сколько стоит ремонт.";return}
+  const m=findModel($("model").value);
+  if(m){
+    $("estSum").textContent="от "+rub(price(m,cr.rep));
+    $("estNote").textContent="Точную цену и срок назовём после проверки детали у поставщика.";
+  } else {
+    const pool=MODELS.filter(x=>!brand||brand==="Другой"||x.brand===brand);
+    $("estSum").textContent="от "+rub(Math.min(...pool.map(x=>price(x,cr.rep))));
+    $("estNote").textContent=$("model").value.trim()?"Цену по этой модели скажем после проверки детали у поставщика.":"Укажите модель — цена будет точнее.";
+  }
+}
+$("brands").addEventListener("change",e=>{
+  brand=e.target.value;
+  const list=CATALOG[brand]||[];
+  $("models").innerHTML=list.map(([n])=>`<option value="${n}">`).join("");
+  $("model").placeholder=list.length?"Например, "+list[Math.min(5,list.length-1)][0]:"Марка и модель";
+  update();
+});
+$("works").addEventListener("change",e=>{work=e.target.value;catRep=null;update()});
+$("model").addEventListener("input",update);
+
+/* подсказки моделей в форме */
+let fIdx=-1, fList=[];
+function formResults(showAll){
+  const q=$("model").value, box=$("fres");
+  const byBrand = brand && CATALOG[brand] ? MODELS.filter(m=>m.brand===brand) : null;
+  if(q.trim()){
+    fList=searchModels(q);
+    if(byBrand){const f=fList.filter(m=>m.brand===brand); if(f.length) fList=f;}
+  } else fList = showAll && byBrand ? byBrand.slice(0,8) : [];
+  if(!fList.length && !q.trim()){box.hidden=true;$("model").setAttribute("aria-expanded","false");return}
+  fIdx=fList.length?0:-1;
+  box.innerHTML = fList.length
+    ? fList.map((m,i)=>`<li role="option" id="fr${i}" data-m="${m.name}" aria-selected="${i===fIdx}"><span>${q.trim()?hl(m.name,q):m.name}</span><small>${m.brand==="iPhone"?"Apple":m.brand}</small></li>`).join("")
+    : `<li class="none">Нет в списке — так и оставьте, мы найдём деталь.</li>`;
+  box.hidden=false; $("model").setAttribute("aria-expanded","true");
+}
+function formPick(m){
+  $("model").value=m.name; $("fres").hidden=true; $("model").setAttribute("aria-expanded","false");
+  const bi=document.querySelector(`#brands input[value="${m.brand}"]`); if(bi){bi.checked=true;brand=m.brand}
+  update();
+}
+$("model").addEventListener("input",()=>formResults(false));
+$("model").addEventListener("focus",()=>formResults(true));
+$("model").addEventListener("blur",()=>setTimeout(()=>{$("fres").hidden=true},150));
+$("model").addEventListener("keydown",e=>{
+  if($("fres").hidden||!fList.length) return;
+  if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+    e.preventDefault(); fIdx=(fIdx+(e.key==="ArrowDown"?1:-1)+fList.length)%fList.length;
+    [...$("fres").children].forEach((li,i)=>li.setAttribute("aria-selected",i===fIdx));
+    $("model").setAttribute("aria-activedescendant","fr"+fIdx);
+  } else if(e.key==="Enter"){e.preventDefault();formPick(fList[fIdx])}
+  else if(e.key==="Escape"){$("fres").hidden=true}
+});
+$("fres").addEventListener("mousedown",e=>{const li=e.target.closest("[data-m]");if(!li)return;e.preventDefault();formPick(MODELS.find(m=>m.name===li.dataset.m))});
+
+/* «Заявка» из прайса → заполнить форму */
+$("plist").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-r]"); if(!b) return;
+  const r=REPAIRS.find(x=>x.id===b.dataset.r), m=catModel;
+  $("ticket").classList.remove("done");
+  const bi=document.querySelector(`#brands input[value="${m.brand}"]`); if(bi){bi.checked=true;brand=m.brand;$("models").innerHTML=CATALOG[m.brand].map(([n])=>`<option value="${n}">`).join("")}
+  $("model").value=m.name;
+  const w=WORKS.find(x=>x.rep===r.id);
+  document.querySelectorAll('#works input').forEach(i=>i.checked=false);
+  if(w){document.querySelector(`#works input[value="${w.id}"]`).checked=true;work=w.id;catRep=null}
+  else {work=null;catRep=r}
+  update();
+  $("ticket").scrollIntoView({behavior:"smooth",block:"start"});
+  setTimeout(()=>$("name").focus({preventScroll:true}),600);
+});
+
+/* номер заявки */
+const no = String(Math.floor(Date.now()/60000)%10000).padStart(4,"0");
+/* номер заявки виден только мастеру */
+
+/* 3D: переключить поломку на «Другое» */
+$("to3d").addEventListener("click",()=>{const r=document.querySelector('input[name=work][value=other]');r.checked=true;work="other";update();setTimeout(()=>$("model").focus(),400)});
+
+$("form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const model=$("model").value.trim(), phone=$("phone").value.trim(), name=$("name").value.trim();
+  if(!model && !brand){$("err").textContent="Укажите телефон: марку или модель.";$("model").focus();return}
+  const cr=currentRepair();
+  if(!cr){$("err").textContent="Выберите, что случилось с телефоном.";return}
+  if(phone.replace(/\D/g,"").length<10){$("err").textContent="Проверьте номер телефона: нужно 10–11 цифр.";$("phone").focus();return}
+  $("err").textContent="";
+  const dev=deviceLabel();
+  $("msgText").textContent =
+`Новая заявка №${no}
+Телефон: ${dev||"не указан"}
+Поломка: ${cr.label}
+Ориентир на сайте: ${$("estSum").textContent}
+Клиент: ${name||"без имени"}, ${phone}
+
+Проверьте наличие детали и ответьте клиенту.`;
+  $("ticket").classList.add("done");
+  $("ticket").scrollIntoView({block:"nearest"});
+});
+$("again").addEventListener("click",()=>{$("ticket").classList.remove("done");$("form").reset();brand=work=catRep=null;update()});
+</script>
+</body>
+</html>

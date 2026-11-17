@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Богиня — салон красоты в Камышине, Октябрьская, 40</title>
+<meta name="description" content="Салон «Богиня» в Камышине: стрижки, сложное окрашивание, уход за волосами, укладки, педикюр, ресницы. Запись к своему мастеру.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk:#F4F4F1;
+  --white:#FFFFFF;
+  --ink:#1C1A1F;
+  --mute:#6E6A72;
+  --line:#DEDCD8;
+  --blond:#E3C38A;
+  --choco:#5A3426;
+  --graph:#2E2B30;
+  --ash:#9EA2A6;
+  --powder:#D9A3A8;
+  --rose:#C2416B;
+  --display:"Unbounded", "Arial Black", sans-serif;
+  --text:"Onest", "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--chalk);color:var(--ink);font:400 17px/1.55 var(--text)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+.test{background:var(--blond);color:var(--ink);font-size:14px;text-align:center;padding:8px 16px}
+
+header{position:sticky;top:0;z-index:20;background:rgba(244,244,241,.94);backdrop-filter:blur(8px)}
+.bar{display:flex;align-items:center;gap:30px;height:70px;border-bottom:2px solid var(--ink)}
+.logo{font:700 22px/1 var(--display);text-decoration:none;letter-spacing:-.01em}
+.nav{display:flex;gap:24px;font-size:15px;font-weight:500;margin-left:auto}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--rose)}
+.tel{font-weight:600;text-decoration:none;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--ink);background:var(--ink);color:#fff;
+  font:600 15px/1 var(--text);padding:15px 22px;border-radius:10px;cursor:pointer;text-decoration:none;transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--rose);border-color:var(--rose)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.small{padding:10px 15px;font-size:14px}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"top pal" "bottom pal";column-gap:40px;align-items:start}
+.h-top{grid-area:top}
+.h-bottom{grid-area:bottom}
+.palette{grid-area:pal}
+h1{font:700 clamp(38px,5.4vw,72px)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 26px}
+.lead{font-size:19px;max-width:30em;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.proof{display:flex;gap:18px;align-items:center;max-width:30em}
+.proof b{font:700 46px/1 var(--display);letter-spacing:-.03em}
+.proof span{font-size:15px;color:var(--mute)}
+
+/* palette of strands — the one bold thing */
+.palette{position:relative;padding-top:22px}
+.ring{height:22px;background:var(--ink);border-radius:11px;position:absolute;left:-8px;right:-8px;top:0;z-index:2}
+.strands{display:flex;justify-content:space-between;gap:10px;height:440px}
+.strand{flex:1;position:relative;border:0;padding:0;cursor:pointer;background:none;transform-origin:top center;
+  animation:drop .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 70ms)}
+.strand .hair{position:absolute;inset:0;background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.09) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, rgba(0,0,0,.22), rgba(255,255,255,.22) 28%, rgba(0,0,0,.04) 52%, rgba(255,255,255,.14) 74%, rgba(0,0,0,.24)),
+    var(--c);
+  bottom:auto;height:var(--len,100%);
+  clip-path:polygon(0 0,100% 0,100% 93%,93% 97%,86% 94%,79% 99.5%,71% 95%,63% 100%,54% 95.5%,45% 99.5%,36% 94.5%,27% 99%,18% 95%,9% 98.5%,0 95%);transform-origin:top center;transition:transform .25s}
+.strand .lbl{position:absolute;left:50%;top:calc(var(--len,100%) - 40px);transform:translateX(-50%) rotate(180deg) translateY(100%);writing-mode:vertical-rl;
+  font:500 15px/1 var(--display);color:var(--tx,#fff);white-space:nowrap}
+.strand:hover .hair,.strand:focus-visible .hair{transform:rotate(-2deg) translateX(-3px)}
+.hint{font-size:14px;color:var(--mute);margin:14px 0 0}
+@keyframes drop{from{transform:scaleY(.15);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.strand{animation:none}.strand .hair{transition:none}}
+
+section{padding:88px 0}
+h2{font:700 clamp(28px,3.6vw,46px)/1.08 var(--display);letter-spacing:-.025em;margin:0 0 14px}
+.intro{color:#3F3B42;max-width:36em;margin:0 0 44px}
+
+/* masters as rows */
+.mrow{display:grid;grid-template-columns:76px 1.1fr 1fr 1.3fr auto;gap:28px;align-items:center;padding:26px 0;border-top:2px solid var(--ink)}
+.mrow:last-child{border-bottom:2px solid var(--ink)}
+.dot{width:76px;height:76px;border-radius:50%;background:var(--c);display:grid;place-items:center;font:700 26px/1 var(--display);color:var(--tx,#fff)}
+.mrow h3{font:700 26px/1.1 var(--display);margin:0 0 4px;letter-spacing:-.02em}
+.mrow .role{color:var(--mute);font-size:15px;margin:0}
+.mrow .does{font-size:15px;margin:0}
+.mrow blockquote{margin:0;font-size:15px;line-height:1.5}
+.mrow blockquote cite{display:block;font-style:normal;color:var(--mute);font-size:13px;margin-top:4px}
+
+/* prices */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px 56px}
+.cat{scroll-margin-top:96px}
+.cat-h{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.swatch{width:72px;height:20px;background:
+  repeating-linear-gradient(0deg, rgba(255,255,255,.14) 0 1px, transparent 1px 4px), var(--c);flex:0 0 auto;
+  clip-path:polygon(0 0,90% 0,97% 14%,91% 30%,100% 46%,92% 62%,98% 78%,90% 92%,94% 100%,0 100%)}
+.cat h3{font:700 22px/1.1 var(--display);margin:0;letter-spacing:-.02em}
+.cat ul{list-style:none;margin:0 0 14px;padding:0}
+.cat li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.cat li small{display:block;color:var(--mute);font-size:14px}
+.cat .pr{font-weight:600;white-space:nowrap;text-align:right}
+.cat .pr.ask{font-weight:400;color:var(--mute)}
+.cat .real{font-size:12px;font-weight:500;color:var(--rose);margin-left:6px}
+.cat.flash ul{animation:flash 1.2s ease}
+@keyframes flash{0%{background:rgba(227,195,138,.45)}100%{background:transparent}}
+.pnote{font-size:14px;color:var(--mute);margin-top:32px}
+
+/* extras */
+.extras{display:flex;flex-wrap:wrap;gap:12px}
+.extras span{background:var(--white);border:2px solid var(--ink);border-radius:10px;padding:12px 16px;font-weight:500}
+.extras small{display:block;font-weight:400;color:var(--mute);font-size:14px}
+
+/* booking band */
+.band{background:var(--ink);color:#F4F4F1}
+.band .intro{color:#C9C5CC}
+.book{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.book ol{padding-left:22px;color:#C9C5CC}
+.book li{margin-bottom:10px}
+.form fieldset{border:0;margin:0 0 22px;padding:0}
+.form legend{font-weight:600;font-size:15px;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-block;border:2px solid #4A4650;border-radius:10px;padding:9px 13px;font-size:14px;cursor:pointer}
+.chips input:checked+span{background:var(--blond);border-color:var(--blond);color:var(--ink);font-weight:600}
+.chips input:focus-visible+span{outline:3px solid var(--rose);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label.f{display:block;font-size:14px;color:#C9C5CC}
+.form input[type=text],.form input[type=tel]{width:100%;margin-top:6px;border:2px solid #4A4650;border-radius:10px;padding:13px 14px;font:400 16px var(--text);background:#26232A;color:#fff}
+.form input:focus{outline:none;border-color:var(--blond)}
+.err{color:#FF9DB7;font-size:14px;min-height:20px;margin:10px 0 0}
+.band .btn{background:var(--blond);border-color:var(--blond);color:var(--ink);width:100%}
+.band .btn:hover{background:#fff;border-color:#fff}
+.band .btn.line{background:transparent;color:#fff;border-color:#fff;width:auto}
+.sent{display:none}.sent.on{display:block}
+.msg{background:#26232A;border-radius:14px 14px 14px 4px;padding:16px;white-space:pre-line;margin:14px 0 18px;font-size:15px}
+
+/* reviews */
+.rv-top{display:flex;gap:40px;align-items:end;flex-wrap:wrap;margin-bottom:44px}
+.big{font:700 clamp(90px,14vw,170px)/.85 var(--display);letter-spacing:-.05em}
+.stats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:auto auto;gap:6px 24px;font-size:15px}
+.stats b{font-weight:600}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 40px}
+.rev{margin:0}
+.rev::before{content:"";display:block;width:60px;height:12px;background:var(--c);margin-bottom:16px;
+  clip-path:polygon(0 0,90% 0,97% 20%,91% 45%,100% 70%,92% 100%,0 100%)}
+.rev blockquote{margin:0 0 10px;font-size:18px;line-height:1.5}
+.rev figcaption{font-size:14px;color:var(--mute)}
+
+/* contacts */
+.contacts{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+dl{margin:0;display:grid;grid-template-columns:150px 1fr;gap:14px 20px}
+dt{color:var(--mute)}
+dd{margin:0;font-weight:500}
+.map{background:var(--blond);border-radius:16px;padding:30px}
+.map h3{font:700 24px/1.15 var(--display);margin:0 0 8px}
+.map p{margin:0 0 18px}
+footer{padding:30px 0 44px;border-top:2px solid var(--ink);font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.pz{white-space:nowrap}
+.mbar{display:none}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .book,.contacts{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:"top" "pal" "bottom"}
+  .palette{margin-bottom:32px}
+  .strands{height:300px}
+  .mrow{grid-template-columns:64px 1fr;gap:12px 18px}
+  .dot{width:64px;height:64px;font-size:22px}
+  .mrow .does,.mrow blockquote,.mrow .btn{grid-column:2}
+  .mrow .btn{justify-self:start}
+  .pgrid{grid-template-columns:1fr}
+  .revs{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  body{font-size:16px}
+  .bar{gap:12px;height:62px}
+  .bar .btn{display:none}
+  .tel{margin-left:auto;font-size:15px}
+  .hero{padding:32px 0 48px}
+  .lead{font-size:17px}
+  .strands{height:230px;gap:6px}
+  .strand .lbl{font-size:12px;top:calc(var(--len,100%) - 28px)}
+  section{padding:60px 0}
+  .revs{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  dl{grid-template-columns:1fr;gap:2px}
+  dd{margin-bottom:12px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(244,244,241,.97);border-top:2px solid var(--ink)}
+  .mbar .btn{flex:1;padding:13px 10px;white-space:nowrap}
+  .mbar .btn.line{flex:0 0 auto;padding:13px 18px}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<div class="test">Тестовая версия страницы для салона «Богиня». Цены, кроме отмеченных «с Карт», примерные — впишем ваши.</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Богиня</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#masters">Мастера</a>
+      <a href="#prices">Цены</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="tel" href="tel:+79377348148">+7 937 734-81-48</a>
+    <a class="btn small" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <h1 class="h-top">Свой мастер по волосам в Камышине</h1>
+    <div class="h-bottom">
+      <p class="lead">Стрижки, сложное окрашивание, уход, укладки, педикюр и ресницы на Октябрьской, 40. Оставьте заявку, и администратор подберёт время, даже если мастер сейчас с клиентом.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Записаться</a>
+        <a class="btn line" href="tel:+79377348148">Позвонить</a>
+      </div>
+      <div class="proof"><b>4,9</b><span>79 оценок на Яндекс Картах. Многие клиенты ходят сюда больше 10 лет.</span></div>
+    </div>
+
+    <div class="palette">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="strands" id="strands" aria-label="Услуги салона"></div>
+      <p class="hint">Нажмите на прядь, чтобы увидеть цены.</p>
+    </div>
+  </div>
+</section>
+
+<section id="masters" style="padding-top:24px">
+  <div class="wrap">
+    <h2>Мастера</h2>
+    <p class="intro">Запишитесь к своему мастеру или выберите «любой», и администратор предложит ближайшее время.</p>
+    <div class="mrow">
+      <div class="dot" style="--c:var(--rose)" aria-hidden="true">Н</div>
+      <div><h3>Наталья</h3><p class="role">Хозяйка салона, главный мастер</p></div>
+      <p class="does">Стрижки, сложное окрашивание, уход, укладки</p>
+      <blockquote>«Понимает с полуслова. Результатом всегда довольна.»<cite>Елена Н., клиентка больше 10 лет</cite></blockquote>
+      <button class="btn small line" type="button" data-master="Наталья" aria-label="Записаться к мастеру Наталья">Записаться</button>
+    </div>
+    <div class="mrow">
+      <div class="dot" style="--c:var(--choco)" aria-hidden="true">А</div>
+      <div><h3>Антон</h3><p class="role">Парикмахер-стилист</p></div>
+      <p class="does">Стрижки, окрашивание, исправление неудачного цвета</p>
+      <blockquote>«С моей неудачной покраской справился на ура. Теперь Антон — мастер всей моей семьи.»<cite>Верочка К.</cite></blockquote>
+      <button class="btn small line" type="button" data-master="Антон" aria-label="Записаться к мастеру Антон">Записаться</button>
+    </div>
+    <div class="mrow">
+      <div class="dot" style="--c:var(--blond);--tx:var(--ink)" aria-hidden="true">К</div>
+      <div><h3>Карина</h3><p class="role">Парикмахер, ресницы</p></div>
+      <p class="does">Женские и мужские стрижки, ламинирование ресниц</p>
+      <blockquote>«Ощущение, что стригусь не первый раз, и мастер всё знает.»<cite>Роман П.</cite></blockquote>
+      <button class="btn small line" type="button" data-master="Карина" aria-label="Записаться к мастеру Карина">Записаться</button>
+    </div>
+    <div class="mrow">
+      <div class="dot" style="--c:var(--powder);--tx:var(--ink)" aria-hidden="true">К</div>
+      <div><h3>Ксения</h3><p class="role">Мастер маникюра</p></div>
+      <p class="does">Маникюр, педикюр, покрытие</p>
+      <blockquote>«Отличный маникюр, красивые модные цвета, качество отличное.»<cite>Катя Х.</cite></blockquote>
+      <button class="btn small line" type="button" data-master="Ксения" aria-label="Записаться к мастеру Ксения">Записаться</button>
+    </div>
+  </div>
+</section>
+
+<section id="prices" style="background:var(--white)">
+  <div class="wrap">
+    <h2>Услуги и цены</h2>
+    <p class="intro">Цена зависит от длины и густоты волос. Точную назовёт мастер, когда посмотрит.</p>
+    <div class="pgrid" id="pgrid"></div>
+    <p class="pnote">Цены с пометкой «с Карт» взяты из вашей карточки на Яндекс Картах, остальные примерные — впишем ваши.</p>
+  </div>
+</section>
+
+<section style="padding:48px 0">
+  <div class="wrap extras">
+    <span>Выезд на дом<small>причёска или стрижка у вас</small></span>
+    <span>Подарочный сертификат<small>на услугу или сумму</small></span>
+    <span>Для кудрявых<small>стрижка и уход для вьющихся</small></span>
+    <span>Косметика для дома<small>профессиональный уход</small></span>
+    <span>Можно с собакой<small>и парковка рядом</small></span>
+  </div>
+</section>
+
+<section class="band" id="book">
+  <div class="wrap book">
+    <div>
+      <h2>Запись к мастеру</h2>
+      <p class="intro">Заявка приходит салону в мессенджер. Администратор перезвонит или напишет и подтвердит время.</p>
+      <ol>
+        <li>Выберите услугу и мастера.</li>
+        <li>Укажите удобный день и время.</li>
+        <li>Оставьте телефон и ждите ответа.</li>
+      </ol>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div id="fbody">
+        <fieldset><legend>Услуга</legend><div class="chips" id="svc"></div></fieldset>
+        <fieldset><legend>Мастер</legend>
+          <div class="chips" id="mst">
+            <label><input type="radio" name="m" value="любой" checked><span>Любой</span></label>
+            <label><input type="radio" name="m" value="Наталья"><span>Наталья</span></label>
+            <label><input type="radio" name="m" value="Антон"><span>Антон</span></label>
+            <label><input type="radio" name="m" value="Карина"><span>Карина</span></label>
+            <label><input type="radio" name="m" value="Ксения"><span>Ксения</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>Когда удобно</legend>
+          <div class="chips">
+            <label><input type="radio" name="day" value="сегодня"><span>Сегодня</span></label>
+            <label><input type="radio" name="day" value="завтра"><span>Завтра</span></label>
+            <label><input type="radio" name="day" value="на этой неделе" checked><span>На этой неделе</span></label>
+            <label><input type="radio" name="day" value="в выходные"><span>В выходные</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>Время</legend>
+          <div class="chips">
+            <label><input type="radio" name="time" value="утро"><span>Утро</span></label>
+            <label><input type="radio" name="time" value="день" checked><span>День</span></label>
+            <label><input type="radio" name="time" value="вечер"><span>Вечер</span></label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label class="f">Имя<input type="text" id="name" autocomplete="given-name"></label>
+          <label class="f">Телефон<input type="tel" id="phone" autocomplete="tel" placeholder="+7"></label>
+        </div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit">Отправить заявку</button>
+      </div>
+      <div class="sent" id="sent">
+        <h3 style="font:700 24px/1.2 var(--display);margin:0">Заявка отправлена</h3>
+        <p style="color:#C9C5CC;margin:6px 0 0">Так она придёт салону в мессенджер:</p>
+        <div class="msg" id="msg"></div>
+        <button class="btn line" type="button" id="again">Новая заявка</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>Отзывы на Яндекс Картах</h2>
+    <div class="rv-top">
+      <div class="big">4,9</div>
+      <ul class="stats">
+        <li>Персонал: <b>100% положительных</b></li>
+        <li>Компетентность: <b>100%</b></li>
+        <li>Стрижка: <b>100%</b></li>
+        <li>Атмосфера: <b>100%</b></li>
+      </ul>
+    </div>
+    <div class="revs">
+      <figure class="rev" style="--c:var(--rose)"><blockquote>«Еду не то что с другого конца города, а с другого конца страны к ней.»</blockquote><figcaption>Ольга Г., о мастере Наталье</figcaption></figure>
+      <figure class="rev" style="--c:var(--blond)"><blockquote>«Нарощенные 70 см и ещё блонд! Лучшие мастера, технологии и сервис.»</blockquote><figcaption>Людмила В.</figcaption></figure>
+      <figure class="rev" style="--c:var(--choco)"><blockquote>«Обзвонила многих, но все по записи. Позвонила сюда, и нас приняли без проблем.»</blockquote><figcaption>Ольга Г., проездом в Камышине</figcaption></figure>
+      <figure class="rev" style="--c:var(--ash)"><blockquote>«Приезжаю из Питера в родной город и всегда бегу к Наталье радовать себя и свои волосы.»</blockquote><figcaption>Мария З.</figcaption></figure>
+      <figure class="rev" style="--c:var(--powder)"><blockquote>«Стрижка, окраска, педикюр — всё на высоком профессиональном уровне.»</blockquote><figcaption>Оксана Л.</figcaption></figure>
+      <figure class="rev" style="--c:var(--graph)"><blockquote>«Уже более 10 лет являюсь клиентом салона. Каждое посещение — прекрасные эмоции.»</blockquote><figcaption>Татьяна М.</figcaption></figure>
+    </div>
+    <p style="margin:36px 0 0"><a class="btn line small" href="https://yandex.ru/maps/org/boginya/59842005037/reviews/" target="_blank" rel="noopener">Все 41 отзыв на Картах</a></p>
+  </div>
+</section>
+
+<section id="contacts" style="padding-top:0">
+  <div class="wrap contacts">
+    <div>
+      <h2>Контакты</h2>
+      <dl>
+        <dt>Адрес</dt><dd>Камышин, Октябрьская улица, 40</dd>
+        <dt>Администратор</dt><dd><a href="tel:+79377348148">+7 937 734-81-48</a></dd>
+        <dt>Наталья</dt><dd><a href="tel:+79275095985">+7 927 509-59-85</a></dd>
+        <dt>Часы</dt><dd>до 19:00</dd>
+        <dt>Telegram</dt><dd><a href="https://t.me/bogini134" target="_blank" rel="noopener">Работы мастеров, до и после</a></dd>
+      </dl>
+    </div>
+    <div class="map">
+      <h3>Как нас найти</h3>
+      <p>Октябрьская улица, 40. Рядом есть парковка.</p>
+      <a class="btn" href="https://yandex.ru/maps/org/boginya/59842005037/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Салон красоты «Богиня», Камышин</span>
+    <span>Октябрьская улица, 40</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn line" href="tel:+79377348148">Позвонить</a>
+  <a class="btn" href="#book">Записаться</a>
+</div>
+
+<script>
+// категория: цвет пряди, светлый текст?, услуги [название, пояснение, цена, с Карт?]
+const CATS = [
+  ["Стрижки","var(--graph)",0,[
+    ["Женская стрижка","",450,true],["Мужская стрижка","",350,true],["Детская стрижка","",300],
+    ["Стрижка чёлки","",150],["Стрижка для кудрявых волос","по кудрявому методу",1200]]],
+  ["Окрашивание","var(--blond)",1,[
+    ["Окрашивание в один тон","",1500],["Сложное окрашивание","шатуш, балаяж, растяжка цвета",3500],
+    ["Мелирование","",2000],["Тонирование","",1200],["Исправление неудачного цвета","","после консультации"]]],
+  ["Уход","var(--powder)",1,[
+    ["ESTEL MORE THERAPY","моретерапия: глины и водоросли для роста и укрепления",800],
+    ["Восстанавливающий уход","",1000],["Наращивание волос","","после консультации"]]],
+  ["Укладки","var(--choco)",0,[
+    ["Укладка","",600],["Вечерняя причёска","",1500],["Свадебная причёска","с пробной","по записи"],["Выезд на дом","","по договорённости"]]],
+  ["Ногти","var(--rose)",0,[["Маникюр с покрытием","",1200],["Педикюр","",1500]]],
+  ["Ресницы и брови","var(--ash)",0,[["Наращивание ресниц","",1500],["Ламинирование ресниц","",1200],["Коррекция бровей","",300]]]
+];
+const $ = id => document.getElementById(id);
+const rub = n => "от " + n.toLocaleString("ru-RU").replace(/ /g," ").replace(" ", " ") + " ₽";
+const slug = i => "cat-" + i;
+
+$("strands").innerHTML = CATS.map(([n,c,dark],i)=>
+  `<button type="button" class="strand" style="--c:${c};--i:${i};--len:${[100,86,94,80,97,89][i]}%;${dark?'--tx:var(--ink)':''}" data-i="${i}" aria-label="${n}: цены"><span class="hair"></span><span class="lbl">${n}</span></button>`).join("");
+
+$("pgrid").innerHTML = CATS.map(([n,c,dark,items],i)=>`<div class="cat" id="${slug(i)}">
+  <div class="cat-h"><span class="swatch" style="--c:${c}"></span><h3>${n}</h3></div>
+  <ul>${items.map(([t,s,p,real])=>`<li><span>${t}${real?'<span class="real">с Карт</span>':''}${s?`<small>${s}</small>`:''}</span><span class="pr${typeof p==="number"?'':' ask'}">${typeof p==="number"?rub(p):p}</span></li>`).join("")}</ul>
+  <button class="btn small line" type="button" data-svc="${n}">Записаться: ${n.toLowerCase()}</button>
+</div>`).join("");
+
+$("svc").innerHTML = [...CATS.map(c=>c[0]), "Подарочный сертификат", "Нужна консультация"]
+  .map(c=>`<label><input type="checkbox" value="${c}"><span>${c}</span></label>`).join("");
+
+const smooth = () => matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+$("strands").addEventListener("click", e=>{
+  const b = e.target.closest(".strand"); if(!b) return;
+  const cat = $(slug(b.dataset.i));
+  cat.scrollIntoView({behavior:smooth(), block:"start"});
+  cat.classList.remove("flash"); void cat.offsetWidth; cat.classList.add("flash");
+});
+function go(){ $("book").scrollIntoView({behavior:smooth()}); }
+const pick = (sel,v) => { const i = document.querySelector(`${sel} input[value="${v}"]`); if(i) i.checked = true; };
+$("pgrid").addEventListener("click", e=>{ const b=e.target.closest("[data-svc]"); if(!b) return; pick("#svc", b.dataset.svc); go(); });
+document.querySelectorAll("[data-master]").forEach(b=>b.addEventListener("click",()=>{
+  pick("#mst", b.dataset.master); if(b.dataset.master==="Ксения") pick("#svc","Ногти"); go();
+}));
+
+$("form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const svc = [...document.querySelectorAll("#svc input:checked")].map(i=>i.value);
+  const phone = $("phone").value.replace(/\D/g,"");
+  if(!svc.length){ $("err").textContent = "Выберите хотя бы одну услугу."; return; }
+  if(phone.length < 10){ $("err").textContent = "Введите телефон полностью, чтобы администратор мог перезвонить."; return; }
+  $("err").textContent = "";
+  const q = n => document.querySelector(`input[name=${n}]:checked`).value;
+  $("msg").textContent = "Новая заявка с сайта «Богиня»\nУслуга: " + svc.join(", ") +
+    "\nМастер: " + q("m") + "\nКогда: " + q("day") + ", " + q("time") +
+    "\nКлиент: " + ($("name").value.trim() || "без имени") + ", " + $("phone").value.trim();
+  $("fbody").style.display = "none"; $("sent").className = "sent on";
+});
+$("again").addEventListener("click", ()=>{ $("fbody").style.display=""; $("sent").className="sent"; $("phone").value=""; $("name").value=""; });
+</script>
+</body>
+</html>

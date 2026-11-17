@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NELIPA — лазерная эпиляция и массаж в Камышине</title>
+<meta name="description" content="Студия NELIPA в Камышине: лазерная эпиляция диодным лазером, электроэпиляция, ручной и аппаратный массаж, уход за лицом. Цены и запись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#E8E3DA;
+  --paper:#F7F4EF;
+  --ink:#2A2623;
+  --mute:#7E766B;
+  --line:#D4CCC0;
+  --pill:#2E2A27;
+  --gold:#A4845F;
+  --ok:#4F6B55;
+  --display:"Forum", "Times New Roman", serif;
+  --text:"Jost", "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{
+  margin:0;color:var(--ink);font:400 17px/1.55 var(--text);
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(255,255,255,.55), transparent 60%),
+    linear-gradient(118deg, transparent 0 38%, rgba(255,255,255,.28) 38.4% 38.8%, transparent 39.2% 100%),
+    linear-gradient(152deg, transparent 0 63%, rgba(120,105,90,.06) 63.2% 63.5%, transparent 63.8% 100%),
+    var(--stone);
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pill);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* test banner */
+.test{background:var(--pill);color:#EFE9E1;font-size:14px;text-align:center;padding:8px 16px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(232,227,218,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;text-decoration:none;font:400 26px/1 var(--display);letter-spacing:.18em;position:relative;padding-top:4px}
+.logo .star{position:absolute;left:calc(50% + 2px);top:-9px;width:12px;height:12px;color:var(--gold)}
+.nav{display:flex;gap:22px;font-size:15px;margin-left:auto}
+.nav a{text-decoration:none;color:var(--mute)}
+.nav a:hover{color:var(--ink)}
+.tel{font-weight:500;text-decoration:none;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--pill);background:var(--pill);color:#F4EFE8;
+  font:500 15px/1 var(--text);padding:14px 22px;border-radius:999px;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+.btn:hover{background:#000}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--pill);color:#F4EFE8}
+.btn.small{padding:10px 16px;font-size:14px}
+
+/* hero */
+.hero{padding:56px 0 32px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+h1{font:400 clamp(40px,5.6vw,72px)/1.02 var(--display);margin:0 0 20px;letter-spacing:-.005em}
+.lead{font-size:19px;max-width:34em;margin:0 0 26px;color:#4A443E}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin:0 0 34px;padding:0;list-style:none;font-size:15px;color:var(--mute)}
+.facts b{color:var(--ink);font-weight:500}
+
+/* picker */
+.picker{background:rgba(247,244,239,.6);border:1px solid var(--line);border-radius:22px;padding:24px}
+.picker h2{font:400 28px/1.15 var(--display);margin:0 0 6px}
+.picker p.hint{margin:0 0 18px;color:var(--mute);font-size:15px}
+.seg{display:inline-flex;border:1px solid var(--pill);border-radius:999px;padding:3px;margin-bottom:18px}
+.seg button{border:0;background:transparent;font:500 14px/1 var(--text);padding:10px 18px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--pill);color:#F4EFE8}
+.zones{display:flex;flex-wrap:wrap;gap:8px}
+.zone{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 14px;font:400 15px/1.1 var(--text);cursor:pointer;color:var(--ink);display:inline-flex;gap:10px;align-items:baseline;transition:border-color .15s,background .15s}
+.zone small{color:var(--mute);font-size:13px}
+.zone:hover{border-color:var(--pill)}
+.zone[aria-pressed="true"]{background:var(--pill);border-color:var(--pill);color:#F4EFE8}
+.zone[aria-pressed="true"] small{color:#CFC6BA}
+
+/* paper sheet */
+.sheet{position:sticky;top:92px;background:var(--paper);border-radius:4px;padding:38px 34px 30px;min-height:520px;
+  box-shadow:0 1px 0 #fff inset, 0 30px 60px -30px rgba(60,48,36,.35), 0 2px 6px rgba(60,48,36,.08);
+  background-image:linear-gradient(160deg, rgba(255,255,255,.7), transparent 40%), linear-gradient(20deg, transparent 60%, rgba(200,188,172,.18));
+  display:flex;flex-direction:column}
+.sheet .ttl{font:400 44px/1 var(--display);letter-spacing:.06em;margin:0}
+.sheet .sub{font-size:12px;letter-spacing:.12em;color:var(--mute);margin:8px 0 26px}
+.lines{list-style:none;margin:0;padding:0;flex:1}
+.lines li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:15px;border-bottom:1px dashed transparent}
+.lines li.empty{color:var(--mute);font-style:normal;display:block;padding-bottom:14px}
+.lines li.qpl{display:block;padding:0}
+.qp{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;text-align:left;border:0;border-top:1px solid var(--line);
+  background:none;padding:13px 0;font:400 15px/1.35 var(--text);color:var(--ink);cursor:pointer}
+.qp:hover b{text-decoration:underline}
+.qp::before{content:"+";flex:0 0 26px;height:26px;border:1px solid var(--pill);border-radius:50%;display:grid;place-items:center;font:400 18px/1 var(--text);align-self:center}
+.qp > span:first-child{flex:1}
+.qp b{font-weight:500}
+.qp .pr{white-space:nowrap;font:400 22px/1 var(--display)}
+.qp small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
+.lines li .x{border:0;background:none;color:var(--mute);cursor:pointer;font-size:16px;padding:0 0 0 8px;line-height:1}
+.lines li .x:hover{color:var(--ink)}
+.lines .pr{white-space:nowrap}
+.rule{height:1px;background:var(--ink);opacity:.5;margin:14px 0}
+.deal{display:none;background:#EEE8DF;border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:14px}
+.deal.on{display:block}
+.deal b{font-weight:500}
+.deal s{color:var(--mute)}
+.total{display:flex;justify-content:space-between;align-items:baseline}
+.total span{font-size:14px;color:var(--mute)}
+.total strong{font:400 36px/1 var(--display)}
+.sheet .note{font-size:13px;color:var(--mute);margin:8px 0 18px}
+.sheet .btn{width:100%}
+.sheet .mark{text-align:center;margin-top:22px;font:400 15px/1 var(--display);letter-spacing:.2em;color:var(--mute)}
+
+/* sections */
+section{padding:72px 0}
+.pill{display:inline-block;background:var(--pill);color:#F4EFE8;font:400 14px/1 var(--text);letter-spacing:.06em;padding:9px 18px;border-radius:6px;margin-bottom:18px}
+h2.big{font:400 clamp(32px,4vw,48px)/1.08 var(--display);margin:0 0 14px}
+.intro{color:#4A443E;max-width:38em;margin:0 0 36px}
+
+/* complexes */
+.cx{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.cx > div{padding:22px 20px 24px;border-right:1px solid var(--line)}
+.cx > div:last-child{border-right:0}
+.cx h3{font:500 15px/1.4 var(--text);margin:0 0 10px;min-height:42px}
+.cx .p{font:400 34px/1 var(--display)}
+.cx .s{font-size:13px;color:var(--mute);margin-top:6px}
+.abon{margin-top:44px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:620px;background:rgba(247,244,239,.55)}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
+th{font-weight:500;font-size:14px;color:var(--mute)}
+td b{font:400 22px/1.1 var(--display);display:block}
+td s{color:var(--mute);font-size:13px}
+td .gain{display:block;font-size:13px;color:var(--ok)}
+
+/* electro */
+.electro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.rate{background:var(--paper);border-radius:4px;padding:36px;box-shadow:0 20px 50px -30px rgba(60,48,36,.35)}
+.rate .n{font:400 92px/1 var(--display)}
+.rate .n small{font:300 26px/1 var(--text);color:var(--mute)}
+.rate ul{margin:18px 0 0;padding-left:18px;color:#4A443E}
+
+/* massage */
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--paper);border-radius:4px;padding:28px 26px;display:flex;flex-direction:column}
+.card h3{font:400 26px/1.15 var(--display);margin:0 0 6px}
+.card .what{color:var(--mute);font-size:14px;margin:0 0 16px}
+.price-list{list-style:none;margin:0;padding:0}
+.price-list li{display:flex;gap:10px;align-items:baseline;padding:7px 0;font-size:15px}
+.price-list li i{flex:1;min-width:16px;border-bottom:1px dotted #BDB3A6;transform:translateY(-4px)}
+.price-list li .d{color:var(--mute);font-size:13px;white-space:nowrap}
+.card .sub-ab{margin-top:auto;padding-top:16px;font-size:14px;color:#4A443E;border-top:1px solid var(--line)}
+.card .sub-ab b{font-weight:500}
+.card .add{margin-top:14px;align-self:flex-start}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--ink)}
+.courses > div{padding:22px 22px 0 0}
+.courses > div+div{padding-left:22px;border-left:1px solid var(--line)}
+.courses h3{font:400 24px/1.15 var(--display);margin:0 0 4px}
+.courses .for{font-size:14px;color:var(--mute);margin:0 0 12px}
+.courses ul{margin:0 0 14px;padding-left:18px;font-size:15px}
+.courses .p{font:400 30px/1 var(--display)}
+
+/* booking */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.form{background:var(--paper);border-radius:4px;padding:32px;box-shadow:0 20px 50px -30px rgba(60,48,36,.35)}
+.form fieldset{border:0;margin:0 0 22px;padding:0}
+.form legend{font-weight:500;font-size:15px;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:14px;background:#fff;cursor:pointer}
+.chips input:checked+span{background:var(--pill);color:#F4EFE8;border-color:var(--pill)}
+.chips input:focus-visible+span{outline:2px solid var(--pill);outline-offset:2px}
+.zline{font-size:14px;color:#4A443E;background:#EEE8DF;border-radius:10px;padding:10px 12px;margin-top:10px;display:none}
+.zline.on{display:block}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label.f{display:block;font-size:14px;color:var(--mute)}
+.form input[type=text],.form input[type=tel]{width:100%;margin-top:6px;border:1px solid var(--line);border-radius:10px;padding:13px 14px;font:400 16px var(--text);background:#fff;color:var(--ink)}
+.form input:focus{outline:2px solid var(--pill);outline-offset:0;border-color:var(--pill)}
+.err{color:#9B3B2E;font-size:14px;min-height:20px;margin:10px 0 0}
+.form .btn{width:100%;margin-top:6px}
+.or{font-size:14px;color:var(--mute);margin-top:14px;text-align:center}
+.sent{display:none}
+.sent.on{display:block}
+.msg{background:#fff;border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:16px;font-size:15px;white-space:pre-line;margin:14px 0 18px}
+.side h2{margin-top:0}
+.side ol{padding-left:20px;color:#4A443E}
+.side li{margin-bottom:10px}
+
+/* contacts */
+.contacts{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.cinfo dl{margin:0;display:grid;grid-template-columns:140px 1fr;gap:14px 20px;font-size:16px}
+.cinfo dt{color:var(--mute)}
+.cinfo dd{margin:0}
+.rating{background:var(--paper);border-radius:4px;padding:28px}
+.rating .n{font:400 64px/1 var(--display)}
+.rating p{margin:6px 0 16px;color:#4A443E}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* ruble sign: Forum has no ₽, take it from Jost; never break price from sign */
+.pz{white-space:nowrap}
+.r{font-family:var(--text)}
+.p .r,td b .r,#sum .r,.rate .n .r,.cx .r,.courses .r{font-weight:300;font-size:.8em;margin-left:.04em}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.rev{background:var(--paper);border-radius:4px;padding:28px 26px;margin:0}
+.rev blockquote{margin:0 0 16px;font:400 22px/1.35 var(--display)}
+.rev figcaption{font-size:14px;color:var(--mute)}
+.revhead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.revhead .score{font:400 56px/1 var(--display)}
+.revhead .score small{font:400 15px/1.3 var(--text);color:var(--mute);display:block;margin-top:6px}
+.courses .btn{margin-top:16px}
+
+/* mobile sticky bar */
+.mbar{display:none}
+
+@media (max-width:960px){
+  .nav{display:none}
+  .hero-grid,.electro,.book,.contacts{grid-template-columns:1fr}
+  .sheet{position:static;min-height:0}
+  .cx{grid-template-columns:1fr 1fr}
+  .cx > div:nth-child(2){border-right:0}
+  .cx > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .mgrid,.courses{grid-template-columns:1fr}
+  .courses > div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .courses > div{padding-bottom:18px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  body{font-size:16px}
+  .bar{gap:12px;height:60px}
+  .bar .btn{display:none}
+  .logo{font-size:22px}
+  .hero{padding:32px 0 16px}
+  .lead{font-size:17px}
+  .picker{padding:18px;border-radius:16px}
+  .sheet{padding:28px 20px 22px}
+  .sheet .ttl{font-size:36px}
+  .cx{grid-template-columns:1fr}
+  .cx > div{border-right:0!important;border-bottom:1px solid var(--line)}
+  .cx > div:last-child{border-bottom:0}
+  .cx h3{min-height:0}
+  section{padding:52px 0}
+  .form{padding:22px 18px}
+  .row{grid-template-columns:1fr}
+  .cinfo dl{grid-template-columns:1fr;gap:2px}
+  .cinfo dd{margin-bottom:12px}
+  .rate .n{font-size:72px}
+  .revs{grid-template-columns:1fr}
+  .rev blockquote{font-size:20px}
+  table{min-width:0}
+  thead{display:none}
+  tbody tr{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ink)}
+  td{border-bottom:0;padding:12px 8px}
+  td:first-child{grid-column:1/-1;border-bottom:1px solid var(--line);font-weight:500}
+  td:not(:first-child)::before{content:attr(data-l);display:block;font-size:12px;color:var(--mute);margin-bottom:4px}
+  td b{font-size:19px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(232,227,218,.95);border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;padding:13px 10px;white-space:nowrap}
+  .mbar .btn.ghost{flex:0 0 auto;padding:13px 18px}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<div class="test">Тестовая версия страницы для студии NELIPA. Цены взяты из вашего прайса во ВКонтакте.</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="NELIPA, на главную">NELIPA
+      <svg class="star" viewBox="0 0 12 12" aria-hidden="true"><path fill="currentColor" d="M6 0 7 5 12 6 7 7 6 12 5 7 0 6 5 5Z"/></svg>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#laser">Лазер</a>
+      <a href="#complex">Комплексы</a>
+      <a href="#electro">Электроэпиляция</a>
+      <a href="#massage">Массаж</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="tel" href="tel:+79047576671">+7 904 757-66-71</a>
+    <a class="btn small" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" id="laser">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Лазерная эпиляция и массаж в Камышине</h1>
+      <p class="lead">Отметьте зоны и сразу увидите свой прайс с итоговой ценой. Если комплекс выйдет дешевле, страница его подскажет.</p>
+      <ul class="facts">
+        <li><b>Диодный лазер</b> Magic One с охлаждением</li>
+        <li><b>Больше 2000</b> клиентов</li>
+        <li>Тургенева, 4б, <b>2 этаж</b></li>
+      </ul>
+
+      <div class="picker">
+        <h2>Какие зоны делаем?</h2>
+        <p class="hint">Цена за одну процедуру. Можно выбрать несколько зон.</p>
+        <div class="seg" role="group" aria-label="Для кого">
+          <button type="button" data-g="w" aria-pressed="true">Для неё</button>
+          <button type="button" data-g="m" aria-pressed="false">Для него</button>
+        </div>
+        <div class="zones" id="zones"></div>
+      </div>
+    </div>
+
+    <aside class="sheet" aria-live="polite">
+      <p class="ttl">PRICE LIST</p>
+      <p class="sub" id="sheetSub">для неё, лазерная эпиляция</p>
+      <ul class="lines" id="lines"></ul>
+      <div class="deal" id="deal"></div>
+      <div id="totals">
+        <div class="rule"></div>
+        <div class="total"><span>Итого за процедуру</span><strong id="sum">0 ₽</strong></div>
+        <p class="note" id="sumNote">Точную цену подтвердит администратор.</p>
+      </div>
+      <a class="btn" href="#book" id="toBook">Записаться на эти зоны</a>
+      <div class="mark">NELIPA</div>
+    </aside>
+  </div>
+</section>
+
+<section id="complex">
+  <div class="wrap">
+    <span class="pill">Выгодные комплексы</span>
+    <h2 class="big">Самое частое сочетание зон дешевле вместе</h2>
+    <p class="intro">Лазерная эпиляция для неё. Цена за одну процедуру.</p>
+    <div class="cx">
+      <div><h3>Бикини глубокое + подмышки</h3><div class="p">2 900 ₽</div><div class="s">по отдельности 3 400 ₽</div></div>
+      <div><h3>Бикини глубокое + подмышки + голени или бёдра</h3><div class="p">4 800 ₽</div><div class="s">по отдельности 5 400 ₽</div></div>
+      <div><h3>Бикини глубокое + подмышки + ноги полностью</h3><div class="p">5 800 ₽</div><div class="s">по отдельности 6 800 ₽</div></div>
+      <div><h3>Всё тело без ограничений</h3><div class="p">11 000 ₽</div><div class="s">любые зоны за один визит</div></div>
+    </div>
+
+    <div class="abon">
+      <span class="pill">Абонементы</span>
+      <table>
+        <thead><tr><th>Комплекс</th><th>6 процедур</th><th>9 процедур</th><th>12 процедур</th></tr></thead>
+        <tbody>
+          <tr><td>S<br><span style="color:var(--mute);font-size:13px">бикини глубокое + подмышки</span></td>
+            <td><b>14 790 ₽</b><s>17 400 ₽</s><span class="gain">выгода 2 610 ₽</span></td>
+            <td><b>20 880 ₽</b><s>26 100 ₽</s><span class="gain">выгода 5 220 ₽</span></td>
+            <td><b>27 840 ₽</b><s>34 800 ₽</s><span class="gain">выгода 6 960 ₽</span></td></tr>
+          <tr><td>M<br><span style="color:var(--mute);font-size:13px">бикини глубокое + подмышки + голени</span></td>
+            <td><b>24 480 ₽</b><s>28 800 ₽</s><span class="gain">выгода 4 320 ₽</span></td>
+            <td><b>34 560 ₽</b><s>43 200 ₽</s><span class="gain">выгода 8 640 ₽</span></td>
+            <td><b>46 080 ₽</b><s>57 600 ₽</s><span class="gain">выгода 11 520 ₽</span></td></tr>
+          <tr><td>L<br><span style="color:var(--mute);font-size:13px">бикини глубокое + подмышки + ноги</span></td>
+            <td><b>29 580 ₽</b><s>34 800 ₽</s><span class="gain">выгода 5 220 ₽</span></td>
+            <td><b>41 760 ₽</b><s>52 200 ₽</s><span class="gain">выгода 10 440 ₽</span></td>
+            <td><b>55 680 ₽</b><s>69 600 ₽</s><span class="gain">выгода 13 920 ₽</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="electro">
+  <div class="wrap electro">
+    <div>
+      <span class="pill">Электроэпиляция</span>
+      <h2 class="big">Для светлых и седых волос, которые не берёт лазер</h2>
+      <p class="intro">Платите только за время работы мастера. Первый раз можно прийти на короткую пробную процедуру и посмотреть, как переносится.</p>
+      <button class="btn ghost" type="button" data-book="Электроэпиляция">Записаться на пробную</button>
+    </div>
+    <div class="rate">
+      <div class="n">35 ₽<small> / минута</small></div>
+      <ul>
+        <li>Пробная процедура 15 минут</li>
+        <li>Консультация и ознакомительный сеанс</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="massage">
+  <div class="wrap">
+    <span class="pill">Массаж и уход</span>
+    <h2 class="big">Ручной, аппаратный и массаж лица</h2>
+    <p class="intro">После ручного массажа — чайная церемония. На курсы и абонементы цена ниже.</p>
+
+    <div class="mgrid">
+      <article class="card">
+        <h3>Ручной массаж</h3>
+        <p class="what">60 минут, всё тело</p>
+        <ul class="price-list">
+          <li>Лимфодренажный<i></i>1 600 ₽</li>
+          <li>Расслабляющий, с массажем головы и стоп<i></i>1 500 ₽</li>
+          <li><span>Шейно-воротниковая зона <span class="d">25 мин</span></span><i></i>1 000 ₽</li>
+          <li><span>Шейно-воротниковая зона и спина <span class="d">40 мин</span></span><i></i>1 500 ₽</li>
+        </ul>
+        <div class="sub-ab"><b>Абонементы</b>
+          <ul class="price-list">
+            <li>Лимфодренажный, 5 сеансов<i></i>6 800 ₽</li>
+            <li>Лимфодренажный, 10 сеансов<i></i>13 600 ₽</li>
+            <li>Расслабляющий, 5 сеансов<i></i>6 300 ₽</li>
+            <li>Расслабляющий, 10 сеансов<i></i>12 750 ₽</li>
+          </ul>
+        </div>
+        <button class="btn ghost small add" type="button" data-book="Массаж тела">Записаться</button>
+      </article>
+
+      <article class="card">
+        <h3>Аппаратный массаж</h3>
+        <p class="what">Вакуум, вибро, кавитация, RF-лифтинг</p>
+        <ul class="price-list">
+          <li><span>Вакуум <span class="d">40 мин</span></span><i></i>1 200 ₽</li>
+          <li><span>Вибро <span class="d">40 мин</span></span><i></i>1 500 ₽</li>
+          <li><span>Вакуум + вибро <span class="d">60 мин</span></span><i></i>1 800 ₽</li>
+          <li><span>Кавитация + вибро <span class="d">60 мин</span></span><i></i>1 800 ₽</li>
+          <li><span>RF-лифтинг тела <span class="d">60 мин</span></span><i></i>1 600 ₽</li>
+          <li><span>RF-лифтинг лица <span class="d">30 мин</span></span><i></i>1 000 ₽</li>
+          <li><span>Обёртывание <span class="d">10–20 мин</span></span><i></i>500 ₽</li>
+        </ul>
+        <button class="btn ghost small add" type="button" data-book="Аппаратный массаж">Записаться</button>
+      </article>
+
+      <article class="card">
+        <h3>Французский скульптурный массаж лица</h3>
+        <p class="what">Спа-программа, 60 минут</p>
+        <ul class="price-list">
+          <li>Очищение, тонизация, массаж, альгинатная маска, крем<i></i>1 800 ₽</li>
+        </ul>
+        <div class="sub-ab">Курс 11 процедур, 1–2 раза в неделю: <b>17 800 ₽</b> вместо 19 800 ₽.</div>
+        <button class="btn ghost small add" type="button" data-book="Массаж лица">Записаться</button>
+      </article>
+    </div>
+
+    <div class="courses">
+      <div>
+        <h3>Курс 1</h3>
+        <p class="for">Лишний вес, целлюлит, дряблость кожи</p>
+        <ul><li>1 ручной лимфодренажный</li><li>2 кавитации</li><li>5 вакуум + вибро</li><li>2 обёртывания</li></ul>
+        <div class="p">18 600 ₽</div>
+        <button class="btn ghost small" type="button" data-book="Курс для фигуры">Записаться на курс</button>
+      </div>
+      <div>
+        <h3>Курс 2</h3>
+        <p class="for">Убрать отёки, подготовить тело к отпуску</p>
+        <ul><li>1 ручной лимфодренажный</li><li>3 вакуумных массажа</li><li>2 вибромассажа + обёртывание</li></ul>
+        <div class="p">9 000 ₽</div>
+        <button class="btn ghost small" type="button" data-book="Курс для фигуры">Записаться на курс</button>
+      </div>
+      <div>
+        <h3>«Стройное тело»</h3>
+        <p class="for">Курс для фигуры</p>
+        <ul><li>10 процедур вакуум + вибро</li><li>3 обёртывания: горячее, холодное, шоколадное или моделирующее</li></ul>
+        <div class="p">15 300 ₽</div>
+        <button class="btn ghost small" type="button" data-book="Курс для фигуры">Записаться на курс</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="revhead">
+      <div>
+        <span class="pill">Отзывы</span>
+        <h2 class="big" style="margin:0">Что пишут клиентки на Яндекс Картах</h2>
+      </div>
+      <div class="score">4,6<small>60 оценок, 37 отзывов</small></div>
+    </div>
+    <div class="revs">
+      <figure class="rev">
+        <blockquote>«Более 50% волос исчезло после первой процедуры! После второй — уже вау!»</blockquote>
+        <figcaption>Алина Л., лазерная эпиляция</figcaption>
+      </figure>
+      <figure class="rev">
+        <blockquote>«Прошла комплекс аппаратного массажа. Живот убрался на 7 см, талия на 5 см минус.»</blockquote>
+        <figcaption>Людмила Г., аппаратный массаж</figcaption>
+      </figure>
+      <figure class="rev">
+        <blockquote>«Современный аппарат, процедура с охлаждением — комфортно. Чисто, уютно, без навязывания дополнительных услуг.»</blockquote>
+        <figcaption>Анастасия П., лазерная эпиляция</figcaption>
+      </figure>
+      <figure class="rev">
+        <blockquote>«Мастера здесь с медицинским образованием, что для меня огромный плюс. После процедуры всегда можно выпить чай или кофе.»</blockquote>
+        <figcaption>Лера Д., постоянная клиентка</figcaption>
+      </figure>
+    </div>
+    <p style="margin:26px 0 0"><a class="btn ghost small" href="https://yandex.ru/maps/org/nelipa/112567554287/reviews/" target="_blank" rel="noopener">Все отзывы на Картах</a></p>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book">
+    <div class="side">
+      <span class="pill">Запись</span>
+      <h2 class="big">Оставьте заявку, администратор подберёт время</h2>
+      <ol>
+        <li>Выберите услугу и удобный день.</li>
+        <li>Заявка сразу приходит студии в мессенджер.</li>
+        <li>Администратор пишет или звонит и подтверждает время.</li>
+      </ol>
+      <p class="or" style="text-align:left">Хотите сами выбрать мастера и время? <a href="https://n1601968.yclients.com/" target="_blank" rel="noopener">Онлайн-запись YClients</a></p>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div id="fbody">
+        <fieldset>
+          <legend>Услуга</legend>
+          <div class="chips" id="svc">
+            <label><input type="checkbox" value="Лазерная эпиляция"><span>Лазерная эпиляция</span></label>
+            <label><input type="checkbox" value="Электроэпиляция"><span>Электроэпиляция</span></label>
+            <label><input type="checkbox" value="Массаж тела"><span>Массаж тела</span></label>
+            <label><input type="checkbox" value="Аппаратный массаж"><span>Аппаратный массаж</span></label>
+            <label><input type="checkbox" value="Массаж лица"><span>Массаж лица</span></label>
+            <label><input type="checkbox" value="Курс для фигуры"><span>Курс для фигуры</span></label>
+            <label><input type="checkbox" value="Нужна консультация"><span>Нужна консультация</span></label>
+          </div>
+          <div class="zline" id="zline"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Когда удобно</legend>
+          <div class="chips" id="day">
+            <label><input type="radio" name="day" value="сегодня"><span>Сегодня</span></label>
+            <label><input type="radio" name="day" value="завтра"><span>Завтра</span></label>
+            <label><input type="radio" name="day" value="на этой неделе" checked><span>На этой неделе</span></label>
+            <label><input type="radio" name="day" value="в выходные"><span>В выходные</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Время</legend>
+          <div class="chips" id="time">
+            <label><input type="radio" name="time" value="утро"><span>Утро</span></label>
+            <label><input type="radio" name="time" value="день" checked><span>День</span></label>
+            <label><input type="radio" name="time" value="вечер"><span>Вечер</span></label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label class="f">Имя<input type="text" id="name" autocomplete="given-name"></label>
+          <label class="f">Телефон<input type="tel" id="phone" autocomplete="tel" placeholder="+7"></label>
+        </div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit">Отправить заявку</button>
+      </div>
+      <div class="sent" id="sent">
+        <h3 style="font:400 28px/1.15 var(--display);margin:0">Заявка отправлена</h3>
+        <p style="color:var(--mute);margin:6px 0 0">Так она придёт студии в мессенджер:</p>
+        <div class="msg" id="msg"></div>
+        <button class="btn ghost" type="button" id="again">Новая заявка</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap contacts">
+    <div class="cinfo">
+      <span class="pill">Контакты</span>
+      <h2 class="big">Студия NELIPA</h2>
+      <dl>
+        <dt>Адрес</dt><dd>Камышин, ул. Тургенева, 4б, 2 этаж</dd>
+        <dt>Телефон</dt><dd><a href="tel:+79047576671">+7 904 757-66-71</a></dd>
+        <dt>Часы</dt><dd>до 21:00</dd>
+        <dt>ВКонтакте</dt><dd><a href="https://vk.ru/nelipa.studio" target="_blank" rel="noopener">vk.ru/nelipa.studio</a></dd>
+        <dt>Онлайн-запись</dt><dd><a href="https://n1601968.yclients.com/" target="_blank" rel="noopener">YClients</a></dd>
+      </dl>
+    </div>
+    <div class="rating">
+      <h3 style="font:400 30px/1.15 var(--display);margin:0 0 8px">Как нас найти</h3>
+      <p>Камышин, улица Тургенева, 4б. Вход в студию на втором этаже.</p>
+      <a class="btn small" href="https://yandex.ru/maps/org/nelipa/112567554287/" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>NELIPA, студия лазерной эпиляции и массажа в Камышине</span>
+    <span>Основатель студии — Диана Нелипа</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn ghost" href="tel:+79047576671">Позвонить</a>
+  <a class="btn" href="#book" id="mbook">Записаться</a>
+</div>
+
+<script>
+const ZONES = {
+  w: [
+    ["arm","Подмышечные впадины",1100],["bd","Глубокое бикини",2300,"bik"],["bm","Среднее бикини",1800,"bik"],
+    ["shin","Голени или бёдра",2000,"leg"],["legs","Ноги полностью",3400,"leg"],
+    ["a34","Руки 3/4",1800,"hand"],["afull","Руки полностью",2400,"hand"],
+    ["neck","Шея",1300],["glut","Ягодицы",1300],["areo","Ареолы",800],["belly","Живот",1600],
+    ["line","Дорожка на животе",600],["low","Поясница",1300],["back","Спина полностью",2600]
+  ],
+  m: [
+    ["arm","Подмышечные впадины",1300],["bedge","Окантовка бороды",1000],["mous","Усы",700],["beard","Борода",2500],
+    ["side","Бакенбарды",700],["neck","Шея",1000],["a34","Руки 3/4",2000,"hand"],["afull","Руки полностью",2800,"hand"]
+  ]
+};
+const COMPLEX = [
+  {ids:["bd","arm","legs"], price:5800, name:"Бикини глубокое + подмышки + ноги полностью"},
+  {ids:["bd","arm","shin"], price:4800, name:"Бикини глубокое + подмышки + голени или бёдра"},
+  {ids:["bd","arm"], price:2900, name:"Бикини глубокое + подмышки"}
+];
+const ALL_BODY = 11000;
+// ready-made options shown while the sheet is empty
+const QUICK = {
+  w: [
+    {name:"Бикини глубокое + подмышки", note:"самый частый выбор", ids:["bd","arm"], price:2900},
+    {name:"Бикини + подмышки + голени", ids:["bd","arm","shin"], price:4800},
+    {name:"Бикини + подмышки + ноги полностью", ids:["bd","arm","legs"], price:5800},
+    {name:"Всё тело без ограничений", ids:["arm","bd","legs","afull","neck","glut","areo","belly","line","low","back"], price:11000}
+  ],
+  m: [
+    {name:"Борода", ids:["beard"], price:2500},
+    {name:"Окантовка бороды", ids:["bedge"], price:1000},
+    {name:"Подмышечные впадины", ids:["arm"], price:1300},
+    {name:"Руки полностью", ids:["afull"], price:2800}
+  ]
+};
+
+let g = "w";
+const picked = {w:new Set(), m:new Set()};
+const $ = id => document.getElementById(id);
+const rub = n => n.toLocaleString("ru-RU").replace(/ /g," ") + " ₽";
+
+function zoneList(){ return ZONES[g]; }
+function zone(id){ return zoneList().find(z=>z[0]===id); }
+
+function renderZones(){
+  $("zones").innerHTML = zoneList().map(z =>
+    `<button type="button" class="zone" data-id="${z[0]}" aria-pressed="${picked[g].has(z[0])}">${z[1]} <small>${rub(z[2])}</small></button>`
+  ).join("");
+}
+
+function calc(){
+  const sel = [...picked[g]];
+  const plain = sel.reduce((s,id)=>s+zone(id)[2],0);
+  let best = {total:plain, cx:null};
+  if(g==="w"){
+    for(const c of COMPLEX){
+      if(c.ids.every(id=>picked.w.has(id))){
+        const rest = sel.filter(id=>!c.ids.includes(id)).reduce((s,id)=>s+zone(id)[2],0);
+        const t = c.price + rest;
+        if(t < best.total) best = {total:t, cx:c};
+        break;
+      }
+    }
+    if(best.total > ALL_BODY) best = {total:ALL_BODY, cx:{name:"Всё тело без ограничений", all:true}};
+  }
+  return {sel, plain, ...best};
+}
+
+function render(){
+  const r = calc();
+  $("sheetSub").textContent = (g==="w" ? "для неё" : "для него") + ", лазерная эпиляция";
+  $("lines").innerHTML = r.sel.length
+    ? r.sel.map(id=>{const z=zone(id);return `<li><span>${z[1]}</span><span class="pr">${rub(z[2])}<button type="button" class="x" data-id="${id}" aria-label="Убрать ${z[1]}">×</button></span></li>`}).join("")
+    : `<li class="empty">Отметьте зоны выше, и здесь сложится ваш прайс. Или начните с готового варианта:</li>` +
+      QUICK[g].map(q=>`<li class="qpl"><button type="button" class="qp" data-ids="${q.ids.join(",")}"><span><b>${q.name}</b>${q.note?`<small>${q.note}</small>`:""}</span><span class="pr">${rub(q.price)}</span></button></li>`).join("");
+  $("totals").style.display = r.sel.length ? "" : "none";
+  const d = $("deal");
+  if(r.cx){
+    d.className = "deal on";
+    d.innerHTML = r.cx.all
+      ? `Выгоднее взять <b>«Всё тело без ограничений»</b>: ${rub(ALL_BODY)} вместо <s>${rub(r.plain)}</s>.`
+      : `Считаем комплексом <b>«${r.cx.name}»</b>: экономия ${rub(r.plain - r.total)}.`;
+  } else d.className = "deal";
+  $("sum").textContent = r.sel.length ? rub(r.total) : "—";
+  $("toBook").style.display = r.sel.length ? "" : "none";
+  $("mbook").textContent = r.sel.length ? "Записаться · " + rub(r.total) : "Записаться";
+  updateZline();
+}
+
+function updateZline(){
+  const r = calc(), zl = $("zline");
+  const laser = document.querySelector('#svc input[value="Лазерная эпиляция"]');
+  if(r.sel.length && laser.checked){
+    zl.className = "zline on";
+    zl.textContent = "Зоны: " + r.sel.map(id=>zone(id)[1].toLowerCase()).join(", ") + ". Ориентир: " + rub(r.total) + ".";
+  } else zl.className = "zline";
+}
+
+$("zones").addEventListener("click", e=>{
+  const b = e.target.closest(".zone"); if(!b) return;
+  const id = b.dataset.id, z = zone(id), s = picked[g];
+  if(s.has(id)) s.delete(id);
+  else {
+    if(z[3]) zoneList().forEach(o=>{ if(o[3]===z[3]) s.delete(o[0]); });
+    s.add(id);
+  }
+  renderZones(); render();
+});
+$("lines").addEventListener("click", e=>{
+  const q = e.target.closest(".qp");
+  if(q){ q.dataset.ids.split(",").forEach(id=>picked[g].add(id)); renderZones(); render(); return; }
+  const b = e.target.closest(".x"); if(!b) return;
+  picked[g].delete(b.dataset.id); renderZones(); render();
+});
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  g = b.dataset.g;
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  renderZones(); render();
+}));
+
+function checkSvc(v){
+  const i = document.querySelector(`#svc input[value="${v}"]`);
+  if(i){ i.checked = true; updateZline(); }
+}
+$("toBook").addEventListener("click", ()=>checkSvc("Лазерная эпиляция"));
+$("mbook").addEventListener("click", ()=>{ if(picked[g].size) checkSvc("Лазерная эпиляция"); });
+document.querySelectorAll("[data-book]").forEach(b=>b.addEventListener("click",()=>{
+  checkSvc(b.dataset.book);
+  $("book").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+}));
+$("svc").addEventListener("change", updateZline);
+
+$("form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const svc = [...document.querySelectorAll("#svc input:checked")].map(i=>i.value);
+  const phone = $("phone").value.replace(/\D/g,"");
+  const name = $("name").value.trim();
+  if(!svc.length){ $("err").textContent = "Выберите хотя бы одну услугу."; return; }
+  if(phone.length < 10){ $("err").textContent = "Введите телефон полностью, чтобы администратор мог связаться."; return; }
+  $("err").textContent = "";
+  const r = calc();
+  const day = document.querySelector('input[name=day]:checked').value;
+  const time = document.querySelector('input[name=time]:checked').value;
+  let text = "Новая заявка с сайта NELIPA\nУслуга: " + svc.join(", ");
+  if(svc.includes("Лазерная эпиляция") && r.sel.length){
+    text += "\nЗоны (" + (g==="w"?"для неё":"для него") + "): " + r.sel.map(id=>zone(id)[1].toLowerCase()).join(", ") + "\nОриентир по прайсу: " + rub(r.total);
+    if(r.cx) text += " (" + (r.cx.all ? "всё тело" : "комплекс") + ")";
+  }
+  text += "\nКогда: " + day + ", " + time + "\nКлиент: " + (name || "без имени") + ", " + $("phone").value.trim();
+  $("msg").textContent = text;
+  $("fbody").style.display = "none";
+  $("sent").className = "sent on";
+});
+$("again").addEventListener("click", ()=>{
+  $("fbody").style.display = "";
+  $("sent").className = "sent";
+  $("phone").value = ""; $("name").value = "";
+});
+
+// Prices: keep "1 500 ₽" on one line and draw ₽ with Jost (Forum has no ₽ glyph)
+const PRICE = /(\d[\d  ]*)\s?₽/g;
+function wrapR(root){
+  if(!root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => (n.nodeValue.includes("₽") && !n.parentElement.closest(".pz,script,style,#msg")) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+  });
+  const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(n=>{
+    const html = n.nodeValue.replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(PRICE, (m,num)=>`<span class="pz">${num.trim()} <span class="r">₽</span></span>`);
+    const t = document.createElement("template"); t.innerHTML = html;
+    n.replaceWith(t.content);
+  });
+}
+const _render = render;
+render = function(){ _render(); ["zones","lines","deal","sum","mbook"].forEach(id=>wrapR($(id))); };
+const _renderZones = renderZones;
+renderZones = function(){ _renderZones(); wrapR($("zones")); };
+
+// abonement table labels for the phone layout
+const heads = [...document.querySelectorAll(".abon thead th")].map(th=>th.textContent);
+document.querySelectorAll(".abon tbody tr").forEach(tr=>[...tr.cells].forEach((td,i)=>td.dataset.l = heads[i]));
+
+wrapR(document.body);
+renderZones(); render();
+</script>
+</body>
+</html>

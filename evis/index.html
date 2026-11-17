@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЭВИС — брови и ресницы в Балаково</title>
+<meta name="description" content="Студия ЭВИС в Балаково: архитектура и долговременная укладка бровей, ламинирование и наращивание ресниц. Без потока, с чаем и разговорами.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --powder:#F4ECEA;
+  --white:#FFFAF8;
+  --henna:#2A1E1C;
+  --brow:#6B3A2A;
+  --pencil:#D8486F;
+  --taupe:#9C8580;
+  --line:#E2D3CF;
+  --serif:"Literata", Georgia, serif;
+  --sans:"IBM Plex Sans", "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--powder);color:var(--henna);font:400 17px/1.6 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pencil);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+.test{font-size:13px;text-align:center;padding:7px 16px;color:var(--taupe);border-bottom:1px solid var(--line)}
+
+header .bar{display:flex;align-items:baseline;gap:28px;padding-top:22px;padding-bottom:22px}
+.logo{font:600 30px/1 var(--serif);text-decoration:none;letter-spacing:.01em}
+.logo small{font:400 14px/1 var(--sans);color:var(--taupe);margin-left:10px;letter-spacing:0}
+.nav{margin-left:auto;display:flex;gap:24px;font-size:15px}
+.nav a{text-decoration:none;color:var(--taupe)}
+.nav a:hover{color:var(--henna)}
+.tel{font-weight:500;text-decoration:none;white-space:nowrap}
+
+/* hero: the brow map */
+.hero{padding:28px 0 72px}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+h1{font:400 clamp(40px,5.6vw,74px)/1.04 var(--serif);margin:0 0 24px;letter-spacing:-.015em}
+.lead{font-size:18px;max-width:28em;margin:0 0 30px}
+.go{display:inline-block;font:500 16px/1 var(--sans);text-decoration:none;color:var(--white);background:var(--henna);padding:16px 26px;border-radius:40px}
+.go:hover{background:var(--brow)}
+.alt{margin-left:18px;font-size:16px;color:var(--henna)}
+
+.map{position:relative}
+.map svg{width:100%;height:auto;display:block;overflow:visible}
+.ml{stroke:var(--pencil);stroke-width:1.6;stroke-dasharray:6 6;fill:none}
+.draw{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.4s ease-out .3s forwards}
+.draw.d2{animation-delay:.6s}.draw.d3{animation-delay:.9s}
+.ml.draw{stroke-dasharray:600}
+@keyframes draw{to{stroke-dashoffset:0}}
+.pt{cursor:pointer}
+.pt circle{fill:var(--white);stroke:var(--pencil);stroke-width:2.5;transition:r .2s}
+.pt text{font:500 15px var(--sans);fill:var(--henna)}
+.pt:hover circle,.pt.on circle{fill:var(--pencil)}
+.pt:focus{outline:none}
+.pt:focus-visible circle{stroke-width:5}
+.explain{min-height:84px;margin:6px 0 0 0;padding-left:16px;border-left:2px solid var(--pencil);font-size:16px;max-width:34em}
+.explain b{font-weight:600}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.draw{animation:none;stroke-dashoffset:0}}
+
+section{padding:84px 0}
+h2{font:400 clamp(30px,3.6vw,46px)/1.1 var(--serif);margin:0 0 14px;letter-spacing:-.01em}
+.sub{color:#5E4A45;max-width:36em;margin:0 0 40px}
+
+/* time strips */
+.legend{font-size:13px;color:var(--taupe);margin:0 0 6px;padding-left:calc(38% + 16px)}
+.scale{position:relative;height:18px;border-left:1px solid var(--line)}
+.scale span{position:absolute;top:0;padding-left:5px;border-left:1px solid var(--line);height:18px;line-height:18px}
+.cat{font:italic 400 22px/1.2 var(--serif);margin:34px 0 6px;color:var(--brow)}
+.svc{display:grid;grid-template-columns:38% 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.svc .nm{font-weight:500}
+.svc .nm small{display:block;font-weight:400;color:var(--taupe);font-size:14px;line-height:1.4;margin-top:2px}
+.track{display:flex;flex-direction:column;gap:8px}
+.fill{display:block;height:20px;width:var(--w);background:var(--henna);border-radius:0 10px 10px 0}
+.fill.lash{background:var(--brow)}
+.fill.duo{background:linear-gradient(90deg,var(--henna) 0 46%,var(--brow) 46% 100%)}
+.tag{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;font-size:15px}
+.tag b{font-weight:600}
+.tag a{color:#A8284F;font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:1px}
+.tag a:hover{color:var(--henna)}
+.note{font-size:14px;color:var(--taupe);margin-top:22px}
+
+/* masters as prose list */
+.people{list-style:none;margin:0;padding:0}
+.people li{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.people .n{font:400 clamp(30px,4vw,48px)/1 var(--serif)}
+.people .r{color:#5E4A45}
+.people button{margin-left:auto;background:none;border:0;padding:0;color:#A8284F;font:500 15px var(--sans);cursor:pointer;border-bottom:1px solid currentColor}
+
+/* words of clients */
+.voice{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.big-q{font:italic 400 clamp(26px,3vw,36px)/1.35 var(--serif);margin:0}
+.big-q + p{color:var(--taupe);font-size:15px;margin:14px 0 0}
+.small-q{list-style:none;margin:0;padding:0}
+.small-q li{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.small-q q{font:400 18px/1.5 var(--serif)}
+.small-q span{display:block;color:var(--taupe);font-size:14px;margin-top:6px}
+.score{margin-top:30px;font-size:15px}
+.score b{font:600 34px/1 var(--serif);margin-right:8px}
+
+/* sentence form */
+.letter{background:var(--white);border-radius:6px 6px 40px 6px;padding:44px 48px;max-width:860px;box-shadow:0 1px 0 var(--line)}
+.letter p.s{font:400 clamp(22px,2.6vw,30px)/1.75 var(--serif);margin:0}
+.letter select,.letter input{font:inherit;color:var(--brow);background:transparent;border:0;border-bottom:2px dashed var(--pencil);padding:0 4px;margin:0 2px;border-radius:0;max-width:100%}
+.letter select{cursor:pointer;-webkit-appearance:none;appearance:none;padding-right:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D8486F' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 4px center}
+.letter input{width:8.5em}
+.letter input.ph{width:9.5em}
+.letter select:focus,.letter input:focus{outline:none;border-bottom-style:solid}
+.send{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}
+.err{color:#B2264F;font-size:15px;margin:0}
+.or{font-size:15px;color:var(--taupe)}
+.or a{color:var(--henna)}
+.sent{display:none;margin-top:28px;padding-top:24px;border-top:1px dashed var(--line)}
+.sent.on{display:block}
+.msg{white-space:pre-line;background:var(--powder);border-radius:14px 14px 14px 4px;padding:16px 18px;font-size:15px;max-width:520px;margin:12px 0 16px}
+
+/* place */
+.place{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+.addr{font:400 clamp(28px,3.4vw,44px)/1.15 var(--serif);margin:0 0 14px}
+.place p{margin:0 0 10px}
+footer{padding:28px 0 40px;color:var(--taupe);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.mbar{display:none}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .hero-grid,.voice,.place{grid-template-columns:1fr}
+  .map{max-width:560px}
+  .svc{grid-template-columns:1fr;gap:6px}
+  .legend{padding-left:0}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  body{font-size:16px}
+  .logo small{display:none}
+  .tel{margin-left:auto}
+  .hero{padding:10px 0 52px}
+  section{padding:58px 0}
+  .alt{display:block;margin:16px 0 0}
+  .letter{padding:28px 22px;border-radius:6px 6px 28px 6px}
+  .letter select{max-width:100%}
+  .people button{margin-left:0}
+  .tag{font-size:14px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:10px;padding:10px 18px calc(10px + env(safe-area-inset-bottom));background:rgba(244,236,234,.97);border-top:1px solid var(--line)}
+  .mbar a{flex:1;text-align:center;padding:14px 10px;border-radius:40px;text-decoration:none;font-weight:500}
+  .mbar a:first-child{flex:0 0 auto;padding:14px 20px;border:1.5px solid var(--henna)}
+  .mbar a:last-child{background:var(--henna);color:var(--white)}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+<div class="test">Тестовая версия сайта для студии ЭВИС. Услуги, цены и отзывы взяты из вашей записи в Dikidi.</div>
+
+<header><div class="wrap bar">
+  <a class="logo" href="#top">эвис<small>брови и ресницы, Балаково</small></a>
+  <nav class="nav" aria-label="Разделы"><a href="#time">цены</a><a href="#people">мастера</a><a href="#words">отзывы</a><a href="#book">запись</a></nav>
+  <a class="tel" href="tel:+79379783999">+7 937 978-39-99</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <h1>брови и ресницы, без спешки</h1>
+    <p class="lead">Работа на поток — не про нас. На каждую выделяем столько времени, сколько нужно: подбираем форму, болтаем, пьём чай или кофе.</p>
+    <a class="go" href="#book">записаться</a><a class="alt" href="#time">посмотреть цены</a>
+  </div>
+
+  <div class="map">
+    <svg viewBox="0 0 560 360" role="img" aria-labelledby="mapt">
+      <title id="mapt">Разметка брови: начало, излом и кончик строятся от крыла носа</title>
+      <!-- brow -->
+      <path class="draw" d="M150 132 C200 96 300 78 372 92 C404 98 430 110 452 128" stroke="#6B3A2A" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <!-- eye -->
+      <path class="draw d2" d="M168 214 C220 178 312 176 380 210" stroke="#2A1E1C" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path class="draw d2" d="M176 220 C240 248 318 246 376 214" stroke="#2A1E1C" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="276" cy="214" r="21" fill="none" stroke="#2A1E1C" stroke-width="2"/>
+      <circle cx="276" cy="214" r="8" fill="#2A1E1C"/>
+      <g stroke="#2A1E1C" stroke-width="2.5" stroke-linecap="round">
+        <path d="M200 198 l-6 -16M232 186 l-3 -18M264 182 l0 -18M296 182 l3 -18M328 188 l6 -17M356 198 l9 -15"/>
+      </g>
+      <!-- nose wing -->
+      <path class="draw d3" d="M120 320 C110 300 124 288 142 292" stroke="#2A1E1C" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- mapping threads from nose wing (140,300) -->
+      <path class="ml draw" d="M140 300 L140 60"/>
+      <path class="ml draw d2" d="M140 300 L322 40"/>
+      <path class="ml draw d3" d="M140 300 L500 106"/>
+      <!-- points -->
+      <g class="pt" tabindex="0" role="button" data-k="start" aria-label="Начало брови"><circle cx="150" cy="132" r="11"/><text x="80" y="122">начало</text></g>
+      <g class="pt" tabindex="0" role="button" data-k="arch" aria-label="Излом брови"><circle cx="300" cy="72" r="11"/><text x="232" y="52">излом</text></g>
+      <g class="pt" tabindex="0" role="button" data-k="tail" aria-label="Кончик брови"><circle cx="452" cy="128" r="11"/><text x="474" y="134">кончик</text></g>
+    </svg>
+    <p class="explain" id="explain" aria-live="polite"><b>Так мастер строит форму.</b> Нажмите на точку, чтобы узнать, зачем она.</p>
+  </div>
+</div></section>
+
+<section id="time" style="padding-top:20px"><div class="wrap">
+  <h2>сколько стоит и сколько займёт</h2>
+  <p class="sub">Длина полосы — время визита. Цена «от» зависит от густоты и задачи, точную назовёт мастер, когда посмотрит.</p>
+  <div class="legend" aria-hidden="true"><div class="scale"><span style="left:0">0</span><span style="left:40%">1 час</span><span style="left:80%">2 часа</span></div></div>
+  <div id="list"></div>
+  <p class="note">Если хотите и брови, и ламинирование, выгоднее взять комплекс: «Будь собой» стоит 2 300 ₽ вместо 2 500 ₽ по отдельности.</p>
+</div></section>
+
+<section id="people" style="background:var(--white)"><div class="wrap">
+  <h2>кто будет делать</h2>
+  <p class="sub">Четыре мастера, у всех оценка 5,0 в Dikidi. Можно выбрать мастера или довериться администратору.</p>
+  <ul class="people">
+    <li><span class="n">Эвелина</span><span class="r">руководитель и топ-мастер, 56 отзывов</span><button type="button" data-m="Эвелина">записаться к Эвелине</button></li>
+    <li><span class="n">Софья</span><span class="r">топ-мастер, 47 отзывов</span><button type="button" data-m="Софья">записаться к Софье</button></li>
+    <li><span class="n">Полина</span><span class="r">мастер, 14 отзывов</span><button type="button" data-m="Полина">записаться к Полине</button></li>
+    <li><span class="n">Карина</span><span class="r">мастер, 5 отзывов</span><button type="button" data-m="Карина">записаться к Карине</button></li>
+  </ul>
+</div></section>
+
+<section id="words" style="background:var(--white)"><div class="wrap voice">
+  <div>
+    <h2>что говорят после</h2>
+    <p class="big-q">«Очень понравилось, как грамотно она подобрала форму и цвет — результат превзошёл все ожидания. Отдельный лайк за вкусный кофе.»</p>
+    <p>Алина, архитектура бровей у Эвелины</p>
+    <p class="score"><b>5,0</b>88 оценок на Яндекс Картах, 132 в Dikidi</p>
+  </div>
+  <ul class="small-q">
+    <li><q>Ресницы мои тяжёлые, но она с ними справляется, и получается такая красота.</q><span>Аида, ламинирование ресниц</span></li>
+    <li><q>Всегда прислушивается к пожеланиям, учитывает индивидуальные особенности. Всегда выходишь красоткой!</q><span>Мария, комплекс «Сияй»</span></li>
+    <li><q>Девчата как всегда на высоте. Бровки — пушка-бомба.</q><span>Ксения, долговременная укладка</span></li>
+  </ul>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <h2>напишите нам, как подруге</h2>
+  <p class="sub">Заполните пропуски, и заявка придёт студии в мессенджер. Администратор ответит и подтвердит время.</p>
+  <form class="letter" id="form" novalidate>
+    <p class="s">Здравствуйте! Хочу на
+      <select id="svc" aria-label="Услуга"></select>
+      к <select id="mst" aria-label="Мастер"><option>любому мастеру</option><option value="Эвелина">Эвелине</option><option value="Софья">Софье</option><option value="Полина">Полине</option><option value="Карина">Карине</option></select>,
+      <select id="day" aria-label="День"><option>на этой неделе</option><option>сегодня</option><option>завтра</option><option>в выходные</option></select>,
+      лучше <select id="tm" aria-label="Время"><option>днём</option><option>утром</option><option>вечером</option></select>.
+      Меня зовут <input id="name" type="text" placeholder="имя" aria-label="Имя" autocomplete="given-name">,
+      мой телефон <input id="phone" class="ph" type="tel" placeholder="+7" aria-label="Телефон" autocomplete="tel">.
+    </p>
+    <div class="send">
+      <button class="go" type="submit" style="border:0;cursor:pointer">отправить заявку</button>
+      <p class="err" id="err" role="alert"></p>
+      <span class="or">или выберите время сами в <a href="https://dikidi.ru/1574744" target="_blank" rel="noopener">Dikidi</a></span>
+    </div>
+    <div class="sent" id="sent">
+      <b>Заявка отправлена.</b> Так её увидит студия в мессенджере:
+      <div class="msg" id="msg"></div>
+      <button type="button" id="again" class="alt" style="margin:0;background:none;border:0;padding:0;cursor:pointer;font:inherit;text-decoration:underline">написать ещё одну</button>
+    </div>
+  </form>
+</div></section>
+
+<section id="place"><div class="wrap place">
+  <div>
+    <p class="addr">Балаково, улица Ленина, 110, офис 1</p>
+    <p><a href="tel:+79379783999">+7 937 978-39-99</a></p>
+    <p><a href="https://yandex.ru/maps/org/evis/143148102108/" target="_blank" rel="noopener">открыть на Яндекс Картах</a></p>
+  </div>
+  <p style="color:#5E4A45;max-width:28em">Чай, кофе и водичка — само собой. Приходите чуть раньше, если хотите спокойно выбрать форму и цвет.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>студия красоты эвис</span><span>Балаково, Ленина, 110</span></div></footer>
+<div class="mbar"><a href="tel:+79379783999">позвонить</a><a href="#book">записаться</a></div>
+
+<script>
+// группа: 0 брови, 1 ресницы, 2 комплексы, 3 дополнительно; [название, пояснение, цена, «от», минуты, тип полосы]
+const CATS = ["брови","ресницы","комплексы","ещё"];
+const S = [
+ [0,"Архитектура бровей","форма, окрашивание краской или хной, увлажнение, коррекция",1100,1,60],
+ [0,"Долговременная укладка бровей","ботокс-увлажнение и коррекция, без окрашивания",1200,1,60],
+ [0,"Полный комплекс укладки","укладка, окрашивание, ботокс-увлажнение, коррекция",1600,1,60],
+ [0,"Окрашивание бровей","без коррекции, краской или хной",800,1,30],
+ [0,"Коррекция бровей","воском или пинцетом",500,1,30],
+ [1,"Ламинирование ресниц","изгиб, окрашивание, ботокс- и церамидный уход",1400,1,60,"lash"],
+ [1,"Наращивание, классика 1,5D","",1800,0,120,"lash"],
+ [1,"Наращивание, средний объём 2D–3D","",2000,0,150,"lash"],
+ [1,"Наращивание, максимальный объём 3,5D–5D","лучи и мокрый эффект",2300,0,150,"lash"],
+ [1,"Окрашивание ресниц","держится до 25 дней",300,1,15,"lash"],
+ [1,"Снятие наращивания","",300,0,15,"lash"],
+ [2,"«Будь собой»","архитектура бровей и ламинирование ресниц",2300,1,130,"duo"],
+ [2,"«Сияй»","долговременная укладка с окрашиванием и ламинирование ресниц",2800,1,140,"duo"],
+ [3,"СПА для рук","парафинотерапия, пока идёт процедура",200,1,10]
+];
+const MAX = 150;
+const $ = id => document.getElementById(id);
+const rub = n => n.toLocaleString("ru-RU").replace(/ /g," ") + " ₽";
+const dur = m => m>=60 ? (Math.floor(m/60)+" ч"+(m%60?" "+m%60+" мин":"")) : m+" мин";
+
+$("list").innerHTML = CATS.map((c,ci)=>`<h3 class="cat">${c}</h3>`+S.filter(s=>s[0]===ci).map(s=>{
+  const w = Math.max(6, Math.round(s[5]/MAX*100));
+  const i = S.indexOf(s);
+  return `<div class="svc"><div class="nm">${s[1]}${s[2]?`<small>${s[2]}</small>`:""}</div>
+  <div class="track" style="--w:${w}%"><span class="fill ${s[6]||""}"></span><span class="tag"><span><b>${s[4]?"от ":""}${rub(s[3])}</b>, ${dur(s[5])}</span><a href="#book" data-i="${i}">хочу</a></span></div></div>`;
+}).join("")).join("");
+
+$("svc").innerHTML = S.map((s,i)=>`<option value="${i}">${s[1].replace(/[«»]/g,"")==s[1]?s[1].toLowerCase():"комплекс "+s[1]}</option>`).join("") + `<option value="-1">консультацию</option>`;
+fit($("svc"));
+
+$("list").addEventListener("click", e=>{ const a=e.target.closest("[data-i]"); if(!a) return; $("svc").value=a.dataset.i; fit($("svc")); });
+document.querySelectorAll("[data-m]").forEach(b=>b.addEventListener("click",()=>{
+  $("mst").value=b.dataset.m; fit($("mst"));
+  $("book").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}));
+// let inline selects size to their text, so the sentence reads naturally
+function fit(sel){
+  const m=document.createElement("span"); m.style.cssText="position:absolute;visibility:hidden;white-space:nowrap;font:"+getComputedStyle(sel).font;
+  m.textContent=sel.options[sel.selectedIndex].text; document.body.appendChild(m);
+  sel.style.width=(m.offsetWidth+30)+"px"; m.remove();
+}
+document.querySelectorAll(".letter select").forEach(s=>{ fit(s); s.addEventListener("change",()=>fit(s)); });
+window.addEventListener("load",()=>document.querySelectorAll(".letter select").forEach(fit));
+
+// brow map points
+const TXT = {
+  start:"<b>Начало</b> — на линии от крыла носа строго вверх. Если начать брови ближе, лицо кажется хмурым, дальше — взгляд «разъезжается».",
+  arch:"<b>Излом</b> — на линии от крыла носа через центр зрачка. Здесь бровь поднимается выше всего и открывает взгляд.",
+  tail:"<b>Кончик</b> — на линии от крыла носа через внешний уголок глаза. Тогда бровь не «опускает» лицо и не выглядит обрезанной."
+};
+document.querySelectorAll(".pt").forEach(p=>{
+  const show=()=>{ document.querySelectorAll(".pt").forEach(x=>x.classList.toggle("on",x===p)); $("explain").innerHTML=TXT[p.dataset.k]; };
+  p.addEventListener("click",show);
+  p.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); show(); } });
+});
+
+$("form").addEventListener("submit", e=>{
+  e.preventDefault();
+  const phone=$("phone").value.replace(/\D/g,"");
+  if(phone.length<10){ $("err").textContent="Допишите телефон полностью, чтобы администратор мог ответить."; $("phone").focus(); return; }
+  $("err").textContent="";
+  const i=+$("svc").value, s=S[i];
+  let t="Новая заявка с сайта ЭВИС\nУслуга: "+(i<0?"консультация":s[1]+(s[0]===2?" (комплекс)":""));
+  if(s) t+="\nОриентир: "+(s[4]?"от ":"")+rub(s[3])+", "+dur(s[5]);
+  t+="\nМастер: "+$("mst").value+"\nКогда: "+$("day").value+", "+$("tm").value+"\nКлиент: "+($("name").value.trim()||"без имени")+", "+$("phone").value.trim();
+  $("msg").textContent=t; $("sent").className="sent on";
+});
+$("again").addEventListener("click",()=>{ $("sent").className="sent"; $("phone").value=""; $("name").value=""; });
+</script>
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tatibounty — студия маникюра и эстетики в Камышине | Советская, 21</title>
+<meta name="description" content="Студия маникюра и педикюра Tatibounty в Камышине: идеальное выравнивание, покрытие от 3 недель, стерильность по СанПиН. Запись онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --surface-alt: #F3EFEA;
+  --ink: #1F1D1B;
+  --ink-soft: #5C5752;
+  --ink-muted: #8F8881;
+  --line: #E8E2D9;
+  --accent: #9E3D52; /* благородный ягодно-винный */
+  --accent-soft: #F7E8EB;
+  --accent-hover: #822F42;
+  --nude: #E5C3B3;
+  --gold: #C49859;
+  --display: "Unbounded", "Segoe UI", sans-serif;
+  --text: "Onest", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--text);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Верхняя плашка для владельца */
+.demo-banner {
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.demo-banner a {
+  color: var(--nude);
+  text-decoration: underline;
+}
+
+/* Хедер */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.logo {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--accent);
+}
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+.meta-item b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.meta-item span {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+.btn-line {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-line:hover {
+  background: var(--surface-alt);
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
+/* Герой-секция */
+.hero {
+  padding: 60px 0 70px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 22px;
+}
+.hero-desc {
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.stat-val {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.stat-val .star {
+  color: #F59E0B;
+  font-size: 26px;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+/* Интерактивная карточка в Hero */
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 16px 40px -10px rgba(31, 29, 27, 0.08);
+  position: relative;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.card-title {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+}
+.quick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.quick-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--surface-alt);
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.quick-item:hover, .quick-item.active {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+.quick-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.quick-meta {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.quick-price {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Секция услуг и калькулятора */
+section {
+  padding: 80px 0;
+}
+.section-head {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 48px;
+}
+.section-tag {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.section-desc {
+  color: var(--ink-soft);
+  font-size: 17px;
+}
+
+/* Сетка услуг */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -8px rgba(31, 29, 27, 0.08);
+}
+.service-top h3 {
+  font-family: var(--display);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.service-desc {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.service-features {
+  list-style: none;
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.service-features li::before {
+  content: "✓ ";
+  color: var(--accent);
+  font-weight: 700;
+}
+.service-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.price-tag {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Мастера */
+.masters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.master-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+}
+.master-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  border: 3px solid var(--surface);
+  box-shadow: 0 4px 16px rgba(158, 61, 82, 0.15);
+}
+.master-card h3 {
+  font-family: var(--display);
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+.master-role {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.master-quote {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Отзывы */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.author-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.review-text {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Форма заявки */
+.booking-section {
+  background: var(--surface);
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  padding: 56px;
+  box-shadow: 0 20px 50px -10px rgba(31, 29, 27, 0.05);
+}
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-family: var(--text);
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--ink);
+  transition: border-color 0.2s;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+/* Футер */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Адаптив под мобилки */
+@media (max-width: 860px) {
+  .hero-grid, .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .header-meta {
+    display: none;
+  }
+  .masters-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-section {
+    padding: 32px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <span>💡 Это бесплатный тестовый вариант страницы заявок для студии <b>Tatibounty</b> (Камышин)</span>
+  <a href="https://yandex.ru/maps/org/tatibounty/136271769067/" target="_blank">Карточка на Яндекс.Картах ↗</a>
+</div>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="#" class="logo">Tati<span>bounty</span></a>
+    
+    <div class="header-meta">
+      <div class="meta-item">
+        <b>Советская, 21</b>
+        <span>Камышин, центр</span>
+      </div>
+      <div class="meta-item">
+        <b>10:00 – 20:00</b>
+        <span>Ежедневно, по записи</span>
+      </div>
+    </div>
+
+    <a href="#booking" class="btn">Онлайн-запись</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-pill">
+          <span>★ 4.8 рейтинг на Яндекс.Картах</span>
+        </div>
+        <h1>Безупречный маникюр и педикюр в самом центре Камышина</h1>
+        <p class="hero-desc">
+          Стерильность по СанПиН в 3 этапа, авторские дизайны и стойкое покрытие, которое держится от 3 недель без сколов.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn">Записаться со скидкой 10%</a>
+          <a href="tel:+79669344555" class="btn btn-line">+7 (966) 934-45-55</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val">4.8 <span class="star">★</span></div>
+            <div class="stat-label">Оценка гостей на Картах</div>
+          </div>
+          <div>
+            <div class="stat-val">3+ нед.</div>
+            <div class="stat-label">Стойкость покрытия</div>
+          </div>
+          <div>
+            <div class="stat-val">100%</div>
+            <div class="stat-label">Стерильный крафт-пакет</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Быстрый выбор услуги -->
+      <div class="hero-card">
+        <div class="card-header">
+          <div class="card-title">Популярные комплексы</div>
+          <span style="font-size:13px; color:var(--accent); font-weight:600;">Советская, 21</span>
+        </div>
+        <div class="quick-list">
+          <div class="quick-item active" onclick="selectService('Комплекс «Все включено»', 1700)">
+            <div>
+              <div class="quick-name">Снятие + Маникюр + Гель-лак</div>
+              <div class="quick-meta">Выравнивание + легкий дизайн • 1.5 ч</div>
+            </div>
+            <div class="quick-price">1 700 ₽</div>
+          </div>
+
+          <div class="quick-item" onclick="selectService('Smart-педикюр с покрытием', 2100)">
+            <div>
+              <div class="quick-name">Smart-педикюр с покрытием</div>
+              <div class="quick-meta">Обработка стопы + пальчики • 1.5 ч</div>
+            </div>
+            <div class="quick-price">2 100 ₽</div>
+          </div>
+
+          <div class="quick-item" onclick="selectService('Наращивание ногтей', 2500)">
+            <div>
+              <div class="quick-name">Наращивание + Маникюр</div>
+              <div class="quick-meta">Гель / полигель + покрытие • 2.5 ч</div>
+            </div>
+            <div class="quick-price">2 500 ₽</div>
+          </div>
+        </div>
+
+        <a href="#booking" class="btn" style="width:100%;" id="hero-select-btn">Выбрать это время</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги и цены -->
+  <section style="background: var(--surface-alt);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Прайс-лист</span>
+        <h2 class="section-title">Честные цены без доплат</h2>
+        <p class="section-desc">В каждый комплекс уже включены стерильные расходники, снятие старого материала и уходовое масло.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-top">
+            <h3>Комплексный маникюр</h3>
+            <p class="service-desc">Чистый комбинированный или аппаратный маникюр с укреплением ногтевой пластины.</p>
+            <ul class="service-features">
+              <li>Снятие покрытия другого мастера</li>
+              <li>Идеальный срез кутикулы</li>
+              <li>Выравнивание базой/гелем</li>
+              <li>Покрытие под кутикулу</li>
+            </ul>
+          </div>
+          <div class="service-bottom">
+            <span class="price-tag">от 1 600 ₽</span>
+            <a href="#booking" class="btn btn-line" onclick="selectService('Комплексный маникюр', 1600)">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="service-card" style="border: 2px solid var(--accent);">
+          <div class="service-top">
+            <div style="font-size:12px; font-weight:700; color:var(--accent); margin-bottom:4px; text-transform:uppercase;">Хит студии</div>
+            <h3>Smart-педикюр</h3>
+            <p class="service-desc">Аппаратная обработка стопы инновационными смарт-дисками без распаривания и лезвий.</p>
+            <ul class="service-features">
+              <li>Гладкая кожа стоп до 4 недель</li>
+              <li>Удаление натоптышей и трещин</li>
+              <li>Обработка пальчиков и кутикулы</li>
+              <li>Стойкое покрытие гель-лак</li>
+            </ul>
+          </div>
+          <div class="service-bottom">
+            <span class="price-tag">от 2 100 ₽</span>
+            <a href="#booking" class="btn" onclick="selectService('Smart-педикюр', 2100)">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <h3>Наращивание и дизайн</h3>
+            <p class="service-desc">Моделирование любой длины и формы, френч, стемпинг, градиент и ручная роспись.</p>
+            <ul class="service-features">
+              <li>Арочное моделирование</li>
+              <li>Ремонт и донаращивание углов</li>
+              <li>Авторские трендовые дизайны</li>
+              <li>Гарантия на прочность</li>
+            </ul>
+          </div>
+          <div class="service-bottom">
+            <span class="price-tag">от 2 400 ₽</span>
+            <a href="#booking" class="btn btn-line" onclick="selectService('Наращивание и дизайн', 2400)">Выбрать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Мастера (на основе реальных отзывов) -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Команда</span>
+        <h2 class="section-title">Мастера, к которым возвращаются</h2>
+        <p class="section-desc">Опытные специалисты студии Tatibounty, отмеченные благодарностями в отзывах на Картах.</p>
+      </div>
+
+      <div class="masters-grid">
+        <div class="master-card">
+          <div class="master-avatar">А</div>
+          <h3>Анастасия</h3>
+          <div class="master-role">Топ-мастер по маникюру</div>
+          <p class="master-quote">«Профессионал своего дела: аккуратная работа, всегда предложит интересные идеи для дизайна.»</p>
+        </div>
+
+        <div class="master-card">
+          <div class="master-avatar" style="background:#FDF2E9; color:#C49859;">Т</div>
+          <h3>Татьяна</h3>
+          <div class="master-role">Ведущий специалист</div>
+          <p class="master-quote">«Огромное спасибо за авторские дизайны и качественную носку. Всегда теплая и уютная атмосфера.»</p>
+        </div>
+
+        <div class="master-card">
+          <div class="master-avatar" style="background:#EEF2FF; color:#4F46E5;">С</div>
+          <h3>София</h3>
+          <div class="master-role">Мастер эстетики и педикюра</div>
+          <p class="master-quote">«Внимательный мастер, покрытие без затеков, держится идеально. Стерильность на 100%.»</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Реальные отзывы с Яндекс Карт -->
+  <section style="background: var(--surface-alt);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-tag">Отзывы</span>
+        <h2 class="section-title">Что говорят наши клиентки</h2>
+        <p class="section-desc">Реальные отзывы гостей из карточки Tatibounty на Яндекс.Картах (Камышин).</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-author">
+            <div class="author-avatar">НС</div>
+            <div>
+              <div class="author-name">Наталья Сыроежкина</div>
+              <div style="font-size:12px; color:#F59E0B;">★★★★★ Яндекс Карты</div>
+            </div>
+          </div>
+          <p class="review-text">
+            «Хочу выразить благодарность мастеру Анастасии за отличное обслуживание! Настоящий профессионал: аккуратно, качественно и предложила классные идеи для дизайна. Отдельно отмечу приятную атмосферу: чувствуешь себя комфортно и расслабленно!»
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-author">
+            <div class="author-avatar">АД</div>
+            <div>
+              <div class="author-name">Анна Дорожкина</div>
+              <div style="font-size:12px; color:#F59E0B;">★★★★★ Яндекс Карты</div>
+            </div>
+          </div>
+          <p class="review-text">
+            «Отличный салон, крутые мастера. Татьяне огромное спасибо за ее дизайны и качественную работу. Очень добрые девочки, всегда перезапишут и никогда не откажут. Уютно, чисто, хорошая атмосфера.»
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-author">
+            <div class="author-avatar">АС</div>
+            <div>
+              <div class="author-name">Асёна Самойлова</div>
+              <div style="font-size:12px; color:#F59E0B;">★★★★★ Яндекс Карты</div>
+            </div>
+          </div>
+          <p class="review-text">
+            «Уже достаточно давно делаю маникюр у Софии. В салоне чисто и аккуратно, чувствуется, что к стерильности относятся очень серьёзно. Покрытие ровное, без затеков, держится отлично, довольна на 100%!»
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Бронирование / Контакты -->
+  <section id="booking">
+    <div class="wrap">
+      <div class="booking-section">
+        <div class="booking-grid">
+          <div>
+            <span class="section-tag">Быстрая запись</span>
+            <h2 class="section-title" style="margin-bottom:18px;">Запишитесь на удобное время</h2>
+            <p style="color:var(--ink-soft); margin-bottom:28px;">
+              Оставьте номер телефона — администратор Tatibounty свяжется с вами в течение 10 минут в мессенджере и подберет окошко к нужному мастеру.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="font-size:20px;">📍</span>
+                <div>
+                  <b>Камышин, Советская улица, 21</b>
+                  <div style="color:var(--ink-muted); font-size:14px;">Центр города, удобная парковка</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="font-size:20px;">⏱</span>
+                <div>
+                  <b>Ежедневно: 10:00 – 20:00</b>
+                  <div style="color:var(--ink-muted); font-size:14px;">Принимаем строго по предварительной записи</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <span style="font-size:20px;">📞</span>
+                <div>
+                  <b>+7 (966) 934-45-55</b>
+                  <div style="color:var(--ink-muted); font-size:14px;">Звонки, WhatsApp, Telegram</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Форма -->
+          <form onsubmit="handleOrder(event)" style="background:var(--surface-alt); padding:32px; border-radius:20px;">
+            <div class="form-group">
+              <label>Выбранная услуга</label>
+              <input type="text" id="form-service" class="form-control" value="Снятие + Маникюр + Гель-лак" readonly>
+            </div>
+
+            <div class="form-group">
+              <label>Ваше имя</label>
+              <input type="text" id="form-name" class="form-control" placeholder="Например, Елена" required>
+            </div>
+
+            <div class="form-group">
+              <label>Телефон для подтверждения</label>
+              <input type="tel" id="form-phone" class="form-control" placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <button type="submit" class="btn" style="width:100%; padding:16px; font-size:16px; margin-top:10px;">
+              Отправить заявку мастеру
+            </button>
+            <div style="font-size:12px; color:var(--ink-muted); text-align:center; margin-top:12px;">
+              Заявка придёт администратору прямо в мессенджер
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <b>Tatibounty</b> © 2026. Студия маникюра и эстетики. Камышин, ул. Советская, 21.
+    </div>
+    <div style="display:flex; gap:18px;">
+      <a href="tel:+79669344555" style="color:var(--ink); text-decoration:none; font-weight:600;">+7 (966) 934-45-55</a>
+      <a href="https://wa.me/79669344555" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600;">WhatsApp ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function selectService(name, price) {
+  document.getElementById('form-service').value = name + ' (' + price + ' ₽)';
+  const quickItems = document.querySelectorAll('.quick-item');
+  quickItems.forEach(el => el.classList.remove('active'));
+}
+
+function handleOrder(e) {
+  e.preventDefault();
+  const service = document.getElementById('form-service').value;
+  const name = document.getElementById('form-name').value;
+  const phone = document.getElementById('form-phone').value;
+  
+  const text = encodeURIComponent('Здравствуйте! Хочу записаться в Tatibounty на услугу: ' + service + '. Моё имя: ' + name + ', тел: ' + phone);
+  // Перенаправляем на WhatsApp студии по их номеру
+  window.open('https://wa.me/79669344555?text=' + text, '_blank');
+}
+</script>
+
+</body>
+</html>

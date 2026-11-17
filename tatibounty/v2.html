@@ -117,23 +117,34 @@ header {
   color: var(--ink-muted);
   font-size: 12px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
 .phone-link {
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   font-size: 15px;
   white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.phone-link:hover {
+  color: var(--burgundy);
 }
 .btn-head {
   background: var(--burgundy);
   color: #fff;
-  padding: 13px 24px;
+  padding: 12px 22px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   border-radius: 4px;
   transition: background 0.2s;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .btn-head:hover {
   background: var(--burgundy-dark);
@@ -625,7 +636,12 @@ footer {
   gap: 16px;
 }
 
-/* Адаптив под мобильные телефоны */
+/* Адаптив под разные экраны */
+@media (max-width: 1040px) {
+  .header-info {
+    display: none;
+  }
+}
 @media (max-width: 860px) {
   .hero-grid, .reviews-grid, .booking-layout {
     grid-template-columns: 1fr;
@@ -634,15 +650,30 @@ footer {
   .team-grid {
     grid-template-columns: 1fr;
   }
-  .header-info {
-    display: none;
-  }
   .price-row {
     grid-template-columns: 1fr auto;
     gap: 14px;
   }
   .price-col-action {
     grid-column: 1 / -1;
+  }
+}
+@media (max-width: 600px) {
+  .header-bar {
+    height: 70px;
+  }
+  .brand-name {
+    font-size: 26px;
+  }
+  .brand-tag {
+    font-size: 9px;
+  }
+  .phone-link {
+    display: none;
+  }
+  .btn-head {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 }
 </style>
@@ -670,10 +701,12 @@ footer {
         <b>10:00 – 20:00</b>
         <span>Ежедневно, по записи</span>
       </div>
-      <a href="tel:+79669344555" class="phone-link">+7 (966) 934-45-55</a>
     </div>
 
-    <a href="#booking" class="btn-head">Онлайн-запись</a>
+    <div class="header-actions">
+      <a href="tel:+79669344555" class="phone-link">+7 (966) 934-45-55</a>
+      <a href="#booking" class="btn-head">Онлайн-запись</a>
+    </div>
   </div>
 </header>
 

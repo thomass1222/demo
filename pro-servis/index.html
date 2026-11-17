@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>PRO-Сервис — Сервисный центр по ремонту техники в Пензе | просп. Строителей, 5</title>
+<meta name="description" content="Сервисный центр PRO-Сервис в Пензе. Ремонт телевизоров, смартфонов, кофемашин и бытовой техники. Выезд мастера на дом, оригинальные запчасти, гарантия до 1 года. Рейтинг 5.0 на Яндекс.Картах.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text: #0F172A;
+  --text-muted: #475569;
+  --text-light: #64748B;
+  --border: #E2E8F0;
+  --brand: #2563EB;
+  --brand-hover: #1D4ED8;
+  --brand-light: #EFF6FF;
+  --accent: #059669;
+  --accent-light: #ECFDF5;
+  --sans: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Демо плашка */
+.top-notice {
+  background: #0F172A;
+  color: #E2E8F0;
+  font-size: 13px;
+  padding: 10px 16px;
+  text-align: center;
+}
+.top-notice b { color: #FFFFFF; }
+.top-notice a {
+  color: #60A5FA;
+  margin-left: 8px;
+  text-decoration: underline;
+}
+
+/* Шапка */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo-block {
+  text-decoration: none;
+}
+.logo-title {
+  font-family: var(--display);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.logo-badge {
+  background: var(--brand);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.logo-caption {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+}
+.header-item b {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+}
+.header-item span {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.phone-head {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.phone-head:hover { color: var(--brand); }
+.btn-head {
+  background: var(--brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-head:hover { background: var(--brand-hover); }
+
+/* Главный блок */
+.hero-section {
+  padding: 56px 0 44px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.hero-content {
+  max-width: 780px;
+}
+.rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-light);
+  color: var(--brand-hover);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.rating-pill span { color: #D97706; }
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.hero-text {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--brand-hover); }
+.btn-secondary {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btn-secondary:hover { background: #E2E8F0; }
+
+/* Быстрые факты сервиса */
+.facts-strip {
+  padding: 36px 0;
+}
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.fact-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.fact-value {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.fact-desc {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.45;
+}
+
+/* Прейскурант и услуги */
+.section-wrapper {
+  padding: 44px 0 54px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.section-desc {
+  font-size: 15px;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+
+.price-list {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  gap: 20px;
+}
+.price-row:last-child {
+  border-bottom: none;
+}
+.service-info {
+  flex: 1;
+}
+.service-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.service-detail {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+.service-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.service-cost {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.service-btn {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.service-btn:hover {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+/* Мастера сервиса */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+}
+.team-role {
+  font-size: 12px;
+  color: var(--brand);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.team-name {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.team-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Реальные отзывы */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.review-author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.review-stars {
+  color: #D97706;
+  font-size: 13px;
+}
+.review-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Блок заявки и контактов */
+.cta-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+  margin: 32px 0 60px;
+}
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: center;
+}
+.cta-title {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.cta-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+.contact-rows b { color: var(--text); }
+.contact-rows span { color: var(--text-light); }
+
+.action-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+}
+.action-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.action-card-text {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+.btn-whatsapp {
+  background: #16A34A;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.15s;
+}
+.btn-whatsapp:hover { background: #15803D; }
+.action-phone {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+.action-phone:hover { color: var(--brand); }
+
+/* Подвал */
+footer {
+  padding: 24px 0 40px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+}
+
+/* Мобильный адаптив */
+@media (max-width: 960px) {
+  .header-center { display: none; }
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .cta-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  .header-row { height: 58px; }
+  .phone-head { display: none; }
+  .btn-head { padding: 8px 14px; font-size: 12px; }
+  .hero-section { padding: 36px 0 28px; }
+  .hero-title { font-size: 26px; }
+  .hero-text { font-size: 15px; }
+  .facts-grid { grid-template-columns: 1fr; }
+  .price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+  .service-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .cta-box { padding: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-notice">
+  Демонстрационная страница онлайн-заявок для сервисного центра <b>PRO-Сервис</b> (Пенза, просп. Строителей, 5)
+  <a href="https://yandex.ru/maps/org/pro_servis/1083393652/" target="_blank">Карточка на Яндекс.Картах (5.0 ★)</a>
+</div>
+
+<header>
+  <div class="wrap header-row">
+    <a href="#" class="logo-block">
+      <div class="logo-title">
+        PRO-Сервис
+        <span class="logo-badge">Сервис</span>
+      </div>
+      <div class="logo-caption">Ремонт техники и электроники в Пензе</div>
+    </a>
+    
+    <div class="header-center">
+      <div class="header-item">
+        <b>просп. Строителей, 5</b>
+        <span>Пенза, Арбеково</span>
+      </div>
+      <div class="header-item">
+        <b>Выезд мастера</b>
+        <span>в течение дня по городу</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a href="tel:+79270906554" class="phone-head">+7 (927) 090-65-54</a>
+      <a href="#order" class="btn-head">Оставить заявку</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Главный экран -->
+  <section class="hero-section" id="hero">
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="rating-pill">
+          <span>★</span> 5.0 рейтинг на Яндекс.Картах • 340 оценок • Пенза
+        </div>
+        <h1 class="hero-title">
+          Ремонт телевизоров, смартфонов и бытовой техники в Пензе
+        </h1>
+        <p class="hero-text">
+          Точная диагностика за 30 минут, оригинальные комплектующие в наличии и понятная стоимость до начала работ. Выезжаем на дом или принимаем в сервисе на проспекте Строителей, 5.
+        </p>
+        <div class="hero-actions">
+          <a href="#order" class="btn-primary">Узнать стоимость ремонта</a>
+          <a href="#prices" class="btn-secondary">Посмотреть прейскурант</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Преимущества и факты -->
+  <section class="facts-strip">
+    <div class="wrap facts-grid">
+      <div class="fact-item">
+        <div class="fact-value">0 ₽ диагностика</div>
+        <div class="fact-desc">Определим поломку и назовем цену. Бесплатно при продолжении ремонта.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-value">от 24 часов</div>
+        <div class="fact-desc">Большинство ходовых деталей уже на складе, не нужно ждать недели.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-value">Выезд на дом</div>
+        <div class="fact-desc">Мастер приедет в удобное время по Пензе для крупной техники.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-value">до 12 месяцев</div>
+        <div class="fact-desc">Официальная гарантия на замененные запчасти и выполненную работу.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Прейскурант услуг -->
+  <section class="section-wrapper" id="prices">
+    <div class="wrap">
+      <h2 class="section-title">Цены на частые виды ремонта</h2>
+      <p class="section-desc">Окончательная цена согласуется перед началом работы и не меняется при выдаче.</p>
+
+      <div class="price-list">
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Ремонт и замена подсветки телевизора</div>
+            <div class="service-detail">Есть звук, но нет изображения, темные пятна или синева на экране. Замена линеек подсветки на новые.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">от 2 500 ₽</div>
+            <a href="#order" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Замена экрана / дисплейного модуля смартфона</div>
+            <div class="service-detail">Разбито стекло, полосы или не работает тачскрин. iPhone, Samsung, Xiaomi, Honor и другие бренды.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">от 1 500 ₽</div>
+            <a href="#order" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Ремонт и обслуживание кофемашин</div>
+            <div class="service-detail">Чистка гидросистемы, декальцинация, ремонт заварочного блока, замена уплотнителей и помпы.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">от 1 800 ₽</div>
+            <a href="#order" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Ремонт микроволновых печей (СВЧ)</div>
+            <div class="service-detail">Не греет, искрит, не крутится тарелка, не включается. Замена магнетрона, слюдяной пластины, предохранителя.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">от 1 200 ₽</div>
+            <a href="#order" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Замена аккумулятора или разъема питания</div>
+            <div class="service-detail">Быстро разряжается, выключается на морозе, отходит кабель зарядки. Установка качественных батарей.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">от 1 100 ₽</div>
+            <a href="#order" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Ремонт материнских плат и прошивка</div>
+            <div class="service-detail">Устройство зависает, перезагружается на логотипе или не реагирует на кнопку включения.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">от 1 600 ₽</div>
+            <a href="#order" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Мастера -->
+  <section class="section-wrapper" id="team" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="section-title">Мастера сервиса</h2>
+      <p class="section-desc">Специалисты с опытом компонентного ремонта электроники более 6 лет.</p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-role">Ведущий инженер</div>
+          <div class="team-name">Антон</div>
+          <div class="team-desc">Специализация: сложный ремонт материнских плат, телевизоров и бытовой техники. Выездная диагностика.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-role">Мастер по электронике</div>
+          <div class="team-name">Александр</div>
+          <div class="team-desc">Специализация: модульный и компонентный ремонт смартфонов, планшетов, замена разъемов и контроллеров питания.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-role">Мастер по мелкой технике</div>
+          <div class="team-name">Владислав</div>
+          <div class="team-desc">Специализация: кофемашины, пылесосы, микроволновые печи и аудиотехника. Восстановление узлов и механизмов.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы клиентов -->
+  <section class="section-wrapper" id="reviews" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="section-title">Отзывы клиентов на Яндекс.Картах</h2>
+      <p class="section-desc">Более 240 реальных отзывов с оценкой 5.0 из 5.</p>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">Надежда Х.</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="review-text">
+            «Микроволновая печь Samsung перестала греть. Говорили, что дешевле выбросить. Позвонила в PRO-Сервис, через 2 часа приехал Антон, провел диагностику, забрал, а через сутки привез уже полностью рабочую! Очень довольна скоростью и честной ценой.»
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-author">Артём Авдошин</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="review-text">
+            «Отличный сервис. Большинство запчастей в наличии, не нужно ждать неделями. Ребята оперативно помогли с ремонтом телевизора — заменили подсветку, картинка снова как с витрины. Мастера работают на совесть.»
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты и запись -->
+  <section class="wrap contact-module" id="booking">
+    <div class="cta-box">
+      <div class="cta-layout">
+        <div>
+          <h2 class="cta-title">Нужна консультация или расчет стоимости?</h2>
+          <p class="cta-sub">Напишите модель вашего устройства и что с ним случилось. Мастер ответит в течение 10 минут, сориентирует по стоимости и срокам.</p>
+          
+          <div class="contact-rows">
+            <div><b>Адрес мастерской:</b> <span>Пенза, проспект Строителей, 5 (Арбеково)</span></div>
+            <div><b>Режим работы:</b> <span>Пн–Сб с 09:00 до 19:00</span></div>
+            <div><b>Прямой телефон:</b> <span>+7 (927) 090-65-54, +7 (8412) 25-50-33</span></div>
+          </div>
+        </div>
+
+        <div class="action-card">
+          <div class="action-card-title">Быстрый ответ в чате</div>
+          <div class="action-card-text">Назовем примерную стоимость и подскажем, есть ли запчасть в наличии</div>
+          <a href="https://wa.me/79270906554?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0" target="_blank" class="btn-whatsapp">Написать в WhatsApp</a>
+          <a href="tel:+79270906554" class="action-phone">+7 (927) 090-65-54</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Демонстрационный концепт страницы для сервисного центра «PRO-Сервис» (Пенза). Все права на торговые марки принадлежат их владельцам.
+  </div>
+</footer>
+
+</body>
+</html>

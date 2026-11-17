@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Nnails Studio — студия ногтевого сервиса и взгляда в Тольятти | Ленинский просп., 1Г</title>
+<meta name="description" content="Студия Nnails Studio в Тольятти на Ленинском проспекте, 1Г. Чистый маникюр, комплексы в 4 руки, Smart-педикюр и архитектура бровей. 5.0 на Яндекс.Картах.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF8F5;
+  --white: #FFFFFF;
+  --text: #231C18;
+  --text-soft: #5C524B;
+  --text-muted: #8E8278;
+  --line: #EBE4DC;
+  --accent: #A66547;
+  --accent-hover: #8D5337;
+  --accent-light: #F7EFE9;
+  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Демо плашка */
+.top-notice {
+  background: #231C18;
+  color: #EFE9E2;
+  font-size: 13px;
+  padding: 10px 16px;
+  text-align: center;
+}
+.top-notice b { color: #FFFFFF; }
+.top-notice a {
+  color: #E2B29F;
+  margin-left: 8px;
+  text-decoration: underline;
+}
+
+/* Шапка */
+header {
+  background: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo-block {
+  text-decoration: none;
+}
+.logo-title {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.logo-caption {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+}
+.header-col b {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+}
+.header-col span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.phone-head {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.phone-head:hover { color: var(--accent); }
+.btn-head {
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 980px;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.btn-head:hover { background: var(--accent-hover); }
+
+/* Главный экран */
+.hero-section {
+  padding: 56px 0 46px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.hero-content {
+  max-width: 760px;
+}
+.rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.rating-pill span { color: #D97706; }
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(30px, 4.2vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.hero-text {
+  font-size: 17px;
+  color: var(--text-soft);
+  line-height: 1.58;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 980px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-secondary {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 22px;
+  border-radius: 980px;
+  text-decoration: none;
+}
+.btn-secondary:hover { background: #EFEAE3; }
+
+/* Факты */
+.facts-strip {
+  padding: 40px 0;
+}
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.fact-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+.fact-num {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.fact-desc {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+/* Прейскурант */
+.section-wrapper {
+  padding: 40px 0 52px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.section-desc {
+  font-size: 15px;
+  color: var(--text-soft);
+  margin-bottom: 26px;
+}
+
+.price-list {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  gap: 20px;
+}
+.price-row:last-child {
+  border-bottom: none;
+}
+.service-info {
+  flex: 1;
+}
+.service-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.service-detail {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+.service-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.service-cost {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+.service-btn {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 980px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.service-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Мастера */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+}
+.team-role {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.team-name {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.team-desc {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+/* Отзывы */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+}
+.review-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.review-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.review-stars {
+  color: #D97706;
+  font-size: 13px;
+}
+.review-text {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* Запись и контакты */
+.cta-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 36px;
+  margin: 32px 0 60px;
+}
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
+  align-items: center;
+}
+.cta-title {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.cta-sub {
+  font-size: 15px;
+  color: var(--text-soft);
+  line-height: 1.52;
+  margin-bottom: 20px;
+}
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+.contact-rows b { color: var(--text); }
+.contact-rows span { color: var(--text-soft); }
+
+.action-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+.action-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.action-card-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: 980px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.15s;
+}
+.btn-whatsapp:hover { background: #1EBE5D; }
+.action-phone {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+.action-phone:hover { color: var(--accent); }
+
+/* Подвал */
+footer {
+  padding: 24px 0 40px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--line);
+}
+
+/* Мобильный адаптив */
+@media (max-width: 960px) {
+  .header-center { display: none; }
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .cta-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  .header-row { height: 58px; }
+  .phone-head { display: none; }
+  .btn-head { padding: 8px 14px; font-size: 12px; }
+  .hero-section { padding: 36px 0 28px; }
+  .hero-title { font-size: 26px; }
+  .hero-text { font-size: 15px; }
+  .facts-grid { grid-template-columns: 1fr; }
+  .price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+  .service-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .cta-box { padding: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-notice">
+  Демонстрационная страница онлайн-записи для студии <b>Nnails Studio</b> (Тольятти, Ленинский просп., 1Г)
+  <a href="https://yandex.ru/maps/org/nnails_studio/27892398301/" target="_blank">Карточка на Яндекс.Картах (5.0 ★)</a>
+</div>
+
+<header>
+  <div class="wrap header-row">
+    <a href="#" class="logo-block">
+      <div class="logo-title">Nnails Studio</div>
+      <div class="logo-caption">Студия ногтевого сервиса и взгляда</div>
+    </a>
+    
+    <div class="header-center">
+      <div class="header-col">
+        <b>Ленинский просп., 1Г</b>
+        <span>Тольятти, Автозаводский район</span>
+      </div>
+      <div class="header-col">
+        <b>10:00 – 20:00</b>
+        <span>Ежедневно по предварительной записи</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a href="tel:+79344796324" class="phone-head">+7 (934) 479-63-24</a>
+      <a href="#booking" class="btn-head">Онлайн-запись</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Главный экран -->
+  <section class="hero-section" id="hero">
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="rating-pill">
+          <span>★</span> 5.0 оценка на Яндекс.Картах • 210 отзывов • Тольятти
+        </div>
+        <h1 class="hero-title">
+          Студия эстетики ногтей и оформления взгляда в Тольятти
+        </h1>
+        <p class="hero-text">
+          Бережный чистый маникюр, умный Smart-педикюр и комплексы в 4 руки за 1.5 часа. Индивидуальный крафт-набор для каждого гостя, комфортная атмосфера и свежий зерновой кофе на Ленинском, 1Г.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn-primary">Записаться со скидкой 10%</a>
+          <a href="#prices" class="btn-secondary">Посмотреть прейскурант</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Факты студии -->
+  <section class="facts-strip">
+    <div class="wrap facts-grid">
+      <div class="fact-item">
+        <div class="fact-num">от 3 недель</div>
+        <div class="fact-desc">Стойкое ровное покрытие без сколов и отслоек с гарантией.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">в 4 руки за 1.5 ч</div>
+        <div class="fact-desc">Маникюр и педикюр одновременно для экономии вашего времени.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">Забота в мелочах</div>
+        <div class="fact-desc">Пилочку после процедуры упакуем в отдельный конверт с собой.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-num">Бесплатно</div>
+        <div class="fact-desc">Снятие предыдущего материала при повторной записи к мастерам.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Прейскурант услуг -->
+  <section class="section-wrapper" id="prices">
+    <div class="wrap">
+      <h2 class="section-title">Прейскурант студии</h2>
+      <p class="section-desc">В каждый комплекс уже включены расходные материалы, обработка и уход.</p>
+
+      <div class="price-list">
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Комплекс «Маникюр + Снятие + Гель-лак»</div>
+            <div class="service-detail">Снятие старого покрытия, чистый комбинированный маникюр, укрепление и однотонное покрытие под кутикулу.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">1 800 ₽</div>
+            <a href="#booking" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Smart-педикюр с полным покрытием гель-лак</div>
+            <div class="service-detail">Мягкая аппаратная обработка стопы смарт-дисками без замачивания и лезвий, обработка пальчиков и цвет.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">2 200 ₽</div>
+            <a href="#booking" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Комплекс в 4 руки (Маникюр + Педикюр)</div>
+            <div class="service-detail">Одновременная синхронная работа двух мастеров. Полный уход за руками и ножками всего за 1 час 30 минут.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">3 800 ₽</div>
+            <a href="#booking" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Архитектура и окрашивание бровей</div>
+            <div class="service-detail">Индивидуальный подбор формы под пропорции лица, бережная коррекция воском / пинцетом и стойкое окрашивание.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">1 100 ₽</div>
+            <a href="#booking" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Наращивание ногтей (гель / полигель)</div>
+            <div class="service-detail">Моделирование правильной архитектуры любой длины и формы, комби-маникюр и однотонное покрытие.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">2 600 ₽</div>
+            <a href="#booking" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="service-info">
+            <div class="service-name">Японский лечебный эко-маникюр</div>
+            <div class="service-detail">Восстановление истонченных ногтей после снятия. Втирание минеральной пасты и натуральной пудры.</div>
+          </div>
+          <div class="service-meta">
+            <div class="service-cost">1 500 ₽</div>
+            <a href="#booking" class="service-btn">Выбрать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Мастера студии -->
+  <section class="section-wrapper" id="team" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="section-title">Мастера Nnails Studio</h2>
+      <p class="section-desc">Опытные специалисты с высокой скоростью и деликатной техникой работы.</p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-role">Топ-мастер ногтевого сервиса</div>
+          <div class="team-name">Валерия</div>
+          <div class="team-desc">Быстрый чистый комби-маникюр, тонкое и прочное укрепление гелем, градиенты и авторские дизайны.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-role">Мастер ногтевой эстетики</div>
+          <div class="team-name">Анастасия</div>
+          <div class="team-desc">Очень легкая рука, идеальный срез кутикулы без неприятных ощущений, аккуратное покрытие под кутикулу.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-role">Бровист-стилист</div>
+          <div class="team-name">Вероника</div>
+          <div class="team-desc">Архитектура бровей, точный подбор оттенка под цветотип лица, ламинирование ресниц и долговременная укладка.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section class="section-wrapper" id="reviews" style="padding-top: 0;">
+    <div class="wrap">
+      <h2 class="section-title">Отзывы гостей на Яндекс.Картах</h2>
+      <p class="section-desc">Оценка 5.0 на основе 210 подробных отзывов.</p>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-author">Вероника К.</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="review-text">
+            «Хожу к мастеру Валерии уже не первый раз! Быстро и красиво все делает. Чувствуется забота даже в мелочах: очень зацепило, что пилочку не просто отдают, а кладут в специальный пакетик, чтобы случайно не задеть свежий маникюр. Очень мило и приятно!»
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-author">Алина Гусарова</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="review-text">
+            «Прекрасный салон! Администратор — потрясающая приветливая девушка, предложили вкусный кофе. Мастера Александра и Мария делали маникюр и педикюр одновременно в 4 руки — очень аккуратно, быстро и безболезненно. Спасибо за атмосферу!»
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Онлайн-запись и контакты -->
+  <section class="wrap" id="booking">
+    <div class="cta-box">
+      <div class="cta-layout">
+        <div>
+          <h2 class="cta-title">Запишитесь на удобный день и время</h2>
+          <p class="cta-sub">Свободные окошки обновляются ежедневно. Напишите нам в WhatsApp — администратор Евгения поможет подобрать удобное время и ответит на любые вопросы.</p>
+          
+          <div class="contact-rows">
+            <div><b>Адрес студии:</b> <span>Тольятти, Ленинский проспект, 1Г (Автозаводский район)</span></div>
+            <div><b>График работы:</b> <span>Ежедневно с 10:00 до 20:00</span></div>
+            <div><b>Прямой номер:</b> <span>+7 (934) 479-63-24</span></div>
+          </div>
+        </div>
+
+        <div class="action-card">
+          <div class="action-card-title">Онлайн-запись через чат</div>
+          <div class="action-card-text">Скидка 10% на первый визит при записи через эту страницу</div>
+          <a href="https://wa.me/79344796324?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Nnails%20Studio" target="_blank" class="btn-whatsapp">Записаться в WhatsApp</a>
+          <a href="tel:+79344796324" class="action-phone">+7 (934) 479-63-24</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Демонстрационный концепт страницы для студии «Nnails Studio» (Тольятти).
+  </div>
+</footer>
+
+</body>
+</html>

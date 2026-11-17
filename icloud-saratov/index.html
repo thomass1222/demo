@@ -6,1012 +6,768 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>iCloud Саратов — оригинальная техника Apple и экспресс-сервис | Московская, 122/126</title>
-<meta name="description" content="Магазин оригинальной техники Apple и авторизованный сервисный центр iCloud в Саратове. Ремонт iPhone за 20–40 минут при вас, гарантия 1 год, трейд-ин. Московская, 122/126.">
+<title>iCloud Саратов — магазин техники Apple и сервисный центр</title>
+<meta name="description" content="Сервисный центр и магазин Apple iCloud в Саратове. Ремонт iPhone, iPad, Mac от 20 минут при вас, гарантия по чеку до 1 года. ул. Московская, 122/126.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0B0D12;
-  --surface: #141822;
-  --surface-raised: #1C2230;
-  --border: #262E40;
-  --border-subtle: #1C2333;
-  --text: #F3F5F9;
-  --text-muted: #8E99AF;
-  --text-subtle: #5B667D;
-  --blue: #2997FF;
-  --blue-hover: #147CE5;
-  --blue-glow: rgba(41, 151, 255, 0.15);
-  --green: #30D158;
-  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --display: "Unbounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #F5F5F7;
+  --white: #FFFFFF;
+  --ink: #1D1D1F;
+  --ink-secondary: #6E6E73;
+  --ink-tertiary: #86868B;
+  --line: #D2D2D7;
+  --line-light: #E5E5EA;
+  --blue: #0071E3;
+  --blue-hover: #0077ED;
+  --green: #28CD41;
+  --green-bg: #EAF9EC;
+  --font: "Golos Text", -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--sans);
+  font-family: var(--font);
   background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  color: var(--ink);
+  line-height: 1.5;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap {
-  max-width: 1140px;
+.container {
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
-/* Demo strip */
-.demo-strip {
-  background: #11141D;
-  border-bottom: 1px solid var(--border-subtle);
-  color: var(--text-muted);
+/* Верхняя системная полоса */
+.notice-bar {
+  background: #1D1D1F;
+  color: #F5F5F7;
   font-size: 13px;
-  padding: 9px 16px;
+  padding: 10px 16px;
   text-align: center;
 }
-.demo-strip b { color: #fff; }
-.demo-strip a {
-  color: var(--blue);
-  margin-left: 10px;
+.notice-bar b { color: #fff; }
+.notice-bar a {
+  color: #64D2FF;
+  margin-left: 8px;
   text-decoration: underline;
 }
 
-/* Шапка */
+/* Шапка сайта */
 header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line-light);
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(11, 13, 18, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-subtle);
+  z-index: 100;
 }
-.header-bar {
+.nav-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 64px;
 }
-.brand {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  text-decoration: none;
-}
-.brand-name {
-  font-family: var(--display);
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #fff;
-}
-.brand-name span { color: var(--blue); }
-.brand-sub {
-  font-size: 11px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-
-.header-center {
+.logo-group {
   display: flex;
   align-items: center;
-  gap: 32px;
-  font-size: 14px;
+  gap: 12px;
+  text-decoration: none;
 }
-.header-item {
+.logo-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.logo-badge {
+  background: #E8E8ED;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.nav-contacts {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+}
+.nav-item {
   display: flex;
   flex-direction: column;
 }
-.header-item b {
-  color: var(--text);
+.nav-item b {
+  color: var(--ink);
   font-weight: 600;
-  font-size: 13px;
 }
-.header-item span {
-  color: var(--text-muted);
+.nav-item span {
+  color: var(--ink-secondary);
   font-size: 12px;
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-}
-.phone-head {
-  color: var(--text);
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-  white-space: nowrap;
-  letter-spacing: -0.01em;
-}
-.phone-head:hover { color: var(--blue); }
-.btn-head {
-  background: var(--blue);
-  color: #fff;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.2s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.btn-head:hover {
-  background: var(--blue-hover);
-}
-
-/* Hero Section */
-.hero {
-  padding: 60px 0 70px;
-  border-bottom: 1px solid var(--border-subtle);
-  background: radial-gradient(circle at 80% 20%, rgba(41, 151, 255, 0.08) 0%, transparent 60%);
-}
-.hero-layout {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
-  align-items: center;
-}
-.badge-rep {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(48, 209, 88, 0.1);
-  border: 1px solid rgba(48, 209, 88, 0.3);
-  color: #3CD864;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.badge-rep::before {
-  content: "★";
-  color: #FFD60A;
-}
-.hero h1 {
-  font-family: var(--display);
-  font-size: clamp(30px, 3.8vw, 48px);
-  font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
-  color: #fff;
-}
-.hero h1 em {
-  font-style: normal;
-  color: var(--blue);
-}
-.hero-p {
-  font-size: 17px;
-  color: var(--text-muted);
-  max-width: 520px;
-  margin-bottom: 32px;
-  line-height: 1.6;
-}
-.hero-buttons {
+.nav-actions {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-shrink: 0;
 }
-.btn-primary {
+.phone-link {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.phone-link:hover { color: var(--blue); }
+.cta-button {
   background: var(--blue);
   color: #fff;
-  padding: 15px 28px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 980px;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.cta-button:hover { background: var(--blue-hover); }
+
+/* Главный блок (Hero) */
+.hero-block {
+  padding: 56px 0 44px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line-light);
+}
+.hero-content {
+  max-width: 760px;
+}
+.rating-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-}
-.btn-primary:hover {
-  background: var(--blue-hover);
-  transform: translateY(-1px);
-}
-.btn-outline {
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text);
-  padding: 14px 24px;
-  border-radius: 8px;
+  background: var(--green-bg);
+  color: #1B7A27;
+  padding: 5px 12px;
+  border-radius: 980px;
+  font-size: 13px;
   font-weight: 600;
+  margin-bottom: 18px;
+}
+.rating-pill span {
+  color: #E2A03F;
+}
+.hero-title {
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.hero-desc {
+  font-size: 18px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-solid {
+  background: var(--ink);
+  color: #fff;
   font-size: 15px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--text-muted);
-}
-
-/* Quick Diagnostic Widget (Right side) */
-.diag-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-}
-.diag-title {
-  font-family: var(--display);
-  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 6px;
-  color: #fff;
-}
-.diag-sub {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 22px;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 14px;
-}
-.diag-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.diag-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
-  padding: 12px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: border-color 0.15s;
-}
-.diag-item:hover, .diag-item.active {
-  border-color: var(--blue);
-}
-.diag-name {
-  font-weight: 600;
-  font-size: 14px;
-  color: #fff;
-}
-.diag-time {
-  font-size: 12px;
-  color: var(--text-subtle);
-  margin-top: 2px;
-}
-.diag-price {
-  font-family: var(--display);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--blue);
-  white-space: nowrap;
-}
-.diag-footer {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.diag-free-note {
-  font-size: 12px;
-  color: #30D158;
-  font-weight: 600;
-}
-.diag-btn {
-  background: #fff;
-  color: #0B0D12;
-  font-weight: 700;
-  font-size: 13px;
-  padding: 10px 16px;
-  border-radius: 6px;
+  padding: 13px 26px;
+  border-radius: 980px;
   text-decoration: none;
   transition: background 0.2s;
-  white-space: nowrap;
 }
-.diag-btn:hover { background: #E1E4EA; }
+.btn-solid:hover { background: #333336; }
+.btn-hollow {
+  background: transparent;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 22px;
+  text-decoration: none;
+}
+.btn-hollow:hover { text-decoration: underline; }
 
-/* Metrics ribbon */
-.ribbon {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 24px 0;
+/* Устройства (Быстрый переключатель) */
+.device-strip {
+  padding: 18px 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
-.ribbon-grid {
+.device-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.device-tab {
+  background: var(--bg);
+  border: 1px solid var(--line-light);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.device-tab.active, .device-tab:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+/* Сетка сервисных преимуществ */
+.points-section {
+  padding: 44px 0;
+}
+.points-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
-.ribbon-item {
-  display: flex;
-  flex-direction: column;
-}
-.ribbon-val {
-  font-family: var(--display);
-  font-size: 26px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.02em;
-}
-.ribbon-label {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-/* Services & Pricing Section */
-.services-section {
-  padding: 70px 0;
-}
-.sec-header {
-  margin-bottom: 36px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.sec-header h2 {
-  font-family: var(--display);
-  font-size: clamp(26px, 3.2vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #fff;
-}
-.sec-header span {
-  font-size: 13px;
-  color: var(--text-muted);
-  text-align: right;
-}
-
-.price-list {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--border);
+.point-box {
+  background: var(--white);
+  border: 1px solid var(--line-light);
   border-radius: 12px;
-  background: var(--surface);
-  overflow: hidden;
+  padding: 20px;
 }
-.price-row {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border-subtle);
-  gap: 24px;
-  transition: background 0.15s;
-}
-.price-row:last-child { border-bottom: none; }
-.price-row:hover { background: var(--surface-raised); }
-.price-title {
+.point-metric {
+  font-size: 22px;
   font-weight: 700;
-  font-size: 16px;
-  color: #fff;
+  color: var(--ink);
   margin-bottom: 4px;
 }
-.price-desc {
+.point-text {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--ink-secondary);
   line-height: 1.4;
 }
-.price-cost {
-  font-family: var(--display);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--blue);
-  white-space: nowrap; /* ЦЕНА СТРОГО В ОДНУ СТРОКУ */
-  text-align: right;
+
+/* Прейскурант ремонта */
+.pricing-section {
+  padding: 30px 0 50px;
 }
-.price-btn {
-  background: rgba(41, 151, 255, 0.1);
+.section-headline {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.section-subhead {
+  font-size: 15px;
+  color: var(--ink-secondary);
+  margin-bottom: 24px;
+}
+.price-sheet {
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.price-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line-light);
+  gap: 20px;
+}
+.price-entry:last-child { border-bottom: none; }
+.entry-info {
+  flex: 1;
+}
+.entry-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.entry-note {
+  font-size: 13px;
+  color: var(--ink-secondary);
+}
+.entry-duration {
+  font-size: 12px;
+  background: #F0F0F2;
+  color: var(--ink-secondary);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.entry-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap; /* ЦЕНА СТРОГО В ОДНУ СТРОКУ */
+}
+.entry-btn {
+  background: #F5F5F7;
   color: var(--blue);
-  border: 1px solid rgba(41, 151, 255, 0.25);
   font-size: 13px;
   font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 7px 16px;
+  border-radius: 980px;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.2s;
+  transition: all 0.15s;
 }
-.price-btn:hover {
+.entry-btn:hover {
   background: var(--blue);
   color: #fff;
 }
 
-/* Free bonuses strip */
-.bonus-box {
-  margin-top: 32px;
-  background: linear-gradient(135deg, rgba(41, 151, 255, 0.08) 0%, rgba(48, 209, 88, 0.05) 100%);
-  border: 1px dashed rgba(41, 151, 255, 0.35);
+/* Баннер бесплатных услуг */
+.gift-banner {
+  margin-top: 24px;
+  background: #EBF5FF;
+  border: 1px solid #C8E1FF;
   border-radius: 12px;
-  padding: 24px 28px;
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
-.bonus-info b {
+.gift-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #004F9E;
+  margin-bottom: 3px;
+}
+.gift-desc {
+  font-size: 13px;
+  color: #2F6396;
+}
+.gift-badge {
+  background: #0071E3;
   color: #fff;
-  font-size: 16px;
-  display: block;
-  margin-bottom: 4px;
-}
-.bonus-info span {
-  font-size: 14px;
-  color: var(--text-muted);
-}
-.bonus-tag {
-  background: #30D158;
-  color: #0B0D12;
-  font-weight: 800;
   font-size: 12px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 980px;
   white-space: nowrap;
 }
 
-/* Guarantees & Advantages */
-.adv-section {
-  padding: 70px 0;
-  background: var(--surface);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-}
-.adv-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 36px;
-}
-.adv-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  padding: 28px;
-  border-radius: 10px;
-}
-.adv-num {
-  font-family: var(--display);
-  font-size: 14px;
-  color: var(--blue);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.adv-title {
-  font-family: var(--display);
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.adv-text {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* Reviews Section */
+/* Отзывы реальных клиентов */
 .reviews-section {
-  padding: 70px 0;
-}
-.rev-header {
-  margin-bottom: 36px;
-}
-.rev-rating {
-  font-family: var(--display);
-  font-size: 48px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.rev-stars { color: #FFD60A; font-size: 22px; margin-left: 10px; }
-.rev-sub {
-  font-size: 14px;
-  color: var(--text-muted);
+  padding: 40px 0 60px;
 }
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
-.rev-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px;
+.review-item {
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: 12px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.rev-quote {
+.review-text {
   font-size: 14px;
-  color: #D3D9E5;
-  line-height: 1.6;
+  color: #333336;
+  line-height: 1.55;
   margin-bottom: 18px;
-  font-style: italic;
 }
-.rev-author {
-  border-top: 1px solid var(--border-subtle);
+.review-meta {
+  border-top: 1px solid var(--line-light);
   padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.author-name {
   font-size: 13px;
   font-weight: 700;
-  color: #fff;
+  color: var(--ink);
 }
-.rev-source {
-  font-size: 11px;
-  color: var(--text-subtle);
-  font-weight: 400;
+.author-service {
+  font-size: 12px;
+  color: var(--ink-secondary);
 }
 
-/* Booking & Contact Footer */
-.contact-section {
-  padding: 70px 0;
-  background: radial-gradient(circle at 50% 100%, rgba(41, 151, 255, 0.12) 0%, transparent 70%);
-  border-top: 1px solid var(--border);
-}
-.contact-box {
-  background: var(--surface);
-  border: 1px solid var(--border);
+/* Блок связи и заявки */
+.contact-module {
+  background: var(--white);
+  border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 48px;
+  padding: 36px;
+  margin: 20px 0 60px;
+}
+.contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
   align-items: center;
 }
-.contact-info h2 {
-  font-family: var(--display);
-  font-size: 32px;
+.contact-heading {
+  font-size: 24px;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 14px;
-  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 10px;
 }
-.contact-info p {
-  color: var(--text-muted);
+.contact-sub {
   font-size: 15px;
-  margin-bottom: 24px;
+  color: var(--ink-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
-.contact-details {
+.contact-specs {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   font-size: 14px;
 }
-.contact-row b { color: #fff; }
-.contact-row span { color: var(--text-muted); }
+.contact-specs b { color: var(--ink); }
+.contact-specs span { color: var(--ink-secondary); }
 
-.contact-action-box {
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  padding: 32px;
+.whatsapp-card {
+  background: var(--bg);
+  border: 1px solid var(--line-light);
   border-radius: 12px;
+  padding: 24px;
   text-align: center;
 }
-.action-title {
-  font-family: var(--display);
-  font-size: 20px;
+.wa-callout {
+  font-size: 14px;
   font-weight: 600;
-  color: #fff;
-  margin-bottom: 8px;
+  color: var(--ink);
+  margin-bottom: 6px;
 }
-.action-sub {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 24px;
+.wa-timing {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin-bottom: 16px;
 }
-.btn-whatsapp {
+.btn-wa {
   background: #25D366;
   color: #fff;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 15px;
-  padding: 15px 28px;
+  padding: 13px 20px;
   border-radius: 8px;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  justify-content: center;
-  transition: all 0.2s;
-}
-.btn-whatsapp:hover {
-  background: #1EBE5D;
-}
-.action-phone-link {
   display: block;
-  margin-top: 16px;
-  color: var(--text);
-  font-size: 14px;
+  transition: background 0.2s;
+}
+.btn-wa:hover { background: #1EBE5D; }
+.direct-call {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
   text-decoration: none;
 }
-.action-phone-link:hover { color: var(--blue); }
+.direct-call:hover { color: var(--blue); }
 
-/* Footer */
+/* Подвал */
 footer {
-  border-top: 1px solid var(--border-subtle);
-  padding: 30px 0;
-  font-size: 13px;
-  color: var(--text-subtle);
+  padding: 24px 0 40px;
   text-align: center;
+  font-size: 12px;
+  color: var(--ink-tertiary);
 }
 
-/* Адаптив под мобильные устройства */
-@media (max-width: 1040px) {
-  .header-center { display: none; }
-  .ribbon-grid { grid-template-columns: repeat(2, 1fr); }
-  .adv-grid { grid-template-columns: 1fr; }
+/* Адаптивность под смартфоны */
+@media (max-width: 960px) {
+  .nav-contacts { display: none; }
+  .points-grid { grid-template-columns: repeat(2, 1fr); }
   .reviews-grid { grid-template-columns: 1fr; }
-  .contact-box { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
-}
-
-@media (max-width: 860px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .price-row {
-    grid-template-columns: 1fr auto;
-    gap: 14px;
-  }
-  .price-col-action {
-    grid-column: 1 / -1;
-  }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .wrap { padding: 0 16px; }
-  .header-bar { height: 64px; }
-  .brand-name { font-size: 20px; }
-  .brand-sub { display: none; }
-  .phone-head { display: none; }
-  .btn-head { padding: 8px 14px; font-size: 12px; }
-  .hero h1 { font-size: 28px; }
-  .diag-card { padding: 20px; }
+  .container { padding: 0 16px; }
+  .nav-row { height: 56px; }
+  .logo-title { font-size: 18px; }
+  .phone-link { display: none; }
+  .cta-button { padding: 7px 14px; font-size: 12px; }
+  .hero-block { padding: 36px 0 30px; }
+  .hero-title { font-size: 26px; }
+  .hero-desc { font-size: 15px; }
+  .points-grid { grid-template-columns: 1fr; }
+  .price-entry { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .contact-module { padding: 22px; }
 }
 </style>
 </head>
 <body>
 
-<div class="demo-strip">
-  Демонстрационный сайт для магазина и сервисного центра <b>iCloud</b> (Саратов, ул. Московская, 122/126)
-  <a href="https://yandex.ru/maps/org/icloud/60942205242/" target="_blank">Карточка на Яндекс.Картах (5.0 ★) ↗</a>
+<div class="notice-bar">
+  Тестовая страница для магазина и сервиса <b>iCloud</b> (Саратов, ул. Московская, 122/126)
+  <a href="https://yandex.ru/maps/org/icloud/60942205242/" target="_blank">Карточка на Яндекс.Картах</a>
 </div>
 
 <header>
-  <div class="wrap header-bar">
-    <a href="#" class="brand">
-      <div class="brand-name">iCloud<span>.</span></div>
-      <span class="brand-sub">Саратов • Apple Service</span>
+  <div class="container nav-row">
+    <a href="#" class="logo-group">
+      <div class="logo-title">iCloud</div>
+      <div class="logo-badge">Саратов</div>
     </a>
     
-    <div class="header-center">
-      <div class="header-item">
-        <b>Московская ул., 122/126</b>
+    <div class="nav-contacts">
+      <div class="nav-item">
+        <b>ул. Московская, 122/126</b>
         <span>рядом с ТК «Москва»</span>
       </div>
-      <div class="header-item">
+      <div class="nav-item">
         <b>10:00 – 22:00</b>
-        <span>Ежедневно, без выходных</span>
+        <span>Каждый день без выходных</span>
       </div>
     </div>
 
-    <div class="header-actions">
-      <a href="tel:+79995756464" class="phone-head">+7 (999) 575-64-64</a>
-      <a href="#services" class="btn-head">Услуги и цены</a>
+    <div class="nav-actions">
+      <a href="tel:+79995756464" class="phone-link">+7 (999) 575-64-64</a>
+      <a href="#booking" class="cta-button">Узнать стоимость</a>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="wrap hero-layout">
-      <div>
-        <div class="badge-rep">Рейтинг 5.0 на Яндекс.Картах • 860+ отзывов</div>
-        <h1>Оригинальная техника <em>Apple</em> и честный экспресс-ремонт в Саратове</h1>
-        <p class="hero-p">
-          Восстановление iPhone, iPad, Apple Watch и MacBook от 20 минут прямо при вас. Оригинальные комплектующие, честная гарантия до 1 года и trade-in ваших устройств на Московской, 122/126.
+  <!-- Главный экран (Hero) -->
+  <section class="hero-block" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="rating-pill">
+          <span>★</span> 5.0 рейтинг на Яндекс.Картах • 860 подтвержденных отзывов
+        </div>
+        <h1 class="hero-title">
+          Оригинальная техника Apple и экспресс-ремонт в Саратове
+        </h1>
+        <p class="hero-desc">
+          Срочное модульное обслуживание iPhone, iPad и Mac за 20–40 минут в вашем присутствии. Запчасти оригинального качества в наличии на Московской, официальная гарантия по чеку до 1 года и честный trade-in.
         </p>
-        <div class="hero-buttons">
-          <a href="#booking" class="btn-primary">
-            <span>Рассчитать стоимость ремонта</span>
-            <span>→</span>
-          </a>
-          <a href="#services" class="btn-outline">Прайс-лист услуг</a>
-        </div>
-      </div>
-
-      <!-- Quick Calculator / Diag Widget -->
-      <div class="diag-card">
-        <div class="diag-title">Экспресс-диагностика</div>
-        <div class="diag-sub">Саратов, ул. Московская, 122/126 • ежедневно 10:00–22:00</div>
-        
-        <div class="diag-list">
-          <div class="diag-item active">
-            <div>
-              <div class="diag-name">Замена дисплея iPhone</div>
-              <div class="diag-time">Оригинальный модуль или копия премиум • 25–40 мин</div>
-            </div>
-            <div class="diag-price">от 2 490 ₽</div>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <div class="diag-name">Замена аккумулятора</div>
-              <div class="diag-time">100% емкость, без ошибки в настройках • 20 мин</div>
-            </div>
-            <div class="diag-price">от 1 890 ₽</div>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <div class="diag-name">Замена заднего стекла / корпуса</div>
-              <div class="diag-time">Лазерное снятие без разбора телефона • 1.5–2 ч</div>
-            </div>
-            <div class="diag-price">от 2 900 ₽</div>
-          </div>
-        </div>
-
-        <div class="diag-footer">
-          <span class="diag-free-note">✓ Первичная диагностика 0 ₽</span>
-          <a href="#booking" class="diag-btn">Записаться на ремонт</a>
+        <div class="hero-btns">
+          <a href="#booking" class="btn-solid">Рассчитать ремонт в WhatsApp</a>
+          <a href="#prices" class="btn-hollow">Посмотреть цены на работы</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ribbon Stats -->
-  <section class="ribbon">
-    <div class="wrap ribbon-grid">
-      <div class="ribbon-item">
-        <div class="ribbon-val">20–40 мин</div>
-        <div class="ribbon-label">Среднее время срочного модульного ремонта при вас</div>
+  <!-- Переключатель категорий -->
+  <div class="device-strip">
+    <div class="container device-row">
+      <div class="device-tab active">iPhone (все модели)</div>
+      <div class="device-tab">iPad & Планшеты</div>
+      <div class="device-tab">Apple Watch</div>
+      <div class="device-tab">MacBook & Mac</div>
+      <div class="device-tab">Trade-in и скупка</div>
+    </div>
+  </div>
+
+  <!-- Факты сервиса -->
+  <section class="points-section" id="points">
+    <div class="container points-grid">
+      <div class="point-box">
+        <div class="point-metric">20–40 минут</div>
+        <div class="point-text">Типовой ремонт (замена дисплея, аккумулятора, разъема) прямо при вас.</div>
       </div>
-      <div class="ribbon-item">
-        <div class="ribbon-val">до 1 года</div>
-        <div class="ribbon-label">Официальная гарантия на работы и запчасти</div>
+      <div class="point-box">
+        <div class="point-metric">до 1 года</div>
+        <div class="point-text">Честная гарантия по печатному кассовому чеку на работу и детали.</div>
       </div>
-      <div class="ribbon-item">
-        <div class="ribbon-val">5.0 ★</div>
-        <div class="ribbon-label">Более 860 подтвержденных отзывов на Яндекс.Картах</div>
+      <div class="point-box">
+        <div class="point-metric">0 ₽</div>
+        <div class="point-text">Точная диагностика устройства даже при отказе от дальнейшего ремонта.</div>
       </div>
-      <div class="ribbon-item">
-        <div class="ribbon-val">0 ₽</div>
-        <div class="ribbon-label">Поклейка защитного стекла и перенос данных в подарок</div>
+      <div class="point-box">
+        <div class="point-metric">100% оригинал</div>
+        <div class="point-text">Собственный склад дисплеев и усиленных аккумуляторов в центре Саратова.</div>
       </div>
     </div>
   </section>
 
-  <!-- Services & Pricing -->
-  <section class="services-section" id="services">
-    <div class="wrap">
-      <div class="sec-header">
+  <!-- Цены -->
+  <section class="pricing-section" id="prices">
+    <div class="container">
+      <h2 class="section-headline">Стоимость популярных ремонтов iPhone</h2>
+      <p class="section-subhead">Согласовываем окончательную стоимость до начала работ. Цена не изменится.</p>
+
+      <div class="price-sheet">
+        <div class="price-entry">
+          <div class="entry-info">
+            <div class="entry-title">
+              Диагностика неисправности
+              <span class="entry-duration">10 минут</span>
+            </div>
+            <div class="entry-note">Тестирование материнской платы, емкости батареи, датчиков Face ID и дисплея.</div>
+          </div>
+          <div class="entry-price">Бесплатно</div>
+          <a href="#booking" class="entry-btn">Выбрать</a>
+        </div>
+
+        <div class="price-entry">
+          <div class="entry-info">
+            <div class="entry-title">
+              Замена дисплейного модуля
+              <span class="entry-duration">25–35 минут</span>
+            </div>
+            <div class="entry-note">Оригинальный экран или проверенный OLED аналог. Перенос функции True Tone.</div>
+          </div>
+          <div class="entry-price">от 2 490 ₽</div>
+          <a href="#booking" class="entry-btn">Выбрать</a>
+        </div>
+
+        <div class="price-entry">
+          <div class="entry-info">
+            <div class="entry-title">
+              Замена аккумулятора (АКБ)
+              <span class="entry-duration">20 минут</span>
+            </div>
+            <div class="entry-note">Новый усиленный элемент с переносом контроллера питания без системных ошибок.</div>
+          </div>
+          <div class="entry-price">от 1 890 ₽</div>
+          <a href="#booking" class="entry-btn">Выбрать</a>
+        </div>
+
+        <div class="price-entry">
+          <div class="entry-info">
+            <div class="entry-title">
+              Замена заднего стекла корпуса
+              <span class="entry-duration">1.5–2 часа</span>
+            </div>
+            <div class="entry-note">Снятие лазером без нагрева системной платы и повреждения беспроводной зарядки.</div>
+          </div>
+          <div class="entry-price">от 2 900 ₽</div>
+          <a href="#booking" class="entry-btn">Выбрать</a>
+        </div>
+
+        <div class="price-entry">
+          <div class="entry-info">
+            <div class="entry-title">
+              Восстановление после воды
+              <span class="entry-duration">от 1 часа</span>
+            </div>
+            <div class="entry-note">Ультразвуковая чистка в ванне, удаление следов коррозии, сушка и пайка.</div>
+          </div>
+          <div class="entry-price">от 1 500 ₽</div>
+          <a href="#booking" class="entry-btn">Выбрать</a>
+        </div>
+
+        <div class="price-entry">
+          <div class="entry-info">
+            <div class="entry-title">
+              Установка удаленных банковских приложений
+              <span class="entry-duration">5 минут</span>
+            </div>
+            <div class="entry-note">Быстрая установка Сбера, Т-Банка, Альфы и ВТБ прямо на ваш iPhone.</div>
+          </div>
+          <div class="entry-price">0 ₽ при визите</div>
+          <a href="#booking" class="entry-btn">Выбрать</a>
+        </div>
+      </div>
+
+      <div class="gift-banner">
         <div>
-          <h2>Популярные услуги сервиса</h2>
-          <p style="color: var(--text-muted); font-size: 14px; margin-top: 6px;">
-            Все работы производятся на профессиональном оборудовании в вашем присутствии.
-          </p>
+          <div class="gift-title">Подарок при любом модульном ремонте</div>
+          <div class="gift-desc">Бесплатно наклеим качественное бронестекло и очистим сетки разговорного динамика от пыли.</div>
         </div>
-        <span>Московская ул., 122/126</span>
-      </div>
-
-      <div class="price-list">
-        <div class="price-row">
-          <div>
-            <div class="price-title">Экспресс-диагностика устройства</div>
-            <div class="price-desc">Проверка платы, емкости АКБ, дисплея и датчиков при вас за 10 минут</div>
-          </div>
-          <div class="price-cost">Бесплатно</div>
-          <div class="price-col-action">
-            <a href="#booking" class="price-btn">Выбрать</a>
-          </div>
-        </div>
-
-        <div class="price-row">
-          <div>
-            <div class="price-title">Замена дисплейного модуля iPhone</div>
-            <div class="price-desc">Оригинальный экран или премиальный OLED аналог. Перенос TrueTone и прошивка контроллера.</div>
-          </div>
-          <div class="price-cost">от 2 490 ₽</div>
-          <div class="price-col-action">
-            <a href="#booking" class="price-btn">Выбрать</a>
-          </div>
-        </div>
-
-        <div class="price-row">
-          <div>
-            <div class="price-title">Замена аккумулятора iPhone (АКБ)</div>
-            <div class="price-desc">Новые усиленные элементы питания, перенос родного шлейфа (без уведомления о замене).</div>
-          </div>
-          <div class="price-cost">от 1 890 ₽</div>
-          <div class="price-col-action">
-            <a href="#booking" class="price-btn">Выбрать</a>
-          </div>
-        </div>
-
-        <div class="price-row">
-          <div>
-            <div class="price-title">Замена задней крышки / стекла корпуса</div>
-            <div class="price-desc">Снятие лазерным станком без нагрева материнской платы и повреждения катушки MagSafe.</div>
-          </div>
-          <div class="price-cost">от 2 900 ₽</div>
-          <div class="price-col-action">
-            <a href="#booking" class="price-btn">Выбрать</a>
-          </div>
-        </div>
-
-        <div class="price-row">
-          <div>
-            <div class="price-title">Восстановление и чистка после попадания жидкости</div>
-            <div class="price-desc">Ультразвуковая чистка платы, удаление окислов, сушка и пайка поврежденных дорожек.</div>
-          </div>
-          <div class="price-cost">от 1 500 ₽</div>
-          <div class="price-col-action">
-            <a href="#booking" class="price-btn">Выбрать</a>
-          </div>
-        </div>
-
-        <div class="price-row">
-          <div>
-            <div class="price-title">Установка удаленных банковских приложений</div>
-            <div class="price-desc">Установка Сбера, Т-Банка, Альфа-Банка, ВТБ на ваш iPhone без App Store.</div>
-          </div>
-          <div class="price-cost">0 ₽ / Бесплатно</div>
-          <div class="price-col-action">
-            <a href="#booking" class="price-btn">Выбрать</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bonus Banner -->
-      <div class="bonus-box">
-        <div class="bonus-info">
-          <b>Бонус каждому клиенту iCloud в Саратове:</b>
-          <span>Бесплатная чистка сеток динамиков от пыли и установка защитного бронестекла при любом сервисном ремонте.</span>
-        </div>
-        <div class="bonus-tag">В подарок к визиту</div>
+        <div class="gift-badge">Бесплатно для всех гостей</div>
       </div>
     </div>
   </section>
 
-  <!-- Advantages -->
-  <section class="adv-section" id="adv">
-    <div class="wrap">
-      <div class="sec-header">
-        <div>
-          <h2>Почему саратовцы выбирают iCloud</h2>
-          <p style="color: var(--text-muted); font-size: 14px; margin-top: 6px;">
-            Стандарты работы, благодаря которым сервис заработал рейтинг 5.0 на Яндекс.Картах
-          </p>
-        </div>
-      </div>
-
-      <div class="adv-grid">
-        <div class="adv-card">
-          <div class="adv-num">01 / Скорость</div>
-          <div class="adv-title">Ремонт прямо при вас</div>
-          <div class="adv-text">
-            90% типовых поломок (экран, аккумулятор, разъем зарядки, динамик) устраняются за 20–40 минут в вашем присутствии в зоне ожидания.
-          </div>
-        </div>
-
-        <div class="adv-card">
-          <div class="adv-num">02 / Детали</div>
-          <div class="adv-title">Оригинальные запчасти</div>
-          <div class="adv-text">
-            Постоянный складской запас дисплеев и аккумуляторов для всех моделей iPhone — от iPhone 7 до флагманских iPhone 15 и 16 Pro Max.
-          </div>
-        </div>
-
-        <div class="adv-card">
-          <div class="adv-num">03 / Честность</div>
-          <div class="adv-title">Никаких навязанных услуг</div>
-          <div class="adv-text">
-            Сначала бесплатная точная диагностика, согласование фиксированной цены до копейки — и только потом работа. Цена не вырастет в процессе.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Customer Reviews -->
+  <!-- Отзывы -->
   <section class="reviews-section" id="reviews">
-    <div class="wrap">
-      <div class="rev-header">
-        <div class="rev-rating">5.0 <span class="rev-stars">★★★★★</span></div>
-        <div class="rev-sub">Подтвержденный рейтинг на основе более 860 отзывов на Яндекс.Картах</div>
-      </div>
+    <div class="container">
+      <h2 class="section-headline">Что пишут клиенты на Яндекс.Картах</h2>
+      <p class="section-subhead">Собрали настоящие отзывы гостей сервиса на Московской, 122/126.</p>
 
       <div class="reviews-grid">
-        <div class="rev-card">
-          <div class="rev-quote">
-            «Отличный магазин и сервис! Пришел поменять аккумулятор на iPhone 13 — сделали буквально за 25 минут, емкость 100%, ошибки нет. Еще и защитное стекло подарили и бесплатно наклеили. Очень вежливый персонал!»
-          </div>
-          <div class="rev-author">
-            Алексей М.
-            <div class="rev-source">Знаток города • Яндекс.Карты</div>
-          </div>
-        </div>
-
-        <div class="rev-card">
-          <div class="rev-quote">
-            «Покупала здесь телефон и сразу сдала свой старый в трейд-ин. Оценили честно, дороже, чем в других сетевых магазинах. Все данные со старого айфона перенесли бесплатно и установили Сбербанк, которого сейчас нет в App Store.»
-          </div>
-          <div class="rev-author">
-            Екатерина В.
-            <div class="rev-source">Реальный покупатель • Яндекс.Карты</div>
-          </div>
-        </div>
-
-        <div class="rev-card">
-          <div class="rev-quote">
-            «Разбил экран на айфоне в хлам, думал попал на крупную сумму. Ребята на Московской быстро предложили варианты — оригинальный модуль или копия. Поставили оригинал, картинка идеальная, датчики работают. Рекомендую!»
-          </div>
-          <div class="rev-author">
-            Дмитрий Смирнов
-            <div class="rev-source">Постоянный клиент • Яндекс.Карты</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Booking & Contact -->
-  <section class="contact-section" id="booking">
-    <div class="wrap">
-      <div class="contact-box">
-        <div class="contact-info">
-          <h2>Ждем вас в iCloud Саратов</h2>
-          <p>
-            Напишите нам в WhatsApp модель вашего устройства и поломку — мастер сориентирует по стоимости и забронирует деталь к вашему приезду.
+        <div class="review-item">
+          <p class="review-text">
+            «Отличный магазин и сервис! Пришел поменять аккумулятор на 13 iPhone — сделали за 25 минут, емкость 100%, ошибки нет. Еще и защитное стекло подарили и бесплатно наклеили. Очень вежливый персонал!»
           </p>
-          <div class="contact-details">
-            <div class="contact-row">
-              <b>Адрес:</b> <span>г. Саратов, Московская улица, 122/126 (рядом с ТК «Москва»)</span>
-            </div>
-            <div class="contact-row">
-              <b>График работы:</b> <span>Ежедневно с 10:00 до 22:00</span>
-            </div>
-            <div class="contact-row">
-              <b>Телефон мастера:</b> <span>+7 (999) 575-64-64</span>
-            </div>
+          <div class="review-meta">
+            <span class="author-name">Алексей М.</span>
+            <span class="author-service">Замена АКБ iPhone 13</span>
           </div>
         </div>
 
-        <div class="contact-action-box">
-          <div class="action-title">Быстрая оценка стоимости</div>
-          <div class="action-sub">Ответим в WhatsApp в течение 5 минут</div>
-          <a href="https://wa.me/79995756464?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0" target="_blank" class="btn-whatsapp">
-            <span>💬 Написать мастеру в WhatsApp</span>
-          </a>
-          <a href="tel:+79995756464" class="action-phone-link">или позвонить: +7 (999) 575-64-64</a>
+        <div class="review-item">
+          <p class="review-text">
+            «Покупала здесь телефон и сразу сдала свой старый в трейд-ин. Оценили честно, дороже сетевых магазинов. Все данные перенесли бесплатно и установили Сбер, которого сейчас нет в магазине приложений.»
+          </p>
+          <div class="review-meta">
+            <span class="author-name">Екатерина В.</span>
+            <span class="author-service">Trade-in и перенос данных</span>
+          </div>
+        </div>
+
+        <div class="review-item">
+          <p class="review-text">
+            «Разбил экран на айфоне, думал попал на крупную сумму. Предложили оригинальный модуль или копию. Поставили оригинал, картинка идеальная, все датчики работают. Рекомендую!»
+          </p>
+          <div class="review-meta">
+            <span class="author-name">Дмитрий Смирнов</span>
+            <span class="author-service">Замена дисплея</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Модуль записи и контактов -->
+  <div class="container" id="booking">
+    <div class="contact-module">
+      <div class="contact-grid">
+        <div>
+          <h2 class="contact-heading">Ждем вас в сервисном центре iCloud</h2>
+          <p class="contact-sub">
+            Напишите нам в WhatsApp модель устройства и что случилось. Мастер сразу назовет точную цену и отложит нужную деталь к вашему приезду.
+          </p>
+          <div class="contact-specs">
+            <div><b>Адрес:</b> <span>г. Саратов, ул. Московская, 122/126 (рядом с ТК «Москва»)</span></div>
+            <div><b>График работы:</b> <span>Ежедневно с 10:00 до 22:00</span></div>
+            <div><b>Телефон:</b> <span>+7 (999) 575-64-64</span></div>
+          </div>
+        </div>
+
+        <div class="whatsapp-card">
+          <div class="wa-callout">Консультация мастера</div>
+          <div class="wa-timing">Отвечаем в течение 5 минут</div>
+          <a href="https://wa.me/79995756464?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B0" target="_blank" class="btn-wa">
+            Написать в WhatsApp
+          </a>
+          <a href="tel:+79995756464" class="direct-call">или набрать номер мастера</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p>© 2026 iCloud Саратов. Сервисный центр и магазин техники Apple. Все цены и условия являются демонстрационными.</p>
+  <div class="container">
+    <p>© 2026 iCloud Саратов. Сервисный центр и магазин техники Apple. Демонстрационная страница.</p>
   </div>
 </footer>
 

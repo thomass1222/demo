@@ -6,909 +6,678 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Amor — салон красоты и студия эстетики в Пензе | ул. Луначарского, 51</title>
-<meta name="description" content="Салон красоты Amor в Пензе на Луначарского, 51. Стрижки, сложное окрашивание, маникюр, педикюр, наращивание ресниц и турбосолярий. Рейтинг 5.0 на Яндекс.Картах.">
+<title>Amor — салон красоты в Пензе | ул. Луначарского, 51</title>
+<meta name="description" content="Салон красоты Amor в Пензе на Луначарского, 51. Стрижки, сложное окрашивание, маникюр, педикюр и турбосолярий. Рейтинг 5.0 на Яндекс.Картах.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F9F7F3;
-  --surface: #FFFFFF;
-  --surface-warm: #F4EFEB;
-  --border: #E8E1D7;
-  --border-light: #F0EAE1;
-  --ink: #1C1917;
-  --ink-soft: #4A4540;
-  --ink-muted: #8C847B;
-  --rose: #A35D6A;
-  --rose-dark: #82434E;
-  --gold: #C29B63;
-  --serif: "Italiana", Georgia, serif;
-  --sans: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #F7F5F0;
+  --white: #FFFFFF;
+  --charcoal: #1F1B18;
+  --charcoal-soft: #524B45;
+  --charcoal-muted: #877E76;
+  --line: #E7E2DA;
+  --terracotta: #A4503E;
+  --terracotta-hover: #8C3E2E;
+  --warm-card: #FDFCF9;
+  --font: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--sans);
+  font-family: var(--font);
   background: var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
+  color: var(--charcoal);
+  line-height: 1.55;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
 .wrap {
-  max-width: 1120px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
-/* Demo strip */
-.demo-strip {
-  background: var(--ink);
-  color: #EDE7E0;
+/* Верхняя системная полоса */
+.notice-strip {
+  background: var(--charcoal);
+  color: #EDE7E1;
   font-size: 13px;
   padding: 9px 16px;
   text-align: center;
 }
-.demo-strip b { color: #fff; }
-.demo-strip a {
-  color: #F3B5C0;
-  margin-left: 10px;
+.notice-strip b { color: #fff; }
+.notice-strip a {
+  color: #F8B4A6;
+  margin-left: 8px;
   text-decoration: underline;
 }
 
-/* Header */
+/* Шапка */
 header {
+  background: rgba(247, 245, 240, 0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(249, 247, 243, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
-.header-bar {
+.header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 78px;
+  height: 68px;
 }
-.brand {
+.brand-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   text-decoration: none;
 }
 .brand-name {
-  font-family: var(--serif);
-  font-size: 32px;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-  line-height: 1;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
 }
 .brand-sub {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--ink-muted);
+  font-size: 11px;
   font-weight: 600;
-  display: block;
-  margin-top: 3px;
+  color: var(--charcoal-muted);
 }
 
 .header-center {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   font-size: 13px;
 }
-.header-item {
-  display: flex;
-  flex-direction: column;
-}
-.header-item b {
-  color: var(--ink);
+.header-center-item b {
+  color: var(--charcoal);
   font-weight: 600;
 }
-.header-item span {
-  color: var(--ink-muted);
+.header-center-item span {
+  color: var(--charcoal-muted);
+  font-size: 12px;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-shrink: 0;
 }
 .phone-head {
-  color: var(--ink);
+  color: var(--charcoal);
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
   white-space: nowrap;
 }
-.phone-head:hover { color: var(--rose); }
+.phone-head:hover { color: var(--terracotta); }
 .btn-head {
-  background: var(--rose);
+  background: var(--terracotta);
   color: #fff;
-  font-weight: 600;
   font-size: 13px;
-  padding: 10px 20px;
-  border-radius: 30px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: background 0.15s;
   white-space: nowrap;
-  flex-shrink: 0;
 }
-.btn-head:hover {
-  background: var(--rose-dark);
-}
+.btn-head:hover { background: var(--terracotta-hover); }
 
-/* Hero Section */
-.hero {
-  padding: 60px 0 70px;
-  border-bottom: 1px solid var(--border);
+/* Главный экран */
+.hero-section {
+  padding: 56px 0 48px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
-.hero-layout {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
-  align-items: center;
+.hero-content {
+  max-width: 760px;
 }
-.badge-tag {
+.rating-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--surface-warm);
-  border: 1px solid var(--border);
-  color: var(--rose-dark);
+  background: #FDF2EF;
+  color: var(--terracotta-hover);
   padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
+  border-radius: 980px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.rating-tag span { color: #E5A83B; }
+.hero-title {
+  font-size: clamp(32px, 4.4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--charcoal);
   margin-bottom: 18px;
 }
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(34px, 4.2vw, 54px);
-  font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
-  color: var(--ink);
-}
-.hero h1 em {
-  font-style: italic;
-  color: var(--rose);
-}
-.hero-p {
+.hero-desc {
   font-size: 17px;
-  color: var(--ink-soft);
-  max-width: 500px;
-  margin-bottom: 30px;
+  color: var(--charcoal-soft);
+  line-height: 1.55;
+  margin-bottom: 28px;
 }
-.hero-actions {
+.hero-btns {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 .btn-primary {
-  background: var(--rose);
+  background: var(--terracotta);
   color: #fff;
-  padding: 14px 28px;
-  border-radius: 30px;
+  font-size: 15px;
   font-weight: 600;
-  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  transition: background 0.15s;
 }
-.btn-primary:hover {
-  background: var(--rose-dark);
-}
+.btn-primary:hover { background: var(--terracotta-hover); }
 .btn-outline {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--ink);
-  padding: 13px 24px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.btn-outline:hover {
-  border-color: var(--ink);
-}
-
-/* Quick Selection Card */
-.selection-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 24px rgba(28, 25, 23, 0.04);
-}
-.sel-title {
-  font-family: var(--serif);
-  font-size: 24px;
-  margin-bottom: 4px;
-}
-.sel-sub {
-  font-size: 12px;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--border-light);
-  padding-bottom: 10px;
-}
-.sel-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 14px;
-  border-radius: 8px;
   background: var(--bg);
-  border: 1px solid transparent;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.sel-item.active, .sel-item:hover {
-  border-color: var(--rose);
-  background: var(--surface-warm);
-}
-.sel-name {
+  border: 1px solid var(--line);
+  color: var(--charcoal);
+  font-size: 15px;
   font-weight: 600;
-  font-size: 14px;
-  color: var(--ink);
-}
-.sel-desc {
-  font-size: 12px;
-  color: var(--ink-muted);
-  margin-top: 2px;
-}
-.sel-price {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--rose-dark);
-  white-space: nowrap; /* ЦЕНА СТРОГО В ОДНУ СТРОКУ */
-}
-.sel-footer {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.sel-btn {
-  background: var(--ink);
-  color: #fff;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 10px 18px;
-  border-radius: 30px;
+  padding: 13px 22px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background 0.2s;
+}
+.btn-outline:hover { background: #EAE6DF; }
+
+/* Категории */
+.category-bar {
+  padding: 16px 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.category-scroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.cat-btn {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--charcoal);
+  cursor: pointer;
   white-space: nowrap;
 }
-.sel-btn:hover { background: var(--rose); }
-
-/* Features Ribbon */
-.ribbon {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 0;
+.cat-btn.active, .cat-btn:hover {
+  background: var(--charcoal);
+  color: #fff;
+  border-color: var(--charcoal);
 }
-.ribbon-grid {
+
+/* Стандарты сервиса */
+.features-section {
+  padding: 44px 0;
+}
+.features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
-.ribbon-val {
-  font-family: var(--serif);
+.feature-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+}
+.feature-stat {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.feature-txt {
+  font-size: 13px;
+  color: var(--charcoal-soft);
+  line-height: 1.4;
+}
+
+/* Прейскурант */
+.pricing-section {
+  padding: 30px 0 50px;
+}
+.section-headline {
   font-size: 28px;
-  font-weight: 700;
-  color: var(--rose-dark);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+  color: var(--charcoal);
 }
-.ribbon-txt {
-  font-size: 13px;
-  color: var(--ink-muted);
-  margin-top: 4px;
+.section-subhead {
+  font-size: 15px;
+  color: var(--charcoal-soft);
+  margin-bottom: 24px;
 }
-
-/* Services Menu */
-.menu-section {
-  padding: 70px 0;
-}
-.menu-header {
-  margin-bottom: 36px;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.menu-header h2 {
-  font-family: var(--serif);
-  font-size: clamp(30px, 3.6vw, 44px);
-  font-weight: 400;
-}
-.menu-header span {
-  font-size: 13px;
-  color: var(--ink-muted);
-  text-align: right;
-}
-
-.price-table {
-  display: flex;
-  flex-direction: column;
+.price-sheet {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
 }
 .price-row {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: flex;
   align-items: center;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
-  gap: 24px;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  gap: 20px;
 }
-.price-name {
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--ink);
-}
-.price-sub {
-  font-size: 13px;
-  color: var(--ink-muted);
-  margin-top: 2px;
-}
-.price-val {
-  font-family: var(--serif);
-  font-size: 22px;
+.price-row:last-child { border-bottom: none; }
+.price-info { flex: 1; }
+.service-title {
+  font-size: 16px;
   font-weight: 700;
-  color: var(--rose-dark);
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.service-desc {
+  font-size: 13px;
+  color: var(--charcoal-soft);
+}
+.service-cost {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--charcoal);
   white-space: nowrap; /* ЦЕНА В ОДНУ СТРОКУ */
 }
-.price-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--ink);
-  padding: 7px 16px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+.service-btn {
+  background: #FDF2EF;
+  color: var(--terracotta-hover);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.15s;
 }
-.price-btn:hover {
-  background: var(--ink);
-  color: #fff;
-  border-color: var(--ink);
-}
+.service-btn:hover { background: #F8E1DC; }
 
-/* Team & Atmosphere */
-.team-section {
-  padding: 70px 0;
-  background: var(--surface-warm);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 36px;
-}
-.team-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 28px;
-  border-radius: 10px;
-}
-.team-num {
-  font-size: 11px;
-  color: var(--rose);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.team-title {
-  font-family: var(--serif);
-  font-size: 22px;
-  margin-bottom: 8px;
-  color: var(--ink);
-}
-.team-desc {
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-
-/* Reviews */
+/* Отзывы */
 .reviews-section {
-  padding: 70px 0;
+  padding: 40px 0 60px;
 }
-.rev-box {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-.rev-rating {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1;
-}
-.rev-stars { color: #E5A83B; font-size: 22px; }
-.rev-count { font-size: 14px; color: var(--ink-muted); }
-
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
-.rev-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px;
+.review-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.rev-quote {
+.review-text {
   font-size: 14px;
-  color: var(--ink-soft);
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 18px;
+  color: var(--charcoal-soft);
+  line-height: 1.55;
+  margin-bottom: 16px;
 }
-.rev-author {
+.review-author {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
   font-size: 13px;
   font-weight: 700;
-  color: var(--ink);
-  border-top: 1px solid var(--border-light);
-  padding-top: 10px;
+  color: var(--charcoal);
 }
-.rev-source {
+.review-tag {
   font-size: 11px;
-  color: var(--ink-muted);
-  font-weight: 400;
+  color: var(--charcoal-muted);
+  font-weight: 500;
 }
 
-/* Contact & WhatsApp */
-.contact-section {
-  padding: 70px 0;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-}
-.contact-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+/* Контакты и запись */
+.contact-module {
+  background: var(--white);
+  border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 44px;
+  padding: 36px;
+  margin: 20px 0 60px;
+}
+.contact-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1fr 340px;
+  gap: 36px;
   align-items: center;
 }
-.contact-info h2 {
-  font-family: var(--serif);
-  font-size: 34px;
-  margin-bottom: 12px;
+.contact-heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--charcoal);
+  margin-bottom: 10px;
 }
-.contact-info p {
-  color: var(--ink-soft);
+.contact-desc {
   font-size: 15px;
-  margin-bottom: 22px;
+  color: var(--charcoal-soft);
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
-.contact-row {
+.contact-specs {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  gap: 8px;
   font-size: 14px;
 }
-.contact-row b { color: var(--ink); }
-.contact-row span { color: var(--ink-muted); }
+.contact-specs b { color: var(--charcoal); }
+.contact-specs span { color: var(--charcoal-soft); }
 
-.booking-box {
-  background: var(--surface);
-  border: 1px solid var(--border);
+.booking-panel {
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 30px;
+  padding: 24px;
   text-align: center;
 }
-.booking-title {
-  font-family: var(--serif);
-  font-size: 22px;
+.panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--charcoal);
   margin-bottom: 6px;
 }
-.booking-sub {
-  font-size: 13px;
-  color: var(--ink-muted);
-  margin-bottom: 20px;
+.panel-sub {
+  font-size: 12px;
+  color: var(--charcoal-muted);
+  margin-bottom: 16px;
 }
-.btn-whatsapp {
+.btn-wa {
   background: #25D366;
   color: #fff;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 14px;
-  padding: 14px 24px;
-  border-radius: 30px;
+  padding: 13px 20px;
+  border-radius: 6px;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  transition: background 0.2s;
-}
-.btn-whatsapp:hover { background: #1EBE5D; }
-.contact-phone-sub {
   display: block;
-  margin-top: 14px;
-  color: var(--ink);
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 600;
+  transition: background 0.15s;
 }
+.btn-wa:hover { background: #1EBE5D; }
+.panel-phone {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+.panel-phone:hover { color: var(--terracotta); }
 
-/* Footer */
+/* Подвал */
 footer {
-  padding: 28px 0;
-  border-top: 1px solid var(--border);
+  padding: 24px 0 40px;
   text-align: center;
   font-size: 12px;
-  color: var(--ink-muted);
+  color: var(--charcoal-muted);
 }
 
-/* Responsive */
-@media (max-width: 1040px) {
+/* Мобильный адаптив */
+@media (max-width: 960px) {
   .header-center { display: none; }
-  .ribbon-grid { grid-template-columns: repeat(2, 1fr); }
-  .team-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
   .reviews-grid { grid-template-columns: 1fr; }
-  .contact-card { grid-template-columns: 1fr; padding: 28px; }
-}
-@media (max-width: 860px) {
-  .hero-layout { grid-template-columns: 1fr; gap: 32px; }
-  .price-row { grid-template-columns: 1fr auto; }
-  .price-col-btn { grid-column: 1 / -1; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .wrap { padding: 0 16px; }
-  .header-bar { height: 64px; }
-  .brand-name { font-size: 24px; }
+  .header-row { height: 56px; }
+  .brand-name { font-size: 20px; }
   .phone-head { display: none; }
-  .btn-head { padding: 8px 14px; font-size: 12px; }
-  .hero h1 { font-size: 30px; }
-  .selection-card { padding: 20px; }
+  .btn-head { padding: 7px 14px; font-size: 12px; }
+  .hero-section { padding: 36px 0 28px; }
+  .hero-title { font-size: 26px; }
+  .hero-desc { font-size: 15px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .price-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .contact-module { padding: 22px; }
 }
 </style>
 </head>
 <body>
 
-<div class="demo-strip">
-  Демонстрационный сайт для салона красоты <b>Amor</b> (Пенза, ул. Луначарского, 51)
-  <a href="https://yandex.ru/maps/org/amor/1006035752/" target="_blank">Карточка на Яндекс.Картах (5.0 ★) ↗</a>
+<div class="notice-strip">
+  Демонстрационная страница онлайн-записи для салона красоты <b>Amor</b> (Пенза, ул. Луначарского, 51)
+  <a href="https://yandex.ru/maps/org/amor/1006035752/" target="_blank">Карточка на Яндекс.Картах (5.0 ★)</a>
 </div>
 
 <header>
-  <div class="wrap header-bar">
-    <a href="#" class="brand">
+  <div class="wrap header-row">
+    <a href="#" class="brand-group">
       <div class="brand-name">Amor</div>
       <span class="brand-sub">Салон красоты • Пенза</span>
     </a>
     
     <div class="header-center">
-      <div class="header-item">
+      <div class="header-center-item">
         <b>ул. Луначарского, 51</b>
         <span>ост. «Улица Толстого»</span>
       </div>
-      <div class="header-item">
+      <div class="header-center-item">
         <b>09:00 – 20:00</b>
-        <span>Ежедневно, по записи</span>
+        <span>Каждый день по записи</span>
       </div>
     </div>
 
     <div class="header-actions">
       <a href="tel:+79063956840" class="phone-head">+7 (906) 395-68-40</a>
-      <a href="#menu" class="btn-head">Прайс-лист</a>
+      <a href="#booking" class="btn-head">Записаться на визит</a>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="wrap hero-layout">
-      <div>
-        <div class="badge-tag">★ Рейтинг 5.0 на Яндекс.Картах • 530+ отзывов</div>
-        <h1>Искусство заботы о вашей красоте <em>в самом сердце</em> Пензы</h1>
-        <p class="hero-p">
-          Профессиональные стрижки и сложное окрашивание, бережный маникюр, оформление бровей и мощный турбосолярий. Уютная атмосфера и забота в салоне на Луначарского, 51.
+  <!-- Главный экран -->
+  <section class="hero-section" id="hero">
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="rating-tag">
+          <span>★</span> 5.0 рейтинг на Яндекс.Картах • 530+ проверенных отзывов
+        </div>
+        <h1 class="hero-title">
+          Профессиональный уход за волосами, маникюр и турбосолярий в Пензе
+        </h1>
+        <p class="hero-desc">
+          Стрижки и сложные окрашивания Airtouch, аккуратный маникюр с укреплением, оформление бровей и мощный вертикальный солярий. Уютная атмосфера и забота о каждом клиенте на Луначарского, 51.
         </p>
-        <div class="hero-actions">
-          <a href="#booking" class="btn-primary">Записаться на визит →</a>
-          <a href="#menu" class="btn-outline">Все услуги и цены</a>
-        </div>
-      </div>
-
-      <!-- Quick Complex Selection -->
-      <div class="selection-card">
-        <div class="sel-title">Популярные комплексы</div>
-        <div class="sel-sub">ул. Луначарского, 51 • Пенза</div>
-
-        <div class="sel-item active">
-          <div>
-            <div class="sel-name">Маникюр с покрытием гель-лак</div>
-            <div class="sel-desc">Снятие, аппаратная обработка, выравнивание, цвет</div>
-          </div>
-          <div class="sel-price">от 1 450 ₽</div>
-        </div>
-
-        <div class="sel-item">
-          <div>
-            <div class="sel-name">Стрижка волос + уход</div>
-            <div class="sel-desc">Мытье головы, модельная стрижка, сушка и укладка</div>
-          </div>
-          <div class="sel-price">от 430 ₽</div>
-        </div>
-
-        <div class="sel-item">
-          <div>
-            <div class="sel-name">Оформление + окрашивание бровей</div>
-            <div class="sel-desc">Архитектура формы пинцетом/воском + стойкая хна/краска</div>
-          </div>
-          <div class="sel-price">от 700 ₽</div>
-        </div>
-
-        <div class="sel-footer">
-          <span style="font-size: 13px; color: var(--ink-muted);">Чай и натуральный кофе для каждого гостя</span>
-          <a href="#booking" class="sel-btn">Выбрать комплекс</a>
+        <div class="hero-btns">
+          <a href="#booking" class="btn-primary">Записаться в WhatsApp</a>
+          <a href="#prices" class="btn-outline">Прейскурант услуг</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ribbon -->
-  <section class="ribbon">
-    <div class="wrap ribbon-grid">
-      <div>
-        <div class="ribbon-val">5.0 ★</div>
-        <div class="ribbon-txt">Более 530 реальных отзывов на Яндекс.Картах и 2ГИС</div>
+  <!-- Категории -->
+  <div class="category-bar">
+    <div class="wrap category-scroll">
+      <div class="cat-btn active">Парикмахерский зал</div>
+      <div class="cat-btn">Ногтевой сервис</div>
+      <div class="cat-btn">Брови & Ресницы</div>
+      <div class="cat-btn">Турбосолярий</div>
+    </div>
+  </div>
+
+  <!-- Факты -->
+  <section class="features-section">
+    <div class="wrap features-grid">
+      <div class="feature-box">
+        <div class="feature-stat">5.0 ★</div>
+        <div class="feature-txt">Высшая оценка на Яндекс.Картах и 2ГИС от жителей Пензы.</div>
       </div>
-      <div>
-        <div class="ribbon-val">100%</div>
-        <div class="ribbon-txt">Стерилизация по регламенту и одноразовые наборы</div>
+      <div class="feature-box">
+        <div class="feature-stat">100% стерильно</div>
+        <div class="feature-txt">Индивидуальные одноразовые наборы и дезинфекция по регламенту.</div>
       </div>
-      <div>
-        <div class="ribbon-val">16 ₽/мин</div>
-        <div class="ribbon-txt">Вертикальный турбосолярий с новыми мощными лампами</div>
+      <div class="feature-box">
+        <div class="feature-stat">16 ₽ / мин</div>
+        <div class="feature-txt">Турбосолярий с новыми ультрафиолетовыми лампами.</div>
       </div>
-      <div>
-        <div class="ribbon-val">от 3 недель</div>
-        <div class="ribbon-txt">Стойкость покрытия гель-лак без сколов и отслоек</div>
+      <div class="feature-box">
+        <div class="feature-stat">от 3 недель</div>
+        <div class="feature-txt">Стойкость покрытия гель-лак без сколов и отслоек.</div>
       </div>
     </div>
   </section>
 
-  <!-- Menu / Services -->
-  <section class="menu-section" id="menu">
+  <!-- Цены -->
+  <section class="pricing-section" id="prices">
     <div class="wrap">
-      <div class="menu-header">
-        <div>
-          <h2>Прайс-лист услуг</h2>
-          <p style="color: var(--ink-muted); font-size: 14px; margin-top: 6px;">
-            Прозрачные цены без скрытых доплат. Расходные материалы включены в стоимость.
-          </p>
-        </div>
-        <span>ул. Луначарского, 51</span>
-      </div>
+      <h2 class="section-headline">Популярные услуги салона</h2>
+      <p class="section-subhead">Честные цены без скрытых доплат. Расходные материалы включены в стоимость.</p>
 
-      <div class="price-table">
+      <div class="price-sheet">
         <div class="price-row">
-          <div>
-            <div class="price-name">Комплексный маникюр с гель-лаком</div>
-            <div class="price-sub">Снятие предыдущего материала, комбинированная обработка кутикулы, укрепление базой, цветное покрытие.</div>
+          <div class="price-info">
+            <div class="service-title">Комплексный маникюр с гель-лаком</div>
+            <div class="service-desc">Снятие предыдущего материала, комби-обработка кутикулы, укрепление базой и цветное покрытие.</div>
           </div>
-          <div class="price-val">от 1 450 ₽</div>
-          <div class="price-col-btn">
-            <a href="#booking" class="price-btn">Записаться</a>
-          </div>
+          <div class="service-cost">от 1 450 ₽</div>
+          <a href="#booking" class="service-btn">Выбрать</a>
         </div>
 
         <div class="price-row">
-          <div>
-            <div class="price-name">Гигиенический маникюр (без покрытия)</div>
-            <div class="price-sub">Аппаратная или комбинированная обработка, опил формы, полировка ногтевой пластины и питательное масло.</div>
+          <div class="price-info">
+            <div class="service-title">Гигиенический маникюр (без покрытия)</div>
+            <div class="service-desc">Аппаратная обработка боковых валиков, чистый срез, полировка и питательное масло.</div>
           </div>
-          <div class="price-val">от 550 ₽</div>
-          <div class="price-col-btn">
-            <a href="#booking" class="price-btn">Записаться</a>
-          </div>
+          <div class="service-cost">от 550 ₽</div>
+          <a href="#booking" class="service-btn">Выбрать</a>
         </div>
 
         <div class="price-row">
-          <div>
-            <div class="price-name">Женская модельная стрижка</div>
-            <div class="price-sub">Консультация стилиста, подбор формы под овал лица, мытье профессиональным шампунем и укладка феном.</div>
+          <div class="price-info">
+            <div class="service-title">Женская модельная стрижка</div>
+            <div class="service-desc">Консультация стилиста, мытье профессиональным шампунем, стрижка и укладка феном.</div>
           </div>
-          <div class="price-val">от 430 ₽</div>
-          <div class="price-col-btn">
-            <a href="#booking" class="price-btn">Записаться</a>
-          </div>
+          <div class="service-cost">от 430 ₽</div>
+          <a href="#booking" class="service-btn">Выбрать</a>
         </div>
 
         <div class="price-row">
-          <div>
-            <div class="price-name">Сложное окрашивание (Airtouch, Shatush, Balayage)</div>
-            <div class="price-sub">Мягкий переход цвета, сохранение качества волос, тонирование и восстанавливающий SPA-уход.</div>
+          <div class="price-info">
+            <div class="service-title">Сложное окрашивание (Airtouch, Шатуш, Балаяж)</div>
+            <div class="service-desc">Плавный переход цвета, защита структуры волос, тонирование и восстанавливающий SPA-уход.</div>
           </div>
-          <div class="price-val">от 3 500 ₽</div>
-          <div class="price-col-btn">
-            <a href="#booking" class="price-btn">Записаться</a>
-          </div>
+          <div class="service-cost">от 3 500 ₽</div>
+          <a href="#booking" class="service-btn">Выбрать</a>
         </div>
 
         <div class="price-row">
-          <div>
-            <div class="price-name">Архитектура и окрашивание бровей</div>
-            <div class="price-sub">Построение идеальной формы по точкам лица, коррекция пинцетом/воском, стойкое окрашивание.</div>
+          <div class="price-info">
+            <div class="service-title">Архитектура и окрашивание бровей</div>
+            <div class="service-desc">Построение симметричной формы, коррекция воском или пинцетом, стойкое окрашивание краской/хной.</div>
           </div>
-          <div class="price-val">от 700 ₽</div>
-          <div class="price-col-btn">
-            <a href="#booking" class="price-btn">Записаться</a>
-          </div>
+          <div class="service-cost">от 700 ₽</div>
+          <a href="#booking" class="service-btn">Выбрать</a>
         </div>
 
         <div class="price-row">
-          <div>
-            <div class="price-name">Сеанс загара в турбосолярии</div>
-            <div class="price-sub">Вертикальный солярий с мощными лампами. Ровный золотистый оттенок уже после первых сеансов.</div>
+          <div class="price-info">
+            <div class="service-title">Сеанс загара в турбосолярии</div>
+            <div class="service-desc">Вертикальный солярий с мощными лампами. Быстрый и ровный оттенок загара.</div>
           </div>
-          <div class="price-val">16 ₽ / мин</div>
-          <div class="price-col-btn">
-            <a href="#booking" class="price-btn">Записаться</a>
-          </div>
+          <div class="service-cost">16 ₽ / мин</div>
+          <a href="#booking" class="service-btn">Выбрать</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Team & Standards -->
-  <section class="team-section" id="team">
-    <div class="wrap">
-      <div class="menu-header" style="border-bottom-color: var(--border);">
-        <div>
-          <h2>Стандарты салона Amor</h2>
-          <p style="color: var(--ink-soft); font-size: 14px; margin-top: 6px;">
-            Почему более 500 гостей рекомендуют нас своим близким и возвращаются годами
-          </p>
-        </div>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-num">01 / Сервис</div>
-          <div class="team-title">Забота о вашем времени</div>
-          <div class="team-desc">
-            Всегда начинаем процедуры вовремя, а при необходимости находим удобные «окошки» день в день даже при плотной записи.
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-num">02 / Материалы</div>
-          <div class="team-title">Бережный уход за волосами и ногтями</div>
-          <div class="team-desc">
-            Работаем только на сертифицированных красителях и премиальных базах. Никаких химических ожогов и пересушенных кончиков.
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-num">03 / Уют</div>
-          <div class="team-title">Атмосфера настоящего отдыха</div>
-          <div class="team-desc">
-            Просторный светлый зал, приятная музыка, вежливые администраторы и свежесваренный кофе для отличного настроения.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews -->
+  <!-- Отзывы -->
   <section class="reviews-section" id="reviews">
     <div class="wrap">
-      <div class="rev-box">
-        <div class="rev-rating">5.0</div>
-        <div class="rev-stars">★★★★★</div>
-        <div class="rev-count">Оценка на Яндекс.Картах на основе 534 отзывов</div>
-      </div>
+      <h2 class="section-headline">Отзывы клиентов на Яндекс.Картах</h2>
+      <p class="section-subhead">Реальные впечатления посетителей салона на ул. Луначарского, 51.</p>
 
       <div class="reviews-grid">
-        <div class="rev-card">
-          <div class="rev-quote">
+        <div class="review-item">
+          <p class="review-text">
             «Хожу в этот салон уже не первый год! Девочки всегда приветливые, предложат кофе, сделают все на высшем уровне. Делала стрижку и маникюр — покрытие держится месяц без единого скола. Огромное спасибо!»
-          </div>
-          <div class="rev-author">
-            Ольга Смирнова
-            <div class="rev-source">Постоянный гость • Яндекс.Карты</div>
-          </div>
-        </div>
-
-        <div class="rev-card">
-          <div class="rev-quote">
-            «Отличный салон! Очень понравился мастер по окрашиванию — подобрали идеальный оттенок блонда, волосы мягкие и блестящие. Цены абсолютно адекватные, вернусь снова обязательно.»
-          </div>
-          <div class="rev-author">
-            Мария Климова
-            <div class="rev-source">Знаток города • Яндекс.Карты</div>
-          </div>
-        </div>
-
-        <div class="rev-card">
-          <div class="rev-quote">
-            «Очень уютный салон рядом с домом на Луначарского. Солярий супер, лампы новые, эффект виден сразу. Администраторы доброжелательные и всегда помогут подобрать время.»
-          </div>
-          <div class="rev-author">
-            Анна В.
-            <div class="rev-source">Отзыв на 2ГИС</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Booking -->
-  <section class="contact-section" id="booking">
-    <div class="wrap">
-      <div class="contact-card">
-        <div class="contact-info">
-          <h2>Ждем вас в гости в Amor</h2>
-          <p>
-            Напишите нам в WhatsApp, чтобы выбрать удобное время или проконсультироваться с мастером.
           </p>
-          <div class="contact-row">
-            <b>Адрес:</b>
-            <span>г. Пенза, улица Луначарского, 51 (1-й этаж, ост. «Улица Толстого»)</span>
-          </div>
-          <div class="contact-row">
-            <b>Режим работы:</b>
-            <span>Ежедневно с 09:00 до 20:00</span>
-          </div>
-          <div class="contact-row">
-            <b>Телефон:</b>
-            <span>+7 (906) 395-68-40</span>
+          <div class="review-author">
+            Ольга Смирнова
+            <div class="review-tag">Пенза • Яндекс.Карты</div>
           </div>
         </div>
 
-        <div class="booking-box">
-          <div class="booking-title">Онлайн-запись</div>
-          <div class="booking-sub">Быстрый ответ в WhatsApp в течение 10 минут</div>
-          <a href="https://wa.me/79063956840?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D1%81%D0%B0%D0%BB%D0%BE%D0%BD%20Amor" target="_blank" class="btn-whatsapp">
-            <span>💬 Записаться через WhatsApp</span>
-          </a>
-          <a href="tel:+79063956840" class="contact-phone-sub">или позвонить: +7 (906) 395-68-40</a>
+        <div class="review-item">
+          <p class="review-text">
+            «Отличный салон! Очень понравился мастер по окрашиванию — подобрали идеальный оттенок блонда, волосы мягкие и блестящие. Цены абсолютно адекватные, вернусь снова обязательно.»
+          </p>
+          <div class="review-author">
+            Мария Климова
+            <div class="review-tag">Пенза • Яндекс.Карты</div>
+          </div>
+        </div>
+
+        <div class="review-item">
+          <p class="review-text">
+            «Очень уютный салон рядом с домом на Луначарского. Солярий супер, лампы новые, эффект виден сразу. Администраторы доброжелательные и всегда помогут подобрать время.»
+          </p>
+          <div class="review-author">
+            Анна В.
+            <div class="review-tag">Пенза • 2ГИС</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Запись и контакты -->
+  <div class="wrap" id="booking">
+    <div class="contact-module">
+      <div class="contact-grid">
+        <div>
+          <h2 class="contact-heading">Запись в салон красоты Amor</h2>
+          <p class="contact-desc">
+            Напишите нам в WhatsApp, чтобы подобрать удобное время или задать вопрос по услугам. Администратор ответит в течение 10 минут.
+          </p>
+          <div class="contact-specs">
+            <div><b>Адрес:</b> <span>г. Пенза, ул. Луначарского, 51 (1-й этаж, ост. «Улица Толстого»)</span></div>
+            <div><b>Режим работы:</b> <span>Ежедневно с 09:00 до 20:00</span></div>
+            <div><b>Телефон:</b> <span>+7 (906) 395-68-40</span></div>
+          </div>
+        </div>
+
+        <div class="booking-panel">
+          <div class="panel-title">Быстрая запись через WhatsApp</div>
+          <div class="panel-sub">Отвечаем ежедневно с 09:00 до 20:00</div>
+          <a href="https://wa.me/79063956840?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D1%81%D0%B0%D0%BB%D0%BE%D0%BD%20Amor" target="_blank" class="btn-wa">
+            Записаться в WhatsApp
+          </a>
+          <a href="tel:+79063956840" class="panel-phone">или набрать администратора</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Салон красоты Amor (Пенза). Демонстрационный проект онлайн-заявки.</p>
+    <p>© 2026 Салон красоты Amor Пенза. Демонстрационная страница.</p>
   </div>
 </footer>
 

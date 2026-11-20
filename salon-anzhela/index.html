@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Анжела — салон красоты на Дома 8 Марта, Саратов</title>
+<meta name="description" content="Салон красоты «Анжела» в Саратове: маникюр, педикюр, стрижки, окрашивание. Запись онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== Theme: the only values that change per salon live in SALON.theme ===== */
+:root{
+  --accent:#C8157A;      /* mosaic wall */
+  --accent-ink:#9E0F5F;
+  --blush:#F4D3E1;       /* manicure photo */
+  --black:#000;
+  --white:#fff;
+  --paper:#FBF7F9;
+  --ink-2:#5E5258;
+  --silver:#C9C9CF;
+  --line:#E7DCE2;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--black);font-family:var(--sans);font-size:17px;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:18px;padding-right:18px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.test{background:var(--black);color:#E9DDE3;font-size:13.5px}
+.test .wrap{padding-top:8px;padding-bottom:8px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:rgba(251,247,249,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:var(--serif);font-weight:900;font-size:26px;letter-spacing:-.01em;text-decoration:none}
+.logo i{font-style:italic;font-weight:500;color:var(--accent)}
+nav.menu{display:none;gap:24px;margin-left:auto;font-size:15px}
+nav.menu a{text-decoration:none;color:var(--ink-2)}
+nav.menu a:hover{color:var(--black)}
+.top .book-sm{margin-left:auto;white-space:nowrap}
+@media (min-width:920px){nav.menu{display:flex}.top .book-sm{margin-left:8px}}
+
+.btn{appearance:none;border:0;border-radius:999px;padding:14px 24px;font-weight:600;font-size:16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;transition:background .2s,transform .2s}
+.btn.main{background:var(--accent);color:#fff}
+.btn.main:hover{background:var(--accent-ink)}
+.btn.dark{background:var(--black);color:#fff}
+.btn.ghost{background:transparent;border:1.5px solid currentColor}
+.btn.sm{padding:10px 18px;font-size:15px}
+
+/* ===== HERO: mosaic wall + vanity mirror ===== */
+.hero{position:relative;overflow:hidden;background:var(--accent-ink);color:#fff;isolation:isolate}
+.mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(22px,1fr));grid-auto-rows:22px;gap:2px;z-index:-1;opacity:.9}
+.mosaic i{background:var(--accent);transition:filter 1.2s ease}
+.mosaic i.s{filter:brightness(1.55) saturate(1.2)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(60,0,32,.82) 0%,rgba(60,0,32,.55) 45%,rgba(60,0,32,.1) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:34px;padding-top:44px;padding-bottom:56px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(58px,13vw,148px);line-height:.9;letter-spacing:-.03em;margin:0}
+.hero h1 em{display:block;font-style:italic;font-weight:500;font-size:.28em;letter-spacing:0;line-height:1.2;margin-top:14px;color:var(--blush)}
+.hero .lead{font-size:clamp(17px,1.7vw,20px);max-width:36ch;margin:22px 0 26px;color:#F7E6EE}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn.main{background:#fff;color:var(--accent-ink)}
+.hero .btn.main:hover{background:var(--blush)}
+.hero .btn.ghost{color:#fff}
+.badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:14.5px;color:#F7E6EE}
+.badges b{font-size:22px;color:#fff;font-weight:800;margin-right:6px}
+
+.mirror{position:relative;width:min(100%,520px);margin:0 auto;aspect-ratio:4/5;padding:30px;border-radius:28px;background:linear-gradient(145deg,#2a2a2e,#0b0b0d);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.mirror .glass{position:relative;width:100%;height:100%;border-radius:12px;overflow:hidden;background:#111}
+.mirror .glass img{width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 2.4s ease}
+.mirror.on .glass img{opacity:1;transform:scale(1)}
+.mirror .glass::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.22) 0%,transparent 35%,transparent 70%,rgba(255,255,255,.08) 100%);pointer-events:none}
+.bulb{position:absolute;width:16px;height:16px;border-radius:50%;background:#55505a;transform:translate(-50%,-50%);transition:background .25s,box-shadow .25s}
+.bulb.lit{background:#FFF6D9;box-shadow:0 0 10px 3px rgba(255,236,180,.9),0 0 28px 8px rgba(255,214,140,.35)}
+@media (min-width:920px){.hero .wrap{grid-template-columns:1.05fr .95fr;gap:40px;min-height:min(88vh,860px)}}
+
+/* sections */
+section.blk{padding:72px 0}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(32px,5vw,54px);letter-spacing:-.02em;line-height:1.05;margin:0 0 14px}
+h2 i{font-weight:500;color:var(--accent)}
+.sub{color:var(--ink-2);margin:0 0 34px;max-width:58ch}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr;gap:28px;align-items:end}
+.story blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.4vw,38px);line-height:1.25}
+.story blockquote small{display:block;margin-top:14px;font-family:var(--sans);font-style:normal;font-size:14px;color:var(--ink-2)}
+.story .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px;margin:0}
+.story .stats div{border-top:2px solid var(--black);padding-top:10px}
+.story .stats dt{font-family:var(--serif);font-size:42px;font-weight:700;line-height:1}
+.story .stats dd{margin:6px 0 0;color:var(--ink-2);font-size:15px}
+@media (min-width:900px){.story{grid-template-columns:1.2fr .8fr;gap:70px}}
+
+/* prices */
+.prices{display:grid;grid-template-columns:1fr;gap:10px 60px}
+@media (min-width:900px){.prices{grid-template-columns:1fr 1fr}}
+.prices h3{font-family:var(--serif);font-size:28px;margin:18px 0 6px}
+.prices ul{list-style:none;margin:0;padding:0}
+.prices li{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.prices li span:first-child{flex:1}
+.prices li small{display:block;color:var(--ink-2);font-size:13.5px;line-height:1.35;margin-top:2px}
+.prices li b{white-space:nowrap;font-weight:800}
+
+/* try-on */
+.try{background:var(--black);color:#fff}
+.try .sub{color:#CFC3C9}
+.tryon{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+@media (min-width:900px){.tryon{grid-template-columns:1.1fr .9fr;gap:60px}}
+.hand{width:100%;max-width:560px;margin:0 auto;display:block}
+.nail{transition:fill .5s ease}
+.tips{transition:opacity .4s ease}
+.shades{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 22px}
+.shades button{width:46px;height:46px;border-radius:50%;border:3px solid var(--black);box-shadow:0 0 0 1.5px #555;cursor:pointer;padding:0}
+.shades button[aria-pressed="true"]{box-shadow:0 0 0 2.5px #fff}
+.shade-name{font-family:var(--serif);font-size:30px;font-style:italic;margin:0 0 6px}
+.toggle{display:inline-flex;gap:8px;align-items:center;font-size:15px;color:#CFC3C9;margin:6px 0 24px;cursor:pointer}
+.toggle input{width:20px;height:20px;accent-color:var(--accent)}
+
+/* gallery */
+.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin}
+.gallery figure{margin:0;flex:0 0 min(78%,520px);scroll-snap-align:start;border-radius:16px;overflow:hidden;background:#eee;aspect-ratio:3/2}
+.gallery figure.sq{flex-basis:min(52%,340px);aspect-ratio:1}
+.gallery img{width:100%;height:100%;object-fit:cover}
+
+/* booking */
+.bookwrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+@media (min-width:960px){.bookwrap{grid-template-columns:1.15fr .85fr;gap:56px}}
+.step{margin-bottom:26px}
+.step h3{font-size:16px;font-weight:700;margin:0 0 10px}
+.step h3 span{color:var(--accent);margin-right:6px}
+.svc-tabs{display:flex;gap:8px;margin-bottom:12px}
+.chip{appearance:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--black);border-color:var(--black);color:#fff}
+.svc-list{display:grid;gap:8px}
+.svc-list label{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer}
+.svc-list input{width:20px;height:20px;accent-color:var(--accent);flex:none}
+.svc-list span{flex:1}
+.svc-list b{white-space:nowrap}
+.svc-list label:has(input:checked){border-color:var(--accent);background:#FFF5FA}
+.days,.times{display:flex;flex-wrap:wrap;gap:8px}
+.days .chip{display:flex;flex-direction:column;align-items:center;line-height:1.15;padding:9px 12px;min-width:62px}
+.days .chip small{font-size:12px;color:inherit;opacity:.7}
+.field{display:grid;gap:6px;margin-bottom:12px}
+.field label{font-size:14px;color:var(--ink-2)}
+.field input{padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:16px}
+
+.ticket{position:relative;background:#fff;border-radius:22px;padding:26px 24px;box-shadow:0 18px 40px rgba(158,15,95,.12);border:1px solid var(--line)}
+@media (min-width:960px){.ticket{position:sticky;top:96px}}
+.ticket::before,.ticket::after{content:"";position:absolute;top:58%;width:26px;height:26px;border-radius:50%;background:var(--paper)}
+.ticket::before{left:-13px}.ticket::after{right:-13px}
+.ticket .tt{font-family:var(--serif);font-size:26px;margin:0 0 4px}
+.ticket .ts{color:var(--ink-2);font-size:14px;margin:0 0 16px}
+.ticket ul{list-style:none;margin:0 0 14px;padding:0;min-height:24px}
+.ticket li{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:4px 0}
+.ticket .when{font-size:15px;padding:12px 0;border-top:1px dashed var(--silver);border-bottom:1px dashed var(--silver);margin-bottom:14px}
+.ticket .total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.ticket .total b{font-family:var(--serif);font-size:44px;line-height:1;white-space:nowrap}
+.ticket .note{font-size:13.5px;color:var(--ink-2);margin:12px 0 0}
+.ticket.done{outline:3px solid var(--accent)}
+.ticket .stamp{display:none;position:absolute;right:18px;top:18px;transform:rotate(-12deg);border:2px solid var(--accent);color:var(--accent);border-radius:10px;padding:4px 10px;font-weight:800;font-size:14px}
+.ticket.done .stamp{display:block;animation:stamp .35s ease-out}
+@keyframes stamp{from{transform:rotate(-12deg) scale(2);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:1fr;gap:30px}
+@media (min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}}
+.revs p{font-family:var(--serif);font-size:21px;line-height:1.4;margin:0 0 10px}
+.revs small{color:var(--ink-2);font-size:14px}
+
+/* contacts */
+.where{display:grid;grid-template-columns:1fr;gap:28px}
+@media (min-width:900px){.where{grid-template-columns:.85fr 1.15fr}}
+.where iframe{width:100%;height:400px;border:0;border-radius:18px;background:#eee}
+.where dl{margin:0}
+.where dt{font-size:14px;color:var(--ink-2);margin-top:16px}
+.where dd{margin:2px 0 0;font-size:20px;font-weight:600}
+
+footer{background:var(--black);color:#BFB3B9;font-size:14px;padding:30px 0 40px}
+footer p{margin:6px 0}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}.mirror .glass img{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="test"><div class="wrap">Тестовая версия сайта для салона «Анжела». Услуги, цены и фото взяты из карточки на Яндекс Картах, запись пока никуда не отправляется.</div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" id="logo">Анжела</a>
+    <nav class="menu" aria-label="Разделы">
+      <a href="#prices">Услуги и цены</a>
+      <a href="#try">Примерить цвет</a>
+      <a href="#gallery">Салон</a>
+      <a href="#where">Как найти</a>
+    </nav>
+    <a class="btn main sm book-sm" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <h1 id="heroName">Анжела<em id="heroKind">салон красоты на Дома 8 Марта</em></h1>
+      <p class="lead" id="heroLead"></p>
+      <div class="cta">
+        <a class="btn main" href="#book">Записаться онлайн</a>
+        <a class="btn ghost" href="#prices">Посмотреть цены</a>
+      </div>
+      <div class="badges" id="badges"></div>
+    </div>
+    <div class="mirror" id="mirror">
+      <div class="glass"><img id="mirrorImg" alt="Зал салона" width="1024" height="683"></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap story">
+    <blockquote id="story"></blockquote>
+    <dl class="stats" id="stats"></dl>
+  </div>
+</section>
+
+<section class="blk" id="prices" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Услуги <i>и цены</i></h2>
+    <p class="sub">Цены из карточки салона. Точную стоимость окрашивания и укладки мастер скажет после консультации.</p>
+    <div class="prices" id="priceList"></div>
+  </div>
+</section>
+
+<section class="blk try" id="try">
+  <div class="wrap tryon">
+    <svg class="hand" viewBox="0 0 560 420" role="img" aria-label="Ногти с выбранным оттенком">
+      <defs>
+        <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3CDB8"/><stop offset="1" stop-color="#E2AE95"/></linearGradient>
+        <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".35" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <g id="fingers"></g>
+    </svg>
+    <div>
+      <h2>Примерьте <i>цвет</i></h2>
+      <p class="sub">Выберите оттенок гель-лака, а мы запишем вас на маникюр с этим покрытием.</p>
+      <p class="shade-name" id="shadeName">Пудровый розовый</p>
+      <div class="shades" id="shades" role="group" aria-label="Оттенки"></div>
+      <label class="toggle"><input type="checkbox" id="french"> Френч</label><br>
+      <a class="btn main" href="#book" id="tryBook">Записаться на этот цвет</a>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="gallery">
+  <div class="wrap">
+    <h2>Наш <i>салон</i></h2>
+    <p class="sub">Мозаика, зеркала с подсветкой и люстры. Фото из карточки салона.</p>
+    <div class="gallery" id="galleryList"></div>
+  </div>
+</section>
+
+<section class="blk" id="book" style="border-top:1px solid var(--line)">
+  <div class="wrap bookwrap">
+    <div>
+      <h2>Запись <i>онлайн</i></h2>
+      <p class="sub">Отметьте услуги, день и время. Администратор подтвердит запись сообщением.</p>
+      <div class="step">
+        <h3><span>1</span>Услуги</h3>
+        <div class="svc-tabs" id="svcTabs" role="group" aria-label="Раздел"></div>
+        <div class="svc-list" id="svcList"></div>
+      </div>
+      <div class="step">
+        <h3><span>2</span>День</h3>
+        <div class="days" id="days" role="group" aria-label="День"></div>
+      </div>
+      <div class="step">
+        <h3><span>3</span>Время</h3>
+        <div class="times" id="times" role="group" aria-label="Время"></div>
+      </div>
+      <div class="step">
+        <h3><span>4</span>Контакты</h3>
+        <div class="field"><label for="bName">Имя</label><input id="bName" autocomplete="given-name"></div>
+        <div class="field"><label for="bPhone">Телефон</label><input id="bPhone" type="tel" placeholder="+7" autocomplete="tel"></div>
+      </div>
+    </div>
+    <aside class="ticket" id="ticket" aria-live="polite">
+      <span class="stamp">Записаны</span>
+      <p class="tt" id="tName">Анжела</p>
+      <p class="ts" id="tAddr"></p>
+      <ul id="tItems"><li style="color:var(--ink-2)">Пока ничего не выбрано</li></ul>
+      <div class="when" id="tWhen">День и время не выбраны</div>
+      <div class="total"><span>Итого</span><b class="num" id="tTotal">0 ₽</b></div>
+      <button class="btn main" type="button" id="tSend" style="width:100%">Записаться</button>
+      <p class="note" id="tNote">В тестовой версии заявка никуда не отправляется. На рабочем сайте она придёт администратору в мессенджер.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="blk" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Что <i>говорят</i></h2>
+    <p class="sub" id="revSub"></p>
+    <div class="revs" id="revs"></div>
+  </div>
+</section>
+
+<section class="blk" id="where" style="border-top:1px solid var(--line)">
+  <div class="wrap where">
+    <div>
+      <h2>Как <i>найти</i></h2>
+      <dl id="contacts"></dl>
+      <div class="cta" style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn dark" id="routeBtn" target="_blank" rel="noopener">Маршрут в Яндекс Картах</a>
+      </div>
+    </div>
+    <iframe id="map" title="Салон на карте" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p id="foot"></p><p>Сайт-макет. Фото и цены взяты из открытой карточки салона на Яндекс Картах.</p></div></footer>
+
+<script>
+/* =====================================================================
+   SALON — всё, что меняется от салона к салону. Остальной код общий.
+   ===================================================================== */
+const SALON = {
+  name: "Анжела",
+  kind: "салон красоты на Дома 8 Марта",
+  city: "Саратов",
+  lead: "Маникюр, педикюр, стрижки и окрашивание. Сюда ходят семьями: в отзывах пишут про три поколения одной семьи.",
+  address: "Саратов, улица Дома 8 Марта, 3",
+  landmark: "43 метра от остановки «Улица Симбирцева»",
+  hours: "до 21:00",
+  phones: [{label:"+7 (8452) 20-97-94", tel:"+78452209794"}, {label:"+7 917 208-27-37", tel:"+79172082737"}],
+  rating: "5,0", ratings: 682, reviews: 346,
+  award: "Хорошее место 2026",
+  yandex: "https://yandex.ru/maps/org/anzhela/99276929444/",
+  map: {ll:"46.007594,51.521067", oid:"99276929444"},
+  theme: {accent:"#C8157A", accentInk:"#9E0F5F", blush:"#F4D3E1"},
+  heroPhoto: "photos/p4.jpg",
+  gallery: ["photos/p1.jpg","photos/p7.jpg","photos/p2.jpg","photos/p6.jpg","photos/p8.jpg","photos/p3.jpg","photos/p5.jpg"],
+  story: {quote:"Сначала стриглись с мамой, теперь привожу сюда сына.", who:"Так пишут сразу несколько гостей в отзывах на Яндекс Картах"},
+  stats: [["94%","хвалят персонал, 274 отзыва"],["98%","довольны атмосферой"],["91%","хвалят маникюр"],["97%","не ждали дольше обещанного"]],
+  services: {
+    "Ногти": [
+      ["Маникюр обрезной","без покрытия",600],
+      ["Маникюр аппаратный или комбинированный","без покрытия",700],
+      ["Комплекс: маникюр и гель-лак в один тон","со снятием старого покрытия",1600],
+      ["Комплекс: аппаратный маникюр и гель-лак","со снятием старого покрытия",1700],
+      ["Педикюр классический","без покрытия",1100],
+      ["Педикюр аппаратный или комбинированный","без покрытия",1200],
+      ["Комплекс: педикюр и гель-лак","со снятием старого покрытия",2100],
+      ["Мужской маникюр","обрезной",700]
+    ],
+    "Волосы": [
+      ["Стрижка женская","без мытья и сушки; с ними от 1 100 ₽",700],
+      ["Стрижка мужская","модельная, с мытьём и сушкой",600],
+      ["Окрашивание в один тон","цена зависит от длины",1300],
+      ["Мелирование","цена зависит от длины и густоты",2000],
+      ["Укладка локоны","от средней длины",600],
+      ["Химическая завивка или карвинг","после консультации",2500]
+    ]
+  },
+  revs: [
+    ["Хожу периодически с самого открытия салона, мастера всегда на высоте, особенно запомнился массаж на педикюре.","steffani, 15 октября"],
+    ["Делаю здесь маникюр, покрытие тонкое и аккуратное, обработка ювелирная.","Екатерина Ф., 30 января"],
+    ["Хорошие мастера, приветливый персонал, приятная музыка и цена без сюрпризов.","Артемий П., 6 июля"]
+  ],
+  timeFrom: 10, timeTo: 20
+};
+/* ===================================================================== */
+
+const $ = s => document.querySelector(s);
+const fmt = n => n.toLocaleString("ru-RU").replace(/ /g," ");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const r = document.documentElement.style;
+r.setProperty("--accent", SALON.theme.accent); r.setProperty("--accent-ink", SALON.theme.accentInk); r.setProperty("--blush", SALON.theme.blush);
+
+/* text fill */
+document.title = `${SALON.name} — ${SALON.kind}, ${SALON.city}`;
+$("#logo").innerHTML = SALON.name;
+$("#heroName").firstChild.textContent = SALON.name;
+$("#heroKind").textContent = SALON.kind;
+$("#heroLead").textContent = SALON.lead;
+$("#badges").innerHTML = `<span><b class="num">${SALON.rating}</b>${fmt(SALON.ratings)} оценок на Картах</span>` + (SALON.award ? `<span><b>★</b>${SALON.award}</span>` : "");
+$("#story").innerHTML = `«${SALON.story.quote}»<small>${SALON.story.who}</small>`;
+$("#stats").innerHTML = SALON.stats.map(([a,b]) => `<div><dt class="num">${a}</dt><dd>${b}</dd></div>`).join("");
+$("#priceList").innerHTML = Object.entries(SALON.services).map(([g,list]) => `<div><h3>${g}</h3><ul>${list.map(([n,d,p]) => `<li><span>${n}<small>${d}</small></span><b class="num">${fmt(p)} ₽</b></li>`).join("")}</ul></div>`).join("");
+$("#galleryList").innerHTML = SALON.gallery.map((src,i) => `<figure class="${/p7/.test(src)?"sq":""}"><img src="${src}" alt="${SALON.name}, фото ${i+1}" loading="lazy"></figure>`).join("");
+$("#revSub").textContent = `${SALON.rating} из 5 по ${fmt(SALON.ratings)} оценкам. Пересказ отзывов с Яндекс Карт.`;
+$("#revs").innerHTML = SALON.revs.map(([t,w]) => `<div><p>${t}</p><small>${w}</small></div>`).join("");
+$("#contacts").innerHTML = `<dt>Адрес</dt><dd>${SALON.address}</dd><dt>Ориентир</dt><dd>${SALON.landmark}</dd><dt>Работаем</dt><dd>${SALON.hours}</dd><dt>Телефон</dt><dd>${SALON.phones.map(p=>`<a class="num" href="tel:${p.tel}">${p.label}</a>`).join("<br>")}</dd>`;
+$("#routeBtn").href = SALON.yandex;
+const [lon,lat] = SALON.map.ll.split(",");
+$("#map").src = `https://yandex.ru/map-widget/v1/?ll=${lon}%2C${lat}&z=16&oid=${SALON.map.oid}&ol=biz`;
+$("#tName").textContent = SALON.name; $("#tAddr").textContent = SALON.address;
+$("#foot").textContent = `${SALON.name}, ${SALON.kind}. ${SALON.address}.`;
+
+/* WOW 1: mosaic wall that glitters + mirror bulbs light up one by one */
+(function(){
+  const m = $("#mosaic"); const n = 900; let html = "";
+  for (let i=0;i<n;i++){ const l = 0.82 + Math.random()*0.3; html += `<i style="filter:brightness(${l.toFixed(2)})"></i>`; }
+  m.innerHTML = html;
+  const tiles = m.children;
+  if (!reduce) setInterval(() => {
+    for (let k=0;k<6;k++){ const t = tiles[(Math.random()*n)|0]; t.classList.add("s"); setTimeout(()=>t.classList.remove("s"), 900+Math.random()*900); }
+  }, 260);
+
+  const mirror = $("#mirror"); const img = $("#mirrorImg"); img.src = SALON.heroPhoto;
+  const pts = [];
+  const per = {top:5, side:6};
+  for (let i=0;i<per.top;i++){ const x = 10 + i*80/(per.top-1); pts.push([x,0]); }
+  for (let i=1;i<=per.side;i++){ const y = i*100/(per.side+1); pts.push([100,y]); }
+  for (let i=per.top-1;i>=0;i--){ const x = 10 + i*80/(per.top-1); pts.push([x,100]); }
+  for (let i=per.side;i>=1;i--){ const y = i*100/(per.side+1); pts.push([0,y]); }
+  const bulbs = pts.map(([x,y]) => { const b = document.createElement("span"); b.className = "bulb"; b.style.left = `calc(15px + (100% - 30px) * ${x/100})`; b.style.top = `calc(15px + (100% - 30px) * ${y/100})`; mirror.appendChild(b); return b; });
+  const light = () => {
+    if (reduce){ bulbs.forEach(b=>b.classList.add("lit")); mirror.classList.add("on"); return; }
+    bulbs.forEach((b,i) => setTimeout(() => b.classList.add("lit"), 120 + i*70));
+    setTimeout(() => mirror.classList.add("on"), 120 + bulbs.length*70);
+  };
+  img.complete ? light() : img.addEventListener("load", light, {once:true});
+})();
+
+/* WOW 2: try a gel shade on the nails */
+const SHADES = [
+  ["Пудровый розовый","#E8B4C1"],["Фуксия как наши стены",SALON.theme.accent],["Красная классика","#B0102A"],
+  ["Молочный","#F3EDE6"],["Шоколад","#5A3426"],["Ночной синий","#1D2A4D"],["Шалфей","#A7B59B"],["Чёрный глянец","#121212"]
+];
+(function(){
+  const g = $("#fingers");
+  /* five fingers: x, top y, width, length, tilt */
+  const F = [[78,150,58,250,-14],[170,70,64,330,-5],[262,48,66,352,0],[354,72,64,330,5],[440,170,56,240,15]];
+  g.innerHTML = F.map(([x,y,w,h,a],i) => {
+    const nw = w*0.72, nh = w*0.95, nx = x + (w-nw)/2, ny = y + 10;
+    const nail = `M${nx},${ny+nh} L${nx},${ny+nh*0.42} Q${nx},${ny} ${nx+nw/2},${ny} Q${nx+nw},${ny} ${nx+nw},${ny+nh*0.42} L${nx+nw},${ny+nh} Q${nx+nw/2},${ny+nh+8} ${nx},${ny+nh} Z`;
+    const tip = `M${nx},${ny+nh*0.42} Q${nx},${ny} ${nx+nw/2},${ny} Q${nx+nw},${ny} ${nx+nw},${ny+nh*0.42} Q${nx+nw/2},${ny+nh*0.30} ${nx},${ny+nh*0.42} Z`;
+    return `<g transform="rotate(${a} ${x+w/2} ${y+h})">
+      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${w/2}" fill="url(#skin)"/>
+      <path class="nail" d="${nail}" fill="#E8B4C1"/>
+      <path class="tips" d="${tip}" fill="#FBF7F2" opacity="0"/>
+      <path d="${nail}" fill="url(#gloss)"/>
+    </g>`;
+  }).join("");
+  const box = $("#shades");
+  box.innerHTML = SHADES.map(([n,c],i) => `<button type="button" style="background:${c}" aria-label="${n}" aria-pressed="${i===0}" data-i="${i}"></button>`).join("");
+  let cur = 0;
+  const apply = () => {
+    const [n,c] = SHADES[cur];
+    g.querySelectorAll(".nail").forEach((p,k) => setTimeout(()=>p.setAttribute("fill", c), reduce?0:k*70));
+    $("#shadeName").textContent = n;
+    box.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.i===cur)));
+  };
+  box.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; cur = +b.dataset.i; apply(); });
+  $("#french").addEventListener("change", e => g.querySelectorAll(".tips").forEach(t => t.setAttribute("opacity", e.target.checked ? "1" : "0")));
+  $("#tryBook").addEventListener("click", () => {
+    const want = Object.keys(SALON.services)[0];
+    openTab(want);
+    const combo = document.querySelector('#svcList input[data-name*="гель-лак"]');
+    if (combo){ combo.checked = true; picked.set(combo.dataset.name, +combo.dataset.price); }
+    shadeNote = `${SHADES[cur][0]}${$("#french").checked ? ", френч" : ""}`;
+    renderTicket();
+  });
+})();
+
+/* WOW 3: booking that builds an appointment ticket */
+let shadeNote = "";
+const picked = new Map();   // name -> price
+let day = null, time = null, tab = Object.keys(SALON.services)[0];
+function openTab(t){
+  tab = t;
+  $("#svcTabs").innerHTML = Object.keys(SALON.services).map(k => `<button class="chip" type="button" aria-pressed="${k===tab}" data-tab="${k}">${k}</button>`).join("");
+  $("#svcList").innerHTML = SALON.services[tab].map(([n,d,p]) => `<label><input type="checkbox" data-name="${n}" data-price="${p}" ${picked.has(n)?"checked":""}><span>${n}</span><b class="num">${fmt(p)} ₽</b></label>`).join("");
+}
+$("#svcTabs").addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (b) openTab(b.dataset.tab); });
+$("#svcList").addEventListener("change", e => { const i = e.target; if (i.checked) picked.set(i.dataset.name, +i.dataset.price); else picked.delete(i.dataset.name); renderTicket(); });
+document.addEventListener("change", e => { if (e.target.matches('#svcList input')) return; });
+
+(function(){
+  const wd = ["вс","пн","вт","ср","чт","пт","сб"];
+  const mo = ["янв","фев","мар","апр","мая","июн","июл","авг","сен","окт","ноя","дек"];
+  const out = []; const now = new Date();
+  for (let i=0;i<8;i++){ const d = new Date(now); d.setDate(now.getDate()+i);
+    out.push(`<button class="chip" type="button" aria-pressed="false" data-day="${d.getDate()} ${mo[d.getMonth()]}, ${i===0?"сегодня":i===1?"завтра":wd[d.getDay()]}">${d.getDate()}<small>${i===0?"сегодня":i===1?"завтра":wd[d.getDay()]}</small></button>`); }
+  $("#days").innerHTML = out.join("");
+  const ts = []; for (let h=SALON.timeFrom; h<=SALON.timeTo; h++) ts.push(`<button class="chip num" type="button" aria-pressed="false" data-time="${h}:00">${h}:00</button>`);
+  $("#times").innerHTML = ts.join("");
+})();
+function pick(group, attr, val){ document.querySelectorAll(`${group} .chip`).forEach(b => b.setAttribute("aria-pressed", String(b.dataset[attr]===val))); }
+$("#days").addEventListener("click", e => { const b = e.target.closest("[data-day]"); if (!b) return; day = b.dataset.day; pick("#days","day",day); renderTicket(); });
+$("#times").addEventListener("click", e => { const b = e.target.closest("[data-time]"); if (!b) return; time = b.dataset.time; pick("#times","time",time); renderTicket(); });
+
+let shown = 0;
+function rollTo(target){
+  const el = $("#tTotal"); const from = shown; shown = target;
+  if (reduce){ el.textContent = `${fmt(target)} ₽`; return; }
+  const t0 = performance.now(), dur = 500;
+  const step = t => { const k = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-k,3); el.textContent = `${fmt(Math.round(from+(target-from)*e))} ₽`; if (k<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function renderTicket(){
+  $("#ticket").classList.remove("done");
+  const items = [...picked.entries()];
+  $("#tItems").innerHTML = items.length ? items.map(([n,p]) => `<li><span>${n}</span><span class="num">${fmt(p)} ₽</span></li>`).join("") + (shadeNote ? `<li><span>Оттенок: ${shadeNote}</span><span></span></li>` : "") : `<li style="color:var(--ink-2)">Пока ничего не выбрано</li>`;
+  $("#tWhen").textContent = day && time ? `${day}, ${time}` : day ? `${day}, время не выбрано` : "День и время не выбраны";
+  rollTo(items.reduce((s,[,p])=>s+p,0));
+}
+$("#tSend").addEventListener("click", () => {
+  const miss = [];
+  if (!picked.size) miss.push("услугу"); if (!day) miss.push("день"); if (!time) miss.push("время");
+  if (!$("#bPhone").value.trim()) miss.push("телефон");
+  if (miss.length){ $("#tNote").textContent = `Осталось выбрать: ${miss.join(", ")}.`; return; }
+  $("#ticket").classList.add("done");
+  $("#tNote").textContent = `Готово, ${$("#bName").value || "гость"}. На рабочем сайте администратор получит заявку в мессенджер и подтвердит время. В тестовой версии ничего не отправляется.`;
+});
+openTab(tab); renderTicket();
+</script>
+</body>
+</html>
